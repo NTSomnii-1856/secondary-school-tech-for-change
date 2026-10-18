@@ -31,3 +31,16 @@
 .reference-group .line-notes{margin-bottom:16px}
 .bigtext .note-code{font-size:18px}
 @media(max-width:550px){.line-notes{padding-inline-start:1.1rem}.line-notes>li{padding-inline-start:2px}.note-code{font-size:13px;padding:10px}.reference-group{padding:16px}.reference-group>summary{font-size:1rem}.learn-actions{align-items:stretch;flex-direction:column}}
+
+/* Concept teaching precedes the practical example. */
+.concept{padding:4px 0 24px;margin:0 0 24px;border-bottom:1px dashed var(--line)}
+.concept:last-of-type{margin-bottom:8px}
+.concept h2{margin:12px 0 14px}
+.concept-points{padding-inline-start:23px;margin:12px 0 18px;list-style:disc}
+.concept-points li{margin:10px 0;line-height:1.6;padding-inline-start:4px;max-width:65ch}
+.concept-example{padding:14px 16px;background:#f5f6ef;border:1px solid var(--line);border-radius:5px 9px 4px 7px}
+.concept-example .example-label{margin:0 0 9px;font-weight:700}
+.concept-example .example-caption{margin:12px 0 0;line-height:1.6;max-width:65ch}
+.concept-example .note-code{background:#fff}
+.reference-lines{margin:15px 0 24px}.reference-lines>summary{cursor:pointer;font-weight:600}
+@media(max-width:550px){.concept-example{padding:12px}.concept-points{padding-inline-start:19px}.concept h2{font-size:1.25rem}}
