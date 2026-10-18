@@ -14,3 +14,20 @@
 .taskcard{padding-top:18px}.tasktools{margin:0}.instructions{margin-top:8px}.instructions li{margin-bottom:14px}.outputpanel{margin:22px 0}.outputpanel h3{font-size:15px;color:var(--muted);margin:0 0 8px}.outputpanel .expected{font-size:17px;margin:0;padding:15px 18px}.taskhint,.codereference,.assessment{margin-top:20px}.assessment>p{font-size:17px;background:var(--soft);padding:12px 15px}.railbox>.btn{margin-top:12px;max-width:100%;white-space:normal;font-size:13px}.taskcard>.inquiry{margin-top:8px}.taskcard pre{white-space:pre;overflow-x:auto}.plainintro{margin-bottom:26px}@media(max-width:550px){.outputpanel .expected{font-size:15px}.railbox>.btn{display:inline-block;margin:6px 4px 0 0}.instructions li{line-height:1.6}}
 /* Independent briefs: one problem, test evidence and a visible assessment route. */
 .problembrief{font-size:19px;line-height:1.7}.briefrequirements{padding-inline-start:24px}.briefrequirements li{padding-inline-start:5px;margin:12px 0;line-height:1.65}.problemsection{padding:20px 25px;margin:20px 0}.problemsection>summary{font-size:20px;line-height:1.5;color:var(--deep)}.problemsection[open]>summary{margin-bottom:18px}.problemsection>.testgrid{margin:18px 0 0}.testcase{border:1px dashed var(--line);border-radius:6px 13px 5px 10px;padding:14px 18px;margin:16px 0;min-width:0}.testcase legend{font-weight:bold;font-size:16px;padding:0 8px;overflow-wrap:anywhere}.testcase p{margin:0 0 10px}.testcase .twocol{gap:15px}.testcase .field{margin:7px 0}.testcase textarea{min-height:65px}.studentcode{font-family:Consolas,monospace!important;font-size:14px!important;min-height:210px!important;white-space:pre;overflow:auto;text-align:left}.rubricrow{display:grid;grid-template-columns:minmax(0,1fr) 110px;gap:15px;align-items:start;padding:18px 0;border-bottom:1px dashed var(--line);font-size:17px;line-height:1.6}.rubricrow select{font-size:16px;padding:10px}.revisionlinks{display:flex;flex-wrap:wrap;gap:12px}.toolkit{font-size:16px}.toolkit p{margin:18px 0}.toolkit code{background:var(--soft);padding:3px 6px;display:inline-block}.problemview .card h2{font-size:23px}.problemview .buttonrow{margin-top:25px}.bigtext .problembrief,.bigtext .briefrequirements li,.bigtext .rubricrow{font-size:22px}@media(max-width:550px){.problemsection{padding:17px}.problembrief{font-size:17px}.problemsection>summary{font-size:19px}.testcase{padding:12px}.rubricrow{grid-template-columns:minmax(0,1fr) 85px;font-size:16px;gap:10px}.rubricrow select{font-size:14px;padding:8px}.testcase legend{font-size:15px}.revisionlinks .btn{width:100%;text-align:start}}
+
+/* Clear line explanations, shared by Learn and Quick reference. */
+.line-notes{padding-inline-start:1.35rem;margin:18px 0 24px;list-style:disc}
+.line-notes>li{padding-inline-start:6px;margin:0 0 22px;min-width:0}
+.line-notes>li::marker{color:var(--deep);font-size:1.1em}
+.line-notes p{margin:8px 0 0;max-width:65ch;line-height:1.6}
+.note-code{margin:0;padding:11px 13px;background:#eff2e8;color:#203a2c;border:1px solid #d4dcc8;border-radius:5px 8px 4px 6px;font:15px/1.65 Consolas,monospace;text-align:left;white-space:pre;overflow:auto;max-width:100%;tab-size:4}
+.note-code code{font:inherit;background:none;padding:0;color:inherit}
+.note-block{overflow:auto;max-width:100%;padding:4px 0 8px;direction:ltr;text-align:left}
+.note-block svg{display:block;max-width:none}
+.learn-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px}
+.reference-group{padding:18px 22px;margin:16px 0}
+.reference-group>summary{font-size:1.12rem;font-weight:700;cursor:pointer;line-height:1.5}
+.reference-group[open]>summary{margin-bottom:24px}
+.reference-group .line-notes{margin-bottom:16px}
+.bigtext .note-code{font-size:18px}
+@media(max-width:550px){.line-notes{padding-inline-start:1.1rem}.line-notes>li{padding-inline-start:2px}.note-code{font-size:13px;padding:10px}.reference-group{padding:16px}.reference-group>summary{font-size:1rem}.learn-actions{align-items:stretch;flex-direction:column}}
