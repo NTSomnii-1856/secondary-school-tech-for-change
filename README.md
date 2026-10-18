@@ -1,21 +1,25 @@
 # Secondary School Tech for Change
 
-NTSOMNII student lessons. Separate year-group folders keep classes and future lessons organised.
+NTSOMNII independent ICT lessons. Each class has its own page and ordered lessons.
 
-- Year 7 / Week 6: Will everyone get a turn? — first Python inputs, whole numbers, variables and calculations.
-- Year 8 / Week 6: Can this ticket get you in? — lists, loops, searching and sorting.
+## Open your class
 
-English, Russian, Simplified Chinese and Hebrew. Hebrew uses right-to-left page layout; Python stays left-to-right. Notes and progress stay in the current browser. There is no student account or server-side collection. Students run Python in the Raspberry Pi online editor. Optional Gemini help opens the school's existing Gemini service.
+- [Year 7](https://ntsomnii-1856.github.io/secondary-school-tech-for-change/year-7/)
+- [Year 8](https://ntsomnii-1856.github.io/secondary-school-tech-for-change/year-8/)
 
-The lesson files in this repository are public. Students' work stays in their own browser until they download it for their teacher. Teacher answer keys are kept separately and are not included here.
+## Lessons
 
-## Student lessons
+| Year | Week 5 | Week 6 |
+| --- | --- | --- |
+| 7 | [Scratch game gate](year-7/week-5-scratch-game-gate/) | [Python game-club planner](year-7/week-6-game-club-planner/) |
+| 8 | [Binary pixel studio](year-8/week-5-binary-pixel-studio/) | [Film-night booking checker](year-8/week-6-film-night-booking-checker/) |
 
-- [Year 7: Will everyone get a turn?](https://ntsomnii-1856.github.io/secondary-school-tech-for-change/year-7/week-6-game-club-planner/)
-- [Year 8: Can this ticket get you in?](https://ntsomnii-1856.github.io/secondary-school-tech-for-change/year-8/week-6-film-night-booking-checker/)
+Each lesson has learning objectives, a guide, independent problems with rubrics, **Level up (optional)** and an exit ticket. Revision links return to the saved problem. Work and self-assessment stay in the student's browser until downloaded for the teacher. The website does not automatically mark Python or Scratch projects. Hand in the working program/project too.
 
-Each class has a learning guide, independent problems, optional harder problems, rubrics and an exit ticket. Revision links return to the saved problem. Download work for my teacher exports code or traces, tests, explanations and self-assessment.
+English, Russian, Simplified Chinese and Hebrew are available in lessons. Python and Scratch block examples use their English code/block names. Hebrew pages read right to left; code and binary data remain left to right.
 
-## Publishing
+Week 5 contains its student files and the locally bundled Scratch block renderer (MIT licence). No audio downloads are needed. Teacher answer keys are kept outside this public repository.
 
-GitHub Pages: deploy from the main branch, root folder. No build or dependencies are needed. Once Pages is enabled, future updates to main publish automatically.
+## Publish
+
+GitHub Pages deploys from `main`, root folder. These are static pages; no build, secret keys or student accounts are required. Keep relative links so each year's lesson page stays separate.
