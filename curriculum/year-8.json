@@ -1,0 +1,641 @@
+{
+  "year": 8,
+  "updated": "20 October 2026",
+  "meta": {
+    "title": "Year 8 Python and connected systems",
+    "route": "Python first, then Raspberry Pi Pico MicroPython in Wokwi; full Raspberry Pi computer concepts and hardware where available.",
+    "next": "Keep Week 6: Can this ticket get you in? Then use Week 7 to transfer Python thinking to a Pico circuit in Wokwi.",
+    "intro": "Students keep building confidence in Python, then use the same ideas to control a simulated device. They develop functions, data handling, 3D design and system testing before the major physical project."
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Rules that work for people",
+      "learn": "Decomposition, flowcharts and decisions with competing needs.",
+      "make": "Retain actual earlier rule/design work; do not assume Python functions were already taught.",
+      "evidence": "A traced rule and explanation of a design choice.",
+      "codes": "ICT3 ICT8",
+      "status": "earlier learning"
+    },
+    {
+      "week": 2,
+      "title": "Can we trust this record",
+      "learn": "Fields, types, units, source and time; missing is different from zero.",
+      "make": "Use actual earlier data work or a short repair activity to establish the starting point.",
+      "evidence": "A structured record with a justified correction.",
+      "codes": "ICT1 ICT6 ICT8",
+      "status": "earlier learning"
+    },
+    {
+      "week": 3,
+      "title": "Keep evidence you can explain",
+      "learn": "Research, safe AI use, file versions and communicating a claim.",
+      "make": "Retain the class work that was actually completed and collect missing evidence through later tasks.",
+      "evidence": "Credited evidence and an organised working file.",
+      "codes": "ICT1 ICT7 ICT8",
+      "status": "earlier learning"
+    },
+    {
+      "week": 4,
+      "title": "Python game studio",
+      "learn": "Variables, input/output, selection and repetition in a small game.",
+      "make": "Keep the beginner Python game activity and stronger-student challenges already prepared.",
+      "evidence": "A working program, a personal change and an explanation of a test.",
+      "codes": "ICT2 ICT3",
+      "status": "prepared or earlier learning"
+    },
+    {
+      "week": 5,
+      "title": "Binary pixel studio",
+      "learn": "Bits, bytes, text/image representation, lists and for loops.",
+      "make": "Keep the prepared pixel lesson; make an icon and explain the data needed. Sound comparison is not required.",
+      "evidence": "Python image rows, size calculation and a saved icon.",
+      "codes": "ICT2 ICT4",
+      "status": "prepared lesson"
+    },
+    {
+      "week": 6,
+      "title": "Can this ticket get you in",
+      "learn": "Lists, loops, selection, searching, sorting and test evidence.",
+      "make": "Keep the existing Python booking-checker lesson. Students can revise the new concept definitions before applying them.",
+      "evidence": "Working checker, found/missing tests and a justified search comparison.",
+      "codes": "ICT2 ICT3",
+      "status": "existing next lesson"
+    },
+    {
+      "week": 7,
+      "title": "Give Python a physical response",
+      "learn": "A microcontroller, GPIO, digital input/output and a repeating MicroPython program.",
+      "make": "Use the Wokwi Raspberry Pi Pico template to control an LED and read a button. Explain how Pico MicroPython differs from desktop Python.",
+      "evidence": "Pico simulation, changed code and a pin/input/output explanation.",
+      "codes": "ICT2 ICT4 ICT5",
+      "status": "proposed next stage"
+    },
+    {
+      "week": 8,
+      "title": "Build a sensor system that decides",
+      "learn": "Sensor values, parameters, reusable functions, thresholds and an override.",
+      "make": "In Wokwi, create a small monitor using a simulated distance or light reading. Test the boundary and a supplied fault case.",
+      "evidence": "Explained function, normal/boundary/fault tests and a clear override.",
+      "codes": "ICT2 ICT3 ICT5 ICT8",
+      "status": "planned"
+    },
+    {
+      "week": 9,
+      "title": "Turn readings into useful evidence",
+      "learn": "Lists/dictionaries, validation, CSV records, keys and a spreadsheet model.",
+      "make": "Record source, units and status; link a small device table to readings and check a summary chart. Recorded/simulated data is sufficient.",
+      "evidence": "Validated records, one checked lookup or query, formulas and a defensible conclusion.",
+      "codes": "ICT1 ICT2 ICT3 ICT6",
+      "status": "planned"
+    },
+    {
+      "week": 10,
+      "title": "Design a housing you can repair",
+      "learn": "Dimensioned CAD, tolerances, assembly, access and alternative designs.",
+      "make": "In Tinkercad 3D Design, model a repairable Pico enclosure with a removable lid. Check supplied component sizes and compare a fit allowance.",
+      "evidence": "Two design choices, CAD views and a fit/access test.",
+      "codes": "ICT1 ICT7 DT2",
+      "status": "planned"
+    },
+    {
+      "week": 11,
+      "title": "Meet the Raspberry Pi computer",
+      "learn": "A Linux single-board computer, OS, files, networks, client/server messages and GPIO.",
+      "make": "Compare a full Raspberry Pi with Pico. Use a school Pi demonstration if available, or labelled system/file traces. Inspect a recorded JSON response and plan offline behaviour.",
+      "evidence": "System/network diagram, interpreted record and an honest offline response.",
+      "codes": "ICT1 ICT4 ICT5 ICT8",
+      "status": "planned"
+    },
+    {
+      "week": 12,
+      "title": "Make your evidence understandable",
+      "learn": "Accessible HTML/CSS, graphics, presentation and responsible AI-assisted communication.",
+      "make": "Create a small device dashboard or explanation page using earlier readings; verify one AI-generated claim and improve the page after a user test.",
+      "evidence": "Credited digital artefact, verified claim and a recorded accessibility improvement.",
+      "codes": "ICT1 ICT6 ICT7 ICT8",
+      "status": "planned"
+    },
+    {
+      "week": 13,
+      "title": "Connect the whole system",
+      "learn": "Integrate a Python/MicroPython controller, structured data, CAD and a usable explanation.",
+      "make": "Adapt earlier components for a chosen need. Distinguish the simulated device, data and physical build still required.",
+      "evidence": "Independent function change, system test log and a justified design decision.",
+      "codes": "ICT1 ICT2 ICT3 ICT4 ICT5 ICT6 ICT7 ICT8",
+      "status": "planned"
+    },
+    {
+      "week": 14,
+      "title": "Demonstrate and improve",
+      "learn": "Individual transfer, algorithm reasoning and closing gaps in the ICT portfolio.",
+      "make": "Change a function, diagnose a fault, check a data result and explain privacy/network choices. Recheck gaps before Christmas.",
+      "evidence": "Individual coverage record and corrected evidence; no separate exam.",
+      "codes": "ICT1 ICT2 ICT3 ICT4 ICT5 ICT6 ICT7 ICT8",
+      "status": "planned"
+    },
+    {
+      "week": 15,
+      "title": "Choose a need worth solving",
+      "learn": "Investigate a specific beneficiary and compare a simple non-digital response.",
+      "make": "Investigate a specific beneficiary and compare a simple non-digital response.",
+      "evidence": "Brief, source evidence and one testable core function.",
+      "codes": "DT1",
+      "status": "planned"
+    },
+    {
+      "week": 16,
+      "title": "Listen before designing",
+      "learn": "Research users, existing products and constraints. Use the community review after this week.",
+      "make": "Research users, existing products and constraints. Use the community review after this week.",
+      "evidence": "Research findings and a recorded change to an assumption.",
+      "codes": "DT1",
+      "status": "planned"
+    },
+    {
+      "week": 17,
+      "title": "Write a specification you can test",
+      "learn": "Turn the need into measurable targets and plan who will test them.",
+      "make": "Turn the need into measurable targets and plan who will test them.",
+      "evidence": "Year 7: five targets. Year 8: six targets with justified constraints.",
+      "codes": "DT1 DT5",
+      "status": "planned"
+    },
+    {
+      "week": 18,
+      "title": "Explore three possible solutions",
+      "learn": "Sketch three concepts and compare usefulness, feasibility and impact.",
+      "make": "Sketch three concepts and compare usefulness, feasibility and impact.",
+      "evidence": "Three concepts, a justified choice and user feedback.",
+      "codes": "DT2",
+      "status": "planned"
+    },
+    {
+      "week": 19,
+      "title": "Model the design in 3D",
+      "learn": "Develop CAD, dimensions, assembly and access before using materials.",
+      "make": "Develop CAD, dimensions, assembly and access before using materials. Year 7 checks basic dimensions and access; Year 8 compares tolerances, assembly and repair.",
+      "evidence": "CAD/drawings, fit evidence and a material/component plan.",
+      "codes": "DT2 DT3",
+      "status": "planned"
+    },
+    {
+      "week": 20,
+      "title": "Test materials and movement",
+      "learn": "Compare materials, joints, structures or mechanisms that matter to the chosen design.",
+      "make": "Compare materials, joints, structures or mechanisms that matter to the chosen design.",
+      "evidence": "A physical trial, measurements and a justified making method.",
+      "codes": "DT3 DT4",
+      "status": "planned"
+    },
+    {
+      "week": 21,
+      "title": "Build the control function",
+      "learn": "Transfer the autumn code and circuit into the project and isolate one fault at a time.",
+      "make": "Use Python/MicroPython with Pico or a justified Raspberry Pi computer route where programmable control benefits the chosen brief. Transfer the autumn code and circuit into the project and isolate one fault at a time.",
+      "evidence": "Explained controller and input/output test record.",
+      "codes": "DT4 DT6",
+      "status": "planned"
+    },
+    {
+      "week": 22,
+      "title": "Make and assemble a physical prototype",
+      "learn": "Make the structure/housing and integrate controls, access and any necessary mechanism.",
+      "make": "Make the structure/housing and integrate controls, access and any necessary mechanism.",
+      "evidence": "An actual physical assembly, making record and safe reset.",
+      "codes": "DT3 DT4 DT6",
+      "status": "planned"
+    },
+    {
+      "week": 23,
+      "title": "Find out where it fails",
+      "learn": "Test normal, boundary and failure conditions against the specification.",
+      "make": "Test normal, boundary and failure conditions against the specification. Year 7 uses a structured test log; Year 8 justifies repeat counts and checks interactions between components.",
+      "evidence": "Repeated results, a fault explanation and a ranked improvement.",
+      "codes": "DT5 DT6",
+      "status": "planned"
+    },
+    {
+      "week": 24,
+      "title": "Let someone else use it",
+      "learn": "Observe an approved user or peer using the prototype without coaching.",
+      "make": "Observe an approved user or peer using the prototype without coaching.",
+      "evidence": "Usability evidence and a specific design revision.",
+      "codes": "DT1 DT5",
+      "status": "planned"
+    },
+    {
+      "week": 25,
+      "title": "Improve the part that matters",
+      "learn": "Use evidence to revise the mechanism, housing, interface or code.",
+      "make": "Use evidence to revise the mechanism, housing, interface or code.",
+      "evidence": "Before/after evidence; explain the trade-off.",
+      "codes": "DT3 DT5 DT6",
+      "status": "planned"
+    },
+    {
+      "week": 26,
+      "title": "Make the demonstration dependable",
+      "learn": "Repeat the core tests; prepare reset, fallback and honest operating limits.",
+      "make": "Repeat the core tests; prepare reset, fallback and honest operating limits.",
+      "evidence": "A reliable demonstration version and a handover guide.",
+      "codes": "DT4 DT5",
+      "status": "planned"
+    },
+    {
+      "week": 27,
+      "title": "Prepare the competition entry",
+      "learn": "Communicate the need, design process, original contribution and strongest test evidence.",
+      "make": "Communicate the need, design process, original contribution and strongest test evidence.",
+      "evidence": "Entry package or school-jury presentation matched to the selected rules.",
+      "codes": "DT2 DT5",
+      "status": "planned"
+    },
+    {
+      "week": 28,
+      "title": "Demonstrate and evaluate the invention",
+      "learn": "Present, answer technical questions and evaluate the outcome against targets.",
+      "make": "Present, answer technical questions and evaluate the outcome against targets.",
+      "evidence": "Checkpoint 2, individual technical explanation and next design priority.",
+      "codes": "DT5",
+      "status": "planned"
+    },
+    {
+      "week": 29,
+      "title": "Design for a new public audience",
+      "learn": "Launch a distinct exhibition brief across Humans, Animals and Nature; investigate visitor needs.",
+      "make": "Launch a distinct exhibition brief across Humans, Animals and Nature; investigate visitor needs.",
+      "evidence": "Fresh brief, audience evidence and a clear new purpose.",
+      "codes": "DT1",
+      "status": "planned"
+    },
+    {
+      "week": 30,
+      "title": "Prototype the visitor experience",
+      "learn": "Compare concepts and trial the interaction, labels and physical design.",
+      "make": "Compare concepts and trial the interaction, labels and physical design.",
+      "evidence": "Prototype, accessibility feedback and a justified choice.",
+      "codes": "DT2 DT5",
+      "status": "planned"
+    },
+    {
+      "week": 31,
+      "title": "Make the exhibition version",
+      "learn": "Produce the exhibit/product/workshop and document repeatable making or operation.",
+      "make": "Produce the exhibit/product/workshop and document repeatable making or operation.",
+      "evidence": "Physical making, a working interaction and operating instructions.",
+      "codes": "DT3 DT4 DT6",
+      "status": "planned"
+    },
+    {
+      "week": 32,
+      "title": "Pilot the exhibition",
+      "learn": "Test with visitors or peers; improve clarity, reliability and the handover.",
+      "make": "Test with visitors or peers; improve clarity, reliability and the handover.",
+      "evidence": "Checkpoint 3 design evidence and a version ready for enterprise planning.",
+      "codes": "DT5",
+      "status": "planned"
+    },
+    {
+      "week": 33,
+      "title": "Find an offer people value",
+      "learn": "Research the audience and approved beneficiary; choose an ethical product, activity or donation route.",
+      "make": "Research the audience and approved beneficiary; choose an ethical product, activity or donation route.",
+      "evidence": "Market evidence, roles and a realistic enterprise plan.",
+      "codes": "ENT1 ENT4",
+      "status": "planned"
+    },
+    {
+      "week": 34,
+      "title": "Cost it and choose a price",
+      "learn": "Calculate costs, price, revenue and net proceeds; compare a realistic low-sales case.",
+      "make": "Calculate costs, price, revenue and net proceeds; compare a realistic low-sales case.",
+      "evidence": "Checked spreadsheet, assumptions and justified pricing.",
+      "codes": "ENT2",
+      "status": "planned"
+    },
+    {
+      "week": 35,
+      "title": "Prepare the launch",
+      "learn": "Create accessible promotion; pilot the offer, manage stock and rehearse roles and support.",
+      "make": "Create accessible promotion; pilot the offer, manage stock and rehearse roles and support.",
+      "evidence": "Tested promotion, production/stock record and adult payment arrangements.",
+      "codes": "ENT1 ENT3 ENT4",
+      "status": "planned"
+    },
+    {
+      "week": 36,
+      "title": "Exhibit and account for the impact",
+      "learn": "Run the public event, reconcile costs and proceeds, use feedback and evaluate individual learning.",
+      "make": "Run the public event, reconcile costs and proceeds, use feedback and evaluate individual learning.",
+      "evidence": "Public outcome, reconciled record, beneficiary handover status and reflection.",
+      "codes": "ENT2 ENT3 ENT4 DT5",
+      "status": "planned"
+    }
+  ],
+  "goals": [
+    [
+      "ICT1",
+      "Digital workflow",
+      "Versioned code/data/models, sources, exports and responsible sharing.",
+      "W2–5, 9–14",
+      "An organised, usable portfolio with ownership and credits."
+    ],
+    [
+      "ICT2",
+      "Programming",
+      "Python/MicroPython variables, types, selection, loops, lists/dictionaries, functions, parameters and returns.",
+      "W4–9, 13–14",
+      "Independent function change and tested program/controller."
+    ],
+    [
+      "ICT3",
+      "Algorithms and models",
+      "Trace, decompose, compare searches/sorts, check assumptions and debug systematically.",
+      "W1, 4, 6, 8–9, 13–14",
+      "Algorithm comparison and a justified test/model correction."
+    ],
+    [
+      "ICT4",
+      "Systems and representation",
+      "Binary, text/image data; CPU/RAM/storage; microcontroller versus a Linux single-board computer.",
+      "W5, 7, 11, 14",
+      "Data-size explanation and a correct system comparison."
+    ],
+    [
+      "ICT5",
+      "Networks and interfaces",
+      "GPIO, sensors, networks, clients/servers, messages/JSON and offline/failure behaviour.",
+      "W7–8, 11, 13–14",
+      "Interface/system diagram and an interpreted record with honest status."
+    ],
+    [
+      "ICT6",
+      "Data and analysis",
+      "Fields, types, keys, validation/verification, linked records, simple queries/lookups, formulas and charts.",
+      "W2, 9, 12–14",
+      "Checked records, query/lookup and spreadsheet conclusion."
+    ],
+    [
+      "ICT7",
+      "Digital and 3D creation",
+      "Accessible HTML/CSS, graphics, presentation, dimensioned CAD, fit and user testing.",
+      "W10, 12–14",
+      "Usable digital content and a repairable, fit-checked enclosure model."
+    ],
+    [
+      "ICT8",
+      "Responsible and AI use",
+      "Privacy, safe prompts, security, reporting, rights, bias, verification and human oversight.",
+      "W1–3, 8, 11–14",
+      "Verified claim and an explained privacy, fairness or failure decision."
+    ]
+  ],
+  "design": [
+    [
+      "DT1",
+      "Investigate and specify",
+      "W15–17; W29",
+      "Evidence of user needs, comparison with an existing solution and measurable targets."
+    ],
+    [
+      "DT2",
+      "Develop and communicate",
+      "W18–19; W30",
+      "Three concepts, justified choice and dimensioned CAD/drawings."
+    ],
+    [
+      "DT3",
+      "Materials and making",
+      "W19–22, 25; W31",
+      "Physical materials/joints trials, accurate making and recorded improvements."
+    ],
+    [
+      "DT4",
+      "Technical knowledge",
+      "W20–22, 26; W31",
+      "Appropriate structure/mechanism, assembly and safe operation."
+    ],
+    [
+      "DT5",
+      "Test and evaluate",
+      "W17, 23–28; W30–32",
+      "Repeated target-based tests, user evidence, revisions and individual evaluation."
+    ],
+    [
+      "DT6",
+      "Electronics and control",
+      "W21–25; W31",
+      "An integrated physical control function, fault response and manual reset/override where relevant."
+    ]
+  ],
+  "enterprise": [
+    [
+      "ENT1",
+      "Audience and ethical offer",
+      "W33, 35",
+      "Market evidence, approved purpose, roles and a tested offer."
+    ],
+    [
+      "ENT2",
+      "Finance and records",
+      "W34, 36",
+      "Checked costs/prices, revenue, donations and net proceeds; adults manage payments."
+    ],
+    [
+      "ENT3",
+      "Communication and launch",
+      "W35–36",
+      "Accessible promotion, stock/production plan and event evidence."
+    ],
+    [
+      "ENT4",
+      "Planning and evaluation",
+      "W33, 35–36",
+      "Decisions, teamwork, fair claims, feedback and accountable handover."
+    ]
+  ],
+  "atl": [
+    [
+      "Research",
+      "Check sources, ask useful questions and distinguish simulated from measured data."
+    ],
+    [
+      "Thinking",
+      "Decompose, compare options, test boundaries and use results to improve."
+    ],
+    [
+      "Communication",
+      "Explain code and design decisions; make accessible labels, diagrams and demonstrations."
+    ],
+    [
+      "Social",
+      "Rotate technical roles, critique respectfully and act on user feedback."
+    ],
+    [
+      "Self-management",
+      "Plan manageable milestones, save versions, seek targeted help and finish a reliable core."
+    ]
+  ],
+  "ai_skills": [
+    [
+      "Frame a useful problem",
+      "Identify who needs help and write a testable requirement.",
+      "Compare competing needs, constraints and a low-tech alternative.",
+      "W13, 15–18, 29; brief and user evidence."
+    ],
+    [
+      "Work with AI critically",
+      "Ask for an explanation or hint, give a clear goal and check the answer.",
+      "Ask for test cases or critique, then verify the result independently.",
+      "W3, 12–14, 21–27; help log, corrected claim/code and own explanation."
+    ],
+    [
+      "Judge information and data",
+      "Check sources, label simulated data and separate missing from zero.",
+      "Check provenance, units, bias, uncertainty and whether a conclusion follows.",
+      "W2–3, 9–10, 12–14; verified claim and checked data record."
+    ],
+    [
+      "Debug and test evidence",
+      "Explain the expected result, test a boundary and repair a fault.",
+      "Use normal, boundary and failure tests; check old behaviour after changes.",
+      "W6–9, 13–14, 23–26; before/after test evidence."
+    ],
+    [
+      "Design systems and automation",
+      "Connect input, decision and output; keep the user in control.",
+      "Explain components, data paths, feedback and an override/offline response.",
+      "W7–9, 11, 13, 21–26; system diagram and tested control."
+    ],
+    [
+      "Model and make in 3D",
+      "Use dimensions, holes and access to design a useful enclosure.",
+      "Compare fit allowances, assembly, repair and material choices.",
+      "Y7 W12 / Y8 W10; W19–22, 30–31; CAD plus physical fit evidence."
+    ],
+    [
+      "Design for people and accessibility",
+      "Use understandable signals, readable labels and an accessible control.",
+      "Observe a user, identify a barrier and justify an improvement.",
+      "W11–13, 16, 24, 29–32; user test and revised design."
+    ],
+    [
+      "Protect people and information",
+      "Know which data should not enter AI; use safe sharing and credit sources.",
+      "Review privacy, security, rights, fairness and human responsibility.",
+      "W3–4, 11–14, 27, 35; scenario decision and responsible publication."
+    ],
+    [
+      "Collaborate and keep versions",
+      "Save named versions, rotate technical jobs and explain a change.",
+      "Compare versions, record decisions and make a reproducible handover.",
+      "All practical weeks; version record and individual technical contribution."
+    ],
+    [
+      "Evaluate impact and communicate honestly",
+      "Explain the useful result and what the prototype cannot prove.",
+      "Use cost, user feedback, sustainability and test evidence to justify a pitch.",
+      "W25–28, 33–36; evidence-based pitch and enterprise evaluation."
+    ]
+  ],
+  "phases": [
+    [
+      1,
+      14,
+      "ICT before Christmas"
+    ],
+    [
+      15,
+      28,
+      "Competition invention from Christmas to April"
+    ],
+    [
+      29,
+      32,
+      "New exhibition project in May"
+    ],
+    [
+      33,
+      36,
+      "Enterprise and fundraising in the final month"
+    ]
+  ],
+  "tools": {
+    "tinkercad": [
+      "Tinkercad Circuits and 3D Design",
+      "https://www.tinkercad.com/"
+    ],
+    "circuits": [
+      "Arduino in Tinkercad Circuits",
+      "https://www.tinkercad.com/circuits"
+    ],
+    "pico": [
+      "New Raspberry Pi Pico MicroPython simulation",
+      "https://wokwi.com/projects/new/micropython-pi-pico"
+    ],
+    "pico_docs": [
+      "Wokwi MicroPython guide",
+      "https://docs.wokwi.com/guides/micropython"
+    ],
+    "python": [
+      "Raspberry Pi Foundation Python editor",
+      "https://editor.raspberrypi.org/en/projects/blank-python-starter"
+    ],
+    "pi": [
+      "Physical computing on a Raspberry Pi computer",
+      "https://projects.raspberrypi.org/en/projects/physical-computing"
+    ]
+  },
+  "sources": [
+    [
+      "UNESCO AI competency framework for students",
+      "https://www.unesco.org/en/articles/ai-competency-framework-students"
+    ],
+    [
+      "Tinkercad official Circuits guide",
+      "https://images.tinkercad.com/jl5ii4oqrdmc/4sMFqe3rDlbUymJt0I4yh/85a4487f7fe274e74c19870ae4679fc1/tinkercad-guides_circuits-Printable.pdf"
+    ],
+    [
+      "Wokwi supported hardware",
+      "https://docs.wokwi.com/getting-started/supported-hardware"
+    ],
+    [
+      "Wokwi MicroPython guide",
+      "https://docs.wokwi.com/guides/micropython"
+    ],
+    [
+      "Raspberry Pi MicroPython documentation",
+      "https://www.raspberrypi.com/documentation/microcontrollers/micropython.html"
+    ],
+    [
+      "Cambridge Lower Secondary Computing 0860",
+      "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-lower-secondary/curriculum/computing/"
+    ],
+    [
+      "Pearson Edexcel iLowerSecondary Computing",
+      "https://qualifications.pearson.com/en/qualifications/edexcel-international-lower-secondary-curriculum/computing-2019.html"
+    ],
+    [
+      "England KS3 computing",
+      "https://www.gov.uk/government/publications/national-curriculum-in-england-computing-programmes-of-study/national-curriculum-in-england-computing-programmes-of-study"
+    ],
+    [
+      "IB MYP Design",
+      "https://ibo.org/programmes/middle-years-programme/curriculum/design/"
+    ]
+  ],
+  "notes": [
+    "36 teaching weeks, two 40-minute periods per week; two additional 60-minute community sessions. Week numbers are teaching weeks and must be matched to local holidays.",
+    "The selected ICT toolkit is explicitly taught and checked before Christmas. January to April is the major D&T competition project. May starts a distinct exhibition brief; the final four teaching weeks focus on enterprise and fundraising.",
+    "Humans, Animals and Nature are represented across the class. Teams choose a bounded need from evidence; the whole autumn does not share a gardening theme.",
+    "Tinkercad Circuits supports Arduino text code in C++. Wokwi supports Pico with MicroPython. Pico is a microcontroller; it is not a simulation of a full Raspberry Pi running Linux. The Raspberry Pi Foundation online Python editor is a coding editor, not hardware simulation.",
+    "Begin simulations without assuming students own hardware. Before Christmas, CAD is a digital skill. During the D&T phases, schedule actual physical materials, making and testing; simulation alone does not demonstrate physical manufacture or real-world reliability.",
+    "Keep one main platform per year. Starter circuits and explained boilerplate reduce setup load; students must still make an independent change and explain it. Year 8 learns the differences between CPython, MicroPython machine.Pin and Raspberry Pi GPIO libraries before transferring code.",
+    "Learn defines new ideas from zero. Your turn contains building and testing. Quick reference uses coding-topic headings. Independent problems have meaningful constraints, rubric criteria and test evidence; Level up remains optional.",
+    "These are local selected outcomes informed by Cambridge, Pearson, England KS3 and IB design/ATL. They do not claim completion of several full programmes or use invented awarding-body objective codes. Detailed stage alignment needs the school’s licensed frameworks.",
+    "Use practical portfolio evidence and individual explanations. A prepared lesson is not evidence that a class has completed it. Competition placing and money raised are not assessment grades.",
+    "Confirm competition rules, deadline and equipment early in the spring project. If the event is later, complete a judged school demonstration by April and retain the entry package.",
+    "Year 9 direction for later agreement: applied AI and data, model evaluation/bias, automation and an independently managed impact project. AI literacy stays present in Years 7–8; specialist AI is a later progression, not a promise of a full Year 9 map here."
+  ]
+}

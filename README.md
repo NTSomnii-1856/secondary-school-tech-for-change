@@ -7,6 +7,13 @@ NTSOMNII independent ICT lessons. Each class has its own page and ordered lesson
 - [Year 7](https://ntsomnii-1856.github.io/secondary-school-tech-for-change/year-7/)
 - [Year 8](https://ntsomnii-1856.github.io/secondary-school-tech-for-change/year-8/)
 
+## Curriculum maps
+
+- [Year 7: Arduino C++ and invention](year-7/curriculum-map/)
+- [Year 8: Python and connected systems](year-8/curriculum-map/)
+
+The updated maps retain ICT before Christmas, the competition invention through April, a new exhibition project in May and the enterprise month. Existing lesson pages remain available while the teacher selects the next lesson.
+
 ## Lessons
 
 | Year | Week 5 | Week 6 |
