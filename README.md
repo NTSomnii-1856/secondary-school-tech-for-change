@@ -12,13 +12,13 @@ NTSOMNII independent ICT lessons. Each class has its own page and ordered lesson
 - [Year 7: Arduino C++ and invention](year-7/curriculum-map/)
 - [Year 8: Python and connected systems](year-8/curriculum-map/)
 
-The updated maps retain ICT before Christmas, the competition invention through April, a new exhibition project in May and the enterprise month. Existing lesson pages remain available while the teacher selects the next lesson.
+The updated maps retain ICT before Christmas, the competition invention through April, a new exhibition project in May and the enterprise month. Year 7 Week 6 introduces Arduino C++; the earlier Python planner remains available as an alternative.
 
 ## Lessons
 
 | Year | Week 5 | Week 6 |
 | --- | --- | --- |
-| 7 | [Scratch game gate](year-7/week-5-scratch-game-gate/) | [Python game-club planner](year-7/week-6-game-club-planner/) |
+| 7 | [Scratch game gate](year-7/week-5-scratch-game-gate/) | [Arduino signal](year-7/week-6-arduino-signal/) · [Python alternative](year-7/week-6-game-club-planner/) |
 | 8 | [Binary pixel studio](year-8/week-5-binary-pixel-studio/) | [Film-night booking checker](year-8/week-6-film-night-booking-checker/) |
 
 Each lesson has learning objectives, a guide, independent problems with rubrics, **Level up (optional)** and an exit ticket. Revision links return to the saved problem. Work and self-assessment stay in the student's browser until downloaded for the teacher. The website does not automatically mark Python or Scratch projects. Hand in the working program/project too.

@@ -4,7 +4,7 @@
   "meta": {
     "title": "Year 7 Arduino and invention",
     "route": "Arduino C++ in Tinkercad Circuits, with 3D design in Tinkercad.",
-    "next": "Proposed Week 6: Build a signal people can read. The existing Python game-club planner remains an available alternative until the teacher chooses.",
+    "next": "Week 6 is ready: Build a signal people can read in Tinkercad Circuits. The Python game-club planner remains an alternative.",
     "intro": "Students move from their earlier Scratch work into text-based code that controls a circuit. They learn how inputs, decisions and outputs produce a useful response, then design a case and explain the evidence behind their choices."
   },
   "weeks": [
@@ -60,7 +60,7 @@
       "make": "In Tinkercad Circuits, make one LED work and change its timing for a useful signal. Introduce setup(), loop(), pinMode(), digitalWrite() and delay with a very short scaffold.",
       "evidence": "Circuit link, changed text code and an explanation of one output.",
       "codes": "ICT2 ICT5 ICT6",
-      "status": "proposed next lesson"
+      "status": "prepared lesson"
     },
     {
       "week": 7,

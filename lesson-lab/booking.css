@@ -1,0 +1,13 @@
+/* Keep the existing booking lesson and saved evidence; add a compact code-trace tool. */
+body[data-year="8"]{--paper:#f7f5ef;--card:#fffef9;--accent:#e1d3f6;--line:#d8d0de;background-image:linear-gradient(#c9b5df10 1px,transparent 1px);background-size:100% 32px}
+body[data-year="8"] .card{border-radius:5px 14px 6px 10px}
+body[data-year="8"] .hero>h1{max-width:700px}
+body[data-year="8"] .intention{border-radius:6px 17px 7px 12px}
+.booking-trace{background:#f0ebf8;border:1px dashed #b9a2cc!important;border-radius:6px 14px 5px 9px;padding:20px!important;margin:24px 0}
+.booking-trace>summary{font-size:19px;color:#342951}
+.booking-trace .field input{max-width:100%;width:100%}
+.booking-trace .trace-status{background:white;padding:14px;border-radius:6px;font-size:16px;line-height:1.6}
+.booking-comparisons{overflow-x:auto;font-size:14px;padding-left:28px}
+.booking-comparisons li{margin:9px 0}
+.booking-trace pre{font-size:14px}
+@media(max-width:550px){.booking-trace{padding:15px!important}.booking-trace>summary{font-size:17px}.booking-trace .btn{width:100%}.booking-comparisons{font-size:12px}}

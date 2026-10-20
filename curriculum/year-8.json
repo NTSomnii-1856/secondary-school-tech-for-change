@@ -4,7 +4,7 @@
   "meta": {
     "title": "Year 8 Python and connected systems",
     "route": "Python first, then Raspberry Pi Pico MicroPython in Wokwi; full Raspberry Pi computer concepts and hardware where available.",
-    "next": "Keep Week 6: Can this ticket get you in? Then use Week 7 to transfer Python thinking to a Pico circuit in Wokwi.",
+    "next": "Week 6 is ready: the Python booking checker, with an optional code-trace tool. Pico simulation follows in Week 7.",
     "intro": "Students keep building confidence in Python, then use the same ideas to control a simulated device. They develop functions, data handling, 3D design and system testing before the major physical project."
   },
   "weeks": [
@@ -60,7 +60,7 @@
       "make": "Keep the existing Python booking-checker lesson. Students can revise the new concept definitions before applying them.",
       "evidence": "Working checker, found/missing tests and a justified search comparison.",
       "codes": "ICT2 ICT3",
-      "status": "existing next lesson"
+      "status": "prepared lesson"
     },
     {
       "week": 7,
