@@ -23,7 +23,7 @@ function taskNow(){return year?C[group()][year][at()]:null;}
 function entry(){const k=group()+'.'+taskNow().id;if(!S.entries[k])S.entries[k]={note:'',rating:'',done:false,choice:['linear','binary'].includes(taskNow().kind)?String(S.target):''};return S.entries[k];}
 function code(id){const ask='players_text = input("How many players? ")\nplayers = int(players_text)\nprint("Players:", players)',minutes='minutes_text = input("Minutes available? ")\nsession_minutes = int(minutes_text)',time='turn_minutes = 2.5\ntotal_minutes = players * turn_minutes\nprint("Minutes needed:", total_minutes)',left='minutes_left = session_minutes - total_minutes\nprint("Minutes left:", minutes_left)';return ({
 clubbroken:'players = input("Players? ")\nsession_minutes = int(input("Minutes available? "))\nsetup_minutes = 3\npack_minutes = 2\nturn_minutes = 2.5\ntotal_minutes = players * turn_minutes\nminutes_left = total_minutes - session_minutes + setup_minutes + pack_minutes\nprint("Minutes needed:", total_minutes)\nprint("Minutes left:", minutes_left)',
-checker:'bookings = [12, 18, 25]\ntarget = int(input("Booking number? "))\nfound = False\nchecks = 0\nfor booking in bookings:\n    checks += 1\n    if booking == target:\n        found = True\n        break\nif found:\n    print("Booked")\nelse:\n    print("Not on list")\nprint("Checks:", checks)',
+checker:'bookings = [12, 18, 25]\ntarget = int(input("Booking number? "))\nfound = False\nchecks = 0\nfor index in range(0, len(bookings)):\n    booking = bookings[index]\n    checks += 1\n    if booking == target:\n        found = True\n        break\nif found:\n    print("Booked")\nelse:\n    print("Not on list")\nprint("Checks:", checks)',
 hello:'print("Hello")',ask,minutes,cost:time,left,full:[ask,minutes,time,left].join('\n'),
 bug:'players = input("Players? ")\ntotal_minutes = players * 2.5\nprint("Minutes needed:", total_minutes)',
 fixed:'players = input("Players? ")\nplayers = int(players)\ntotal_minutes = players * 2.5\nprint("Minutes needed:", total_minutes)',
@@ -33,8 +33,8 @@ packs:'players = 10\nteams = players // 4\nprint("Full teams:", teams)\nwaiting 
 safe:'players = int(input("Players? "))\nprint("Players:", players)',
 safehint:'while True:\n    try:\n        players = int(input("Players? "))\n        if players > 0:\n            break\n        print("Use 1 or more.")\n    except ValueError:\n        print("Use a whole number.")\nprint("Players:", players)',
 tag:'team = "PIXEL"\nprint(len(team))\nprint(team[0])\nprint(team[:3])',
-list:'bookings = [12, 18, 25, 31]\nprint(bookings)',loop:'bookings = [12, 18, 25, 31]\nfor booking in bookings:\n    print(booking)',
-linearcode:'def linear_search(bookings, target):\n    checks = 0\n    for index, booking in enumerate(bookings):\n        checks += 1\n        # Add the match test here\n    return -1, checks\n\nprint(linear_search([12, 18, 25], 18))',
+list:'bookings = [12, 18, 25, 31]\nprint(bookings)',loop:'bookings = [12, 18, 25, 31]\nfor index in range(0, len(bookings)):\n    booking = bookings[index]\n    print(booking)',
+linearcode:'def linear_search(bookings, target):\n    checks = 0\n    for index in range(0, len(bookings)):\n        booking = bookings[index]\n        checks += 1\n        # Add the match test here\n    return -1, checks\n\nprint(linear_search([12, 18, 25], 18))',
 binarycode:'def binary_search(bookings, target):\n    low = 0\n    high = len(bookings) - 1\n    checks = 0\n    while low <= high:\n        mid = (low + high) // 2\n        checks += 1\n        return -1, checks  # Replace this line\n    return -1, checks\n\nbookings = [12, 18, 25, 31, 44, 57, 68, 90]\nprint(binary_search(bookings, 57))',
 sortcode:'def bubble_sort(bookings):\n    checks = 0\n    for end in range(len(bookings) - 1, 0, -1):\n        for i in range(end):\n            checks += 1\n            # Add the comparison and swap here\n    return bookings, checks\n\nprint(bubble_sort([3, 1, 2]))'
 })[id]||'';}

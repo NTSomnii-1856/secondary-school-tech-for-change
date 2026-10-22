@@ -9,7 +9,7 @@ rows = [
     "00000000",
 ]
 
-for row in rows:
-    picture = row.replace("0", ".")
+for row in range(0, len(rows)):
+    picture = rows[row].replace("0", ".")
     picture = picture.replace("1", "#")
     print(picture)
