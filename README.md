@@ -12,9 +12,16 @@ NTSOMNII independent ICT lessons. Each class has its own page and ordered lesson
 - [Year 7: Arduino C++ and invention](year-7/curriculum-map/)
 - [Year 8: Python and connected systems](year-8/curriculum-map/)
 
-The updated maps retain ICT before Christmas, the competition invention through April, a new exhibition project in May and the enterprise month. Year 7 Week 6 introduces Arduino C++; the earlier Python planner remains available as an alternative.
+The updated maps retain ICT before Christmas, the competition invention through April, a new exhibition project in May and the enterprise month. Year 7 Week 6 now uses an Arduino countdown project; the earlier versions remain available as alternatives.
 
-## Lessons
+## Current project lessons
+
+- [Year 7: Arcade countdown](year-7/week-6-arcade-countdown/) - Arduino C++ in a ready-wired Wokwi project.
+- [Year 8: Build the memory-game lights](year-8/week-6-light-memory-game/) - Pico MicroPython, lists and range loops.
+
+The first memory-game lesson plays the pattern; buttons and scoring follow later. Earlier prepared lessons remain below as alternatives or revision. The Year 8 binary page is not a record of achieved classroom coverage.
+
+## Earlier prepared lessons
 
 | Year | Week 5 | Week 6 |
 | --- | --- | --- |

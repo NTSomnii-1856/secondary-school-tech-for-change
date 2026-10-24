@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "author": "NTSOMNII - Tech for Change",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 175,
+      "left": 15,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led0",
+      "top": 22,
+      "left": 40,
+      "attrs": {
+        "color": "red",
+        "label": "RED"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r0",
+      "top": 100,
+      "left": 33,
+      "rotate": 90,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 22,
+      "left": 165,
+      "attrs": {
+        "color": "yellow",
+        "label": "AMBER"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 100,
+      "left": 158,
+      "rotate": 90,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 22,
+      "left": 290,
+      "attrs": {
+        "color": "green",
+        "label": "GREEN"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 100,
+      "left": 283,
+      "rotate": 90,
+      "attrs": {
+        "value": "330"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:8",
+      "r0:2",
+      "red",
+      []
+    ],
+    [
+      "r0:1",
+      "led0:A",
+      "red",
+      []
+    ],
+    [
+      "led0:C",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "uno:9",
+      "r1:2",
+      "yellow",
+      []
+    ],
+    [
+      "r1:1",
+      "led1:A",
+      "yellow",
+      []
+    ],
+    [
+      "led1:C",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "uno:10",
+      "r2:2",
+      "green",
+      []
+    ],
+    [
+      "r2:1",
+      "led2:A",
+      "green",
+      []
+    ],
+    [
+      "led2:C",
+      "uno:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

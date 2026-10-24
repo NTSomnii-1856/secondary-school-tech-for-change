@@ -1,10 +1,10 @@
 {
   "year": 7,
-  "updated": "20 October 2026",
+  "updated": "23 October 2026",
   "meta": {
     "title": "Year 7 Arduino and invention",
-    "route": "Arduino C++ in Tinkercad Circuits, with 3D design in Tinkercad.",
-    "next": "Week 6 is ready: Build a signal people can read in Tinkercad Circuits. The Python game-club planner remains an alternative.",
+    "route": "Arduino C++ in Wokwi and Tinkercad Circuits, with 3D design in Tinkercad.",
+    "next": "Week 6 is ready: Arcade countdown. Use a ready-wired Uno in Wokwi to learn Arduino C++ through a working start signal.",
     "intro": "Students move from their earlier Scratch work into text-based code that controls a circuit. They learn how inputs, decisions and outputs produce a useful response, then design a case and explain the evidence behind their choices."
   },
   "weeks": [
@@ -55,12 +55,12 @@
     },
     {
       "week": 6,
-      "title": "Build a signal people can read",
-      "learn": "A complete circuit, LED, resistor and Arduino output; first Arduino C++ instructions.",
-      "make": "In Tinkercad Circuits, make one LED work and change its timing for a useful signal. Introduce setup(), loop(), pinMode(), digitalWrite() and delay with a very short scaffold.",
-      "evidence": "Circuit link, changed text code and an explanation of one output.",
+      "title": "Arcade countdown",
+      "learn": "Sequence, digital outputs and timing in Arduino C++; read and change one short working program.",
+      "make": "Run a supplied three-light start signal, change its timings and repair an overlapping-light fault.",
+      "evidence": "Working project, timing/order tests and an individual explanation of an output instruction.",
       "codes": "ICT2 ICT5 ICT6",
-      "status": "prepared lesson"
+      "status": "prepared project; classroom outcome not yet checked"
     },
     {
       "week": 7,

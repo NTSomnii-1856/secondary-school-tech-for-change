@@ -1,10 +1,10 @@
 {
   "year": 8,
-  "updated": "20 October 2026",
+  "updated": "23 October 2026",
   "meta": {
     "title": "Year 8 Python and connected systems",
     "route": "Python first, then Raspberry Pi Pico MicroPython in Wokwi; full Raspberry Pi computer concepts and hardware where available.",
-    "next": "Week 6 is ready: the Python booking checker, with an optional code-trace tool. Pico simulation follows in Week 7.",
+    "next": "Week 6 is ready: Build the memory-game lights. Use a ready-wired Pico in Wokwi; build from the lists and range loops taught in class. Binary/image objectives remain to be checked.",
     "intro": "Students keep building confidence in Python, then use the same ideas to control a simulated device. They develop functions, data handling, 3D design and system testing before the major physical project."
   },
   "weeks": [
@@ -46,37 +46,37 @@
     },
     {
       "week": 5,
-      "title": "Binary pixel studio",
-      "learn": "Bits, bytes, text/image representation, lists and for loops.",
-      "make": "Keep the prepared pixel lesson; make an icon and explain the data needed. Sound comparison is not required.",
-      "evidence": "Python image rows, size calculation and a saved icon.",
+      "title": "Python lists and for loops",
+      "learn": "Classroom teaching focused on Python lists and counted range loops.",
+      "make": "Teacher-led replacement for the unsuccessful binary pixel lesson. Keep the original page as a revision resource, not proof of coverage.",
+      "evidence": "Actual list/loop work from class. Bits, bytes and image representation remain unconfirmed.",
       "codes": "ICT2 ICT4",
-      "status": "prepared lesson"
+      "status": "taught: lists and loops; representation needs revisiting"
     },
     {
       "week": 6,
-      "title": "Can this ticket get you in",
-      "learn": "Lists, loops, selection, searching, sorting and test evidence.",
-      "make": "Keep the existing Python booking-checker lesson. Students can revise the new concept definitions before applying them.",
-      "evidence": "Working checker, found/missing tests and a justified search comparison.",
+      "title": "Build the memory-game lights",
+      "learn": "Lists, zero-based positions, counted range loops and len(); call a supplied hardware function.",
+      "make": "Play a three-light pattern, choose a sequence for a partner and make the same loop handle different lengths.",
+      "evidence": "Working Pico pattern player, short/long/repeated-item tests and an explanation of a list position.",
       "codes": "ICT2 ICT3",
-      "status": "prepared lesson"
+      "status": "prepared project; classroom outcome not yet checked"
     },
     {
       "week": 7,
-      "title": "Give Python a physical response",
-      "learn": "A microcontroller, GPIO, digital input/output and a repeating MicroPython program.",
-      "make": "Use the Wokwi Raspberry Pi Pico template to control an LED and read a button. Explain how Pico MicroPython differs from desktop Python.",
-      "evidence": "Pico simulation, changed code and a pin/input/output explanation.",
+      "title": "Make the memory game respond",
+      "learn": "Digital button input and decisions; compare a response with a stored pattern.",
+      "make": "Extend the working pattern player gradually. Start with one button and one comparison before a complete game.",
+      "evidence": "Correct/wrong input tests and an individual explanation of the decision.",
       "codes": "ICT2 ICT4 ICT5",
       "status": "proposed next stage"
     },
     {
       "week": 8,
-      "title": "Build a sensor system that decides",
-      "learn": "Sensor values, parameters, reusable functions, thresholds and an override.",
-      "make": "In Wokwi, create a small monitor using a simulated distance or light reading. Test the boundary and a supplied fault case.",
-      "evidence": "Explained function, normal/boundary/fault tests and a clear override.",
+      "title": "Beat the light",
+      "learn": "Functions, elapsed time, input validation and repeatable tests.",
+      "make": "Build a reaction-time game from a working button input. Reject early presses and keep several valid results.",
+      "evidence": "Explained function, early/valid input tests and a usable results list.",
       "codes": "ICT2 ICT3 ICT5 ICT8",
       "status": "planned"
     },
