@@ -16,10 +16,10 @@ The updated maps retain ICT before Christmas, the competition invention through 
 
 ## Current project lessons
 
-- [Year 7: Arcade countdown](year-7/week-6-arcade-countdown/) - Arduino C++ in a ready-wired Wokwi project.
-- [Year 8: Build the memory-game lights](year-8/week-6-light-memory-game/) - Pico MicroPython, lists and range loops.
+- [Year 7: Arcade countdown](year-7/week-6-arcade-countdown/) - Arduino C++ in a ready-wired Wokwi project. Optional project: a traffic-light controller.
+- [Year 8: Build the memory-game lights](year-8/week-6-light-memory-game/) - Pico MicroPython, lists and range loops. Optional project: watch the LEDs, type their order and check the answer.
 
-The first memory-game lesson plays the pattern; buttons and scoring follow later. Earlier prepared lessons remain below as alternatives or revision. The Year 8 binary page is not a record of achieved classroom coverage.
+The core memory lesson plays the pattern; the optional project adds typed input. Physical buttons and scoring follow later. Earlier prepared lessons remain below as alternatives or revision. The Year 8 binary page is not a record of achieved classroom coverage.
 
 ## Earlier prepared lessons
 
