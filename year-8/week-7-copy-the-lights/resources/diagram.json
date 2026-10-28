@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "author": "NTSOMNII - Tech for Change",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 260,
+      "left": 70,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led0",
+      "top": 10,
+      "left": 30,
+      "attrs": {
+        "color": "red",
+        "label": "1"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r0",
+      "top": 82,
+      "left": 23,
+      "rotate": 90,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 10,
+      "left": 175,
+      "attrs": {
+        "color": "yellow",
+        "label": "2"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 82,
+      "left": 168,
+      "rotate": 90,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 10,
+      "left": 320,
+      "attrs": {
+        "color": "green",
+        "label": "3"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 82,
+      "left": 313,
+      "rotate": 90,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "button0",
+      "top": 155,
+      "left": 10,
+      "attrs": {
+        "color": "red",
+        "label": "1"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "button1",
+      "top": 155,
+      "left": 155,
+      "attrs": {
+        "color": "yellow",
+        "label": "2"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "button2",
+      "top": 155,
+      "left": 300,
+      "attrs": {
+        "color": "green",
+        "label": "3"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pico:GP15",
+      "r0:2",
+      "red",
+      []
+    ],
+    [
+      "r0:1",
+      "led0:A",
+      "red",
+      []
+    ],
+    [
+      "led0:C",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pico:GP16",
+      "r1:2",
+      "yellow",
+      []
+    ],
+    [
+      "r1:1",
+      "led1:A",
+      "yellow",
+      []
+    ],
+    [
+      "led1:C",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pico:GP17",
+      "r2:2",
+      "green",
+      []
+    ],
+    [
+      "r2:1",
+      "led2:A",
+      "green",
+      []
+    ],
+    [
+      "led2:C",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pico:GP12",
+      "button0:1.l",
+      "blue",
+      []
+    ],
+    [
+      "button0:2.l",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pico:GP13",
+      "button1:1.l",
+      "blue",
+      []
+    ],
+    [
+      "button1:2.l",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pico:GP14",
+      "button2:1.l",
+      "blue",
+      []
+    ],
+    [
+      "button2:2.l",
+      "pico:GND.1",
+      "black",
+      []
+    ]
+  ]
+}

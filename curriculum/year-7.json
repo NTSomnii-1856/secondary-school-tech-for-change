@@ -1,6 +1,6 @@
 {
   "year": 7,
-  "updated": "23 October 2026",
+  "updated": "28 October 2026",
   "meta": {
     "title": "Year 7 Arduino and invention",
     "route": "Arduino C++ in Wokwi and Tinkercad Circuits, with 3D design in Tinkercad.",
@@ -64,12 +64,13 @@
     },
     {
       "week": 7,
-      "title": "Make it respond to a button",
+      "title": "Build a quiz-show buzzer",
       "learn": "Digital input, variables and if/else; distinguish a pressed and released button.",
-      "make": "Turn the light into a request, ready or game-start signal. Test both button states.",
-      "evidence": "Explained input-to-output rule and two state tests.",
+      "make": "Build a quiz buzzer, adapt it for a quiet setting and repair a stuck output. Optional: keep the first team’s turn for a quiz host.",
+      "evidence": "Working input/output code, a live demonstration and an individual explanation. Optional: first-winner storage and a reset rule.",
       "codes": "ICT2 ICT5 ICT6",
-      "status": "planned"
+      "status": "published lesson; classroom outcome not yet checked",
+      "link": "../week-7-quiz-buzzer/"
     },
     {
       "week": 8,

@@ -1,6 +1,6 @@
 {
   "year": 8,
-  "updated": "23 October 2026",
+  "updated": "28 October 2026",
   "meta": {
     "title": "Year 8 Python and connected systems",
     "route": "Python first, then Raspberry Pi Pico MicroPython in Wokwi; full Raspberry Pi computer concepts and hardware where available.",
@@ -64,12 +64,13 @@
     },
     {
       "week": 7,
-      "title": "Make the memory game respond",
-      "learn": "Digital button input and decisions; compare a response with a stored pattern.",
-      "make": "Extend the working pattern player gradually. Start with one button and one comparison before a complete game.",
-      "evidence": "Correct/wrong input tests and an individual explanation of the decision.",
+      "title": "Memory game — Part 2",
+      "learn": "Continue the Week 6 project: supplied button-reading functions, list positions, counted range loops, comparison and scoring.",
+      "make": "Answer the light pattern with coloured buttons. Repair the order check. Optional: prepare a three-round game and final visitor scorecard for an exhibition helper.",
+      "evidence": "Correct, wrong and repeated-colour button runs, explained comparison and working score. Optional: stored round results, labelled totals and a clean start for the next visitor.",
       "codes": "ICT2 ICT4 ICT5",
-      "status": "proposed next stage"
+      "status": "published lesson; classroom outcome not yet checked",
+      "link": "../week-7-copy-the-lights/"
     },
     {
       "week": 8,
