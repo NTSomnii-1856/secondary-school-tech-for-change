@@ -17,10 +17,10 @@ The updated maps retain ICT before Christmas, the competition invention through 
 ## Current project lessons
 
 - [Year 7: Arcade countdown](year-7/week-6-arcade-countdown/) - Arduino C++ in a ready-wired Wokwi project. Optional project: a traffic-light controller.
-- [Year 8 Week 6: From Blink to traffic lights](year-8/week-6-light-memory-game/) — first Wokwi and Pico MicroPython, then a three-light controller.
-- [Year 8 Week 7: Build a light memory game](year-8/week-7-copy-the-lights/) — lists, range loops, typed input and scoring. Physical buttons remain an optional extension in the earlier guide.
+- [Year 8 Week 6: Blink and traffic lights](year-8/week-6-light-memory-game/) — first Wokwi and Pico MicroPython, then a three-light controller.
+- [Year 8 Week 7: Make a light memory game](year-8/week-7-copy-the-lights/) — lists, counted repetition and a typed whole-order answer check.
 
-Year 8 uses the same clean page shell and stylesheet as Year 7: two concrete objectives, separate Learn and Your turn views, three brief actions per task and optional code/circuit help. The final project is unlocked from the start. Only counted `in range(...)` examples are used; the complete Python repeat line is supplied and explained. There is no prior-knowledge panel. The core memory game checks one typed sequence against its matching answer, without scoring, len or str. Earlier advanced examples remain available in the legacy files. The Year 8 binary page is not a record of achieved classroom coverage.
+Year 8 uses the Year 7 page shell and stylesheet: two concrete objectives, separate Learn and Your turn views, three brief actions per task and optional circuit help. Wiring, GPIO labels, LED polarity and imports are explained before use. The student starter contains hardware setup and a light helper; students write the blink, traffic-light and memory-game logic. Only counted `in range(...)` examples are used. The final project is unlocked from the start. Teacher mode starts off, loads guidance and worked examples only when enabled, and follows the current task. It is a classroom display toggle, not authentication. Earlier examples remain in legacy files. The Year 8 binary page is not a record of achieved classroom coverage.
 
 ## Earlier prepared lessons
 
@@ -33,7 +33,7 @@ Each lesson has learning objectives, a guide, independent problems with rubrics,
 
 English, Russian, Simplified Chinese and Hebrew are available in lessons. Python and Scratch block examples use their English code/block names. Hebrew pages read right to left; code and binary data remain left to right.
 
-Week 5 contains its student files and the locally bundled Scratch block renderer (MIT licence). No audio downloads are needed. Teacher answer keys are kept outside this public repository.
+Week 5 contains its student files and the locally bundled Scratch block renderer (MIT licence). No audio downloads are needed. Year 8 worked examples are in a separately fetched teacher guide, shown only with Teacher mode enabled in the lesson interface.
 
 ## Publish
 

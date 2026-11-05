@@ -9,8 +9,9 @@ lamps = [red, amber, green]
 
 def flash(number):
     # Light 1 = red, 2 = amber, 3 = green.
-    for lamp in lamps:
-        lamp.off()
+    red.off()
+    amber.off()
+    green.off()
     lamp = lamps[number - 1]
     lamp.on()
     sleep(0.5)
