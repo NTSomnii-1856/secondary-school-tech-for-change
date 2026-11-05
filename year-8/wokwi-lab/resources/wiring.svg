@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="title desc">
+  <title id="title">Three LED wiring map for the Raspberry Pi Pico</title>
+  <desc id="desc">GP15 connects through a 330 ohm resistor to red LED anode A. GP16 connects through a 330 ohm resistor to amber LED anode A. GP17 connects through a 330 ohm resistor to green LED anode A. Every LED cathode C connects to Pico ground GND. These are three separate branches.</desc>
+  <defs><style>text{font-family:Arial,sans-serif;fill:#162323} .label{font-size:24px;font-weight:700}.small{font-size:20px}.wire{fill:none;stroke-width:5;stroke-linejoin:round}.tag{fill:#f4f1fa;stroke:#665383;stroke-width:2}</style></defs>
+  <rect width="960" height="480" rx="22" fill="#fffefa"/>
+  <text x="32" y="40" class="label">Pico → resistor → LED → GND</text>
+  <text x="32" y="75" class="small">Each light has its own resistor. A = anode. C = cathode.</text>
+  <rect x="32" y="110" width="185" height="280" rx="14" fill="#e4f0e9" stroke="#193d37" stroke-width="3"/>
+  <text x="52" y="148" class="label">Raspberry</text><text x="52" y="180" class="label">Pi Pico</text>
+  <text x="92" y="230" class="label">GP15</text><text x="92" y="290" class="label">GP16</text><text x="92" y="350" class="label">GP17</text>
+  <path class="wire" stroke="#af2635" d="M217 222H300M440 222H530M700 222H825"/>
+  <path class="wire" stroke="#9b6400" d="M217 282H300M440 282H530M700 282H825"/>
+  <path class="wire" stroke="#167141" d="M217 342H300M440 342H530M700 342H825"/>
+  <g fill="#fff3cd" stroke="#665120" stroke-width="2"><rect x="300" y="202" width="140" height="40" rx="5"/><rect x="300" y="262" width="140" height="40" rx="5"/><rect x="300" y="322" width="140" height="40" rx="5"/></g>
+  <g class="small" text-anchor="middle"><text x="370" y="229">330 Ω</text><text x="370" y="289">330 Ω</text><text x="370" y="349">330 Ω</text></g>
+  <rect x="530" y="199" width="170" height="46" rx="23" fill="#fde3e6" stroke="#af2635" stroke-width="2"/>
+  <rect x="530" y="259" width="170" height="46" rx="23" fill="#fff0bd" stroke="#9b6400" stroke-width="2"/>
+  <rect x="530" y="319" width="170" height="46" rx="23" fill="#dff1e4" stroke="#167141" stroke-width="2"/>
+  <g class="small"><text x="542" y="229">A</text><text x="674" y="229">C</text><text x="542" y="289">A</text><text x="674" y="289">C</text><text x="542" y="349">A</text><text x="674" y="349">C</text></g>
+  <g class="small" text-anchor="middle"><text x="615" y="229">1 RED</text><text x="615" y="289">2 AMBER</text><text x="615" y="349">3 GREEN</text></g>
+  <path class="wire" stroke="#273436" d="M825 222V405H125V390M825 282V342"/>
+  <circle cx="825" cy="282" r="6" fill="#273436"/><circle cx="825" cy="342" r="6" fill="#273436"/>
+  <text x="842" y="292" class="label">GND</text>
+  <text x="32" y="450" class="small">Use GP labels, not physical pin numbers. The Wokwi starter is already wired.</text>
+</svg>

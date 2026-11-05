@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Memory game sequence and answer flow</title>
+  <desc id="desc">The list contains 1, 3, 2. At position 0, light 1 red flashes. At position 1, light 3 green flashes. At position 2, light 2 amber flashes. The player types one answer per position. A matching answer adds one to the score. After all answers the program reports the score.</desc>
+  <defs><style>text{font-family:Arial,sans-serif;fill:#162323}.title{font-size:26px;font-weight:700}.label{font-size:23px;font-weight:700}.small{font-size:21px}.box{fill:#f0eafb;stroke:#665383;stroke-width:2}.arrow{stroke:#342951;stroke-width:3;fill:none;marker-end:url(#arrow)}</style><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#342951"/></marker></defs>
+  <rect width="960" height="520" rx="22" fill="#fffefa"/>
+  <text x="32" y="42" class="title">A list stores the order</text>
+  <text x="32" y="80" class="small">pattern = [1, 3, 2]     •     positions start at 0</text>
+  <g text-anchor="middle">
+    <text x="190" y="128" class="small">position 0</text><text x="480" y="128" class="small">position 1</text><text x="770" y="128" class="small">position 2</text>
+    <rect x="75" y="145" width="230" height="85" rx="15" fill="#fde3e6" stroke="#af2635" stroke-width="2"/><text x="190" y="183" class="label">1 · RED</text><text x="190" y="213" class="small">first flash</text>
+    <rect x="365" y="145" width="230" height="85" rx="15" fill="#dff1e4" stroke="#167141" stroke-width="2"/><text x="480" y="183" class="label">3 · GREEN</text><text x="480" y="213" class="small">second flash</text>
+    <rect x="655" y="145" width="230" height="85" rx="15" fill="#fff0bd" stroke="#9b6400" stroke-width="2"/><text x="770" y="183" class="label">2 · AMBER</text><text x="770" y="213" class="small">third flash</text>
+    <path class="arrow" d="M310 187H357"/><path class="arrow" d="M600 187H647"/>
+  </g>
+  <text x="32" y="285" class="title">Then check the player's answers</text>
+  <rect class="box" x="32" y="318" width="205" height="85" rx="13"/><text x="134" y="353" class="label" text-anchor="middle">input()</text><text x="134" y="384" class="small" text-anchor="middle">one answer</text>
+  <path class="arrow" d="M245 360H300"/>
+  <rect class="box" x="310" y="318" width="295" height="85" rx="13"/><text x="457" y="353" class="label" text-anchor="middle">Matches this position?</text><text x="457" y="384" class="small" text-anchor="middle">yes → score + 1</text>
+  <path class="arrow" d="M613 360H667"/>
+  <rect class="box" x="677" y="318" width="250" height="85" rx="13"/><text x="802" y="353" class="label" text-anchor="middle">Next position</text><text x="802" y="384" class="small" text-anchor="middle">until all are checked</text>
+  <text x="32" y="460" class="small">input() gives text: compare answer with str(pattern[position]).</text>
+  <text x="32" y="493" class="small">Example perfect score: 3 / 3. Stop, then Run starts a new attempt.</text>
+</svg>

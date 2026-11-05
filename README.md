@@ -17,9 +17,10 @@ The updated maps retain ICT before Christmas, the competition invention through 
 ## Current project lessons
 
 - [Year 7: Arcade countdown](year-7/week-6-arcade-countdown/) - Arduino C++ in a ready-wired Wokwi project. Optional project: a traffic-light controller.
-- [Year 8: Build the memory-game lights](year-8/week-6-light-memory-game/) - Pico MicroPython, lists and range loops. Optional project: watch the LEDs, type their order and check the answer.
+- [Year 8 Week 6: From Blink to traffic lights](year-8/week-6-light-memory-game/) — first Wokwi and Pico MicroPython, then a three-light controller.
+- [Year 8 Week 7: Build a light memory game](year-8/week-7-copy-the-lights/) — lists, range loops, typed input and scoring. Physical buttons remain an optional extension in the earlier guide.
 
-The core memory lesson plays the pattern; the optional project adds typed input. Physical buttons and scoring follow later. Earlier prepared lessons remain below as alternatives or revision. The Year 8 binary page is not a record of achieved classroom coverage.
+Both Year 8 pages offer an unlocked final-project route, one task at a time, labelled diagrams, local progress, larger text, focus view, optional hints and complete examples. Students start with known if/elif/else, range, lists and input; the guide explains Pin, sleep, len and the supplied flash helper. Each week covers two 40-minute lessons, with flexible pacing. Stop/Run restarts the Wokwi program. The Year 8 binary page is not a record of achieved classroom coverage.
 
 ## Earlier prepared lessons
 
