@@ -20,7 +20,7 @@ The updated maps retain ICT before Christmas, the competition invention through 
 - [Year 8 Week 6: From Blink to traffic lights](year-8/week-6-light-memory-game/) — first Wokwi and Pico MicroPython, then a three-light controller.
 - [Year 8 Week 7: Build a light memory game](year-8/week-7-copy-the-lights/) — lists, range loops, typed input and scoring. Physical buttons remain an optional extension in the earlier guide.
 
-Both Year 8 pages offer an unlocked final-project route, one task at a time, labelled diagrams, local progress, larger text, focus view, optional hints and complete examples. Students start with known if/elif/else, range, lists and input; the guide explains Pin, sleep, len and the supplied flash helper. Each week covers two 40-minute lessons, with flexible pacing. Stop/Run restarts the Wokwi program. The Year 8 binary page is not a record of achieved classroom coverage.
+Year 8 uses the same clean page shell and stylesheet as Year 7: two concrete objectives, separate Learn and Your turn views, three brief actions per task and optional code/circuit help. The final project is unlocked from the start. Only counted `in range(...)` examples are used; the complete Python repeat line is supplied and explained. There is no prior-knowledge panel. The core memory game checks one typed sequence against its matching answer, without scoring, len or str. Earlier advanced examples remain available in the legacy files. The Year 8 binary page is not a record of achieved classroom coverage.
 
 ## Earlier prepared lessons
 

@@ -19,7 +19,7 @@ sys.dont_write_bytecode = True
 RESOURCES = Path(__file__).resolve().parents[1] / "year-8/wokwi-lab/resources"
 
 
-def run_program(name, answers=(), pattern=None):
+def run_program(name, answers=(), pattern=None, replacements=None):
     events = []
     pins = {}
     sleeps = []
@@ -57,11 +57,15 @@ def run_program(name, answers=(), pattern=None):
         sys.path.insert(0, str(RESOURCES))
         builtins.input = lambda prompt="": next(answers)
         with contextlib.redirect_stdout(output):
-            if pattern is None:
+            if pattern is None and not replacements:
                 runpy.run_path(str(RESOURCES / name), run_name="__main__")
             else:
                 source = (RESOURCES / name).read_text(encoding="utf-8")
-                source = source.replace("pattern = [1, 3, 2]", f"pattern = {pattern!r}")
+                if pattern is not None:
+                    source = source.replace("pattern = [1, 3, 2]", f"pattern = {pattern!r}")
+                for before, after in (replacements or {}).items():
+                    assert before in source, f"Test replacement not found in {name}: {before}"
+                    source = source.replace(before, after)
                 exec(compile(source, name, "exec"), {"__name__": "__main__"})
         assert all(pin.state == 0 for pin in pins.values()), "A lamp stayed on at the end"
         return events, sleeps, output.getvalue()
@@ -76,6 +80,47 @@ def run_program(name, answers=(), pattern=None):
 
 
 def main():
+    events, sleeps, output = run_program("blink-once.py")
+    assert [pin for pin, state in events if state] == [15]
+    assert sleeps == [1]
+    assert "one red flash" in output
+
+    events, sleeps, output = run_program("repeat-blink.py")
+    assert [pin for pin, state in events if state] == [15] * 3
+    assert sleeps == [1] * 6
+
+    events, sleeps, output = run_program("traffic-once.py")
+    assert [pin for pin, state in events if state] == [15, 17, 16]
+    assert sleeps == [2, 2, 1]
+
+    for name in ("three-lights.py", "range-lights.py"):
+        events, sleeps, output = run_program(name)
+        assert [pin for pin, state in events if state] == [15, 17, 16]
+        assert sleeps == [0.5] * 6
+        events, sleeps, output = run_program(name, pattern=[2, 2, 1])
+        assert [pin for pin, state in events if state] == [16, 16, 15]
+        assert sleeps == [0.5] * 6
+
+    for answer, won in [("132", True), ("123", False), ("", False), ("x", False)]:
+        events, sleeps, output = run_program("memory-simple.py", [answer])
+        assert [pin for pin, state in events if state] == [15, 17, 16]
+        assert ("You win!" in output) == won
+        assert ("Try again." in output) == (not won)
+
+    # The one-answer version deliberately stores a separate answer string.
+    # Changing both settings together must change playback and accepted input.
+    events, sleeps, output = run_program(
+        "memory-simple.py", ["321"], pattern=[3, 2, 1],
+        replacements={'correct = "132"': 'correct = "321"'},
+    )
+    assert [pin for pin, state in events if state] == [17, 16, 15]
+    assert "You win!" in output
+    events, sleeps, output = run_program(
+        "memory-simple.py", ["132"], pattern=[3, 2, 1],
+        replacements={'correct = "132"': 'correct = "321"'},
+    )
+    assert "Try again." in output and "You win!" not in output
+
     events, sleeps, output = run_program("blink.py")
     assert [pin for pin, state in events if state] == [15] * 5
     assert sleeps == [0.5] * 10
@@ -122,7 +167,7 @@ def main():
         assert frozenset((f"r{index}:1", f"led{index}:A")) in edges
         assert frozenset((f"led{index}:C", "pico:GND.1")) in edges
     assert all(part["attrs"]["value"] == "330" for part in diagram["parts"] if part["type"] == "wokwi-resistor")
-    print("PASS: blink, traffic sequence/exclusive lights, pattern playback/length, answer feedback, memory scoring/input/length, circuit wiring")
+    print("PASS: simple/legacy blink and traffic, exclusive lights, explicit/range pattern playback, single-answer game and matching settings, legacy answer/scoring, circuit wiring")
 
 
 if __name__ == "__main__":
