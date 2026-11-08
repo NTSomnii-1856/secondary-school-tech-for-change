@@ -22,7 +22,7 @@
     return `<table class="pin-table"><thead><tr><th>${esc(u('output'))}</th><th>${esc(u('pin'))}</th></tr></thead><tbody>${labels.map((name,i) => `<tr><td>${esc(u(name))}</td><td dir="ltr">${year===8?'GP':''}${pins[i]}${i===5?' ↔ GND':''}</td></tr>`).join('')}</tbody></table><div class="wire-path">${esc(u('ledWire'))}</div><p>${esc(u('buttonWire'))}</p>${year===8?`<p class="small">${esc(u('gpio'))}</p>`:''}`;
   }
   function setup() {
-    return `<details class="setup-help"><summary>${esc(u('setup'))}</summary><p class="starter-note"><strong>${esc(u('keepCode'))}</strong></p><div class="actions">${starter()+simulator()}</div><p>${esc(u(year===7?'arduinoFiles':'picoFiles'))}</p><p>${esc(u('upload'))}</p><p class="small">${esc(u('physical'))}</p>${wiring()}</details>`;
+    return `<details class="setup-help"><summary>${esc(u('setup'))}</summary><p class="starter-note"><strong>${esc(u('keepCode'))}</strong></p><div class="actions">${starter()+simulator()}</div><p>${esc(u(year===7?'arduinoFiles':'picoFiles'))}</p>${year===7?`<p>${esc(u('arduinoUpload'))}</p>`:''}<p>${esc(u('upload'))}</p><p class="small">${esc(u('physical'))}</p>${wiring()}</details>`;
   }
   function sequence() {
     return `<details class="sequence-help"><summary>${esc(u('sequence'))}</summary><p>${esc(u('normal'))}</p><p>${esc(u('request'))}</p><ol class="signal-sequence"><li>${esc(u('allRed'))}</li><li>${esc(u('walk'))}</li><li>${esc(u('resume'))}</li></ol>${year===8?`<p class="small">${esc(u('picoRounds'))}</p>`:''}</details>`;

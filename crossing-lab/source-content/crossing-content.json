@@ -26,7 +26,7 @@
         "steps": [
           "Open your own Week 6 .ino in Arduino IDE. Save a Week 7 copy.",
           "Finish green for 3 seconds, amber for 1 second, then red for 1 second.",
-          "Run it. Switch each light off before the next starts."
+          "Verify and upload your sketch. Check that each light switches off before the next starts."
         ],
         "result": "Your three car lights run green → amber → red, with only one on.",
         "hint": "Still on one LED? Keep its on–wait–off commands. Add the same commands for the other two.",
