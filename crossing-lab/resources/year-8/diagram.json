@@ -1,0 +1,229 @@
+{
+  "version": 1,
+  "author": "NTSOMNII - Tech for Change",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 215,
+      "left": 125,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "vehicleRed",
+      "top": 20,
+      "left": 0,
+      "attrs": {
+        "color": "red",
+        "label": "VEHICLE RED"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r0",
+      "top": 115,
+      "left": -7,
+      "rotate": 90,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "vehicleAmber",
+      "top": 20,
+      "left": 100,
+      "attrs": {
+        "color": "yellow",
+        "label": "VEHICLE AMBER"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 115,
+      "left": 93,
+      "rotate": 90,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "vehicleGreen",
+      "top": 20,
+      "left": 200,
+      "attrs": {
+        "color": "green",
+        "label": "VEHICLE GREEN"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 115,
+      "left": 193,
+      "rotate": 90,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "pedestrianRed",
+      "top": 20,
+      "left": 390,
+      "attrs": {
+        "color": "red",
+        "label": "WALK RED"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 115,
+      "left": 383,
+      "rotate": 90,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "pedestrianGreen",
+      "top": 20,
+      "left": 490,
+      "attrs": {
+        "color": "green",
+        "label": "WALK GREEN"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 115,
+      "left": 483,
+      "rotate": 90,
+      "attrs": {
+        "value": "330"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "request",
+      "top": 325,
+      "left": 480,
+      "attrs": {
+        "color": "blue",
+        "label": "REQUEST CROSSING"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pico:GP15",
+      "r0:2",
+      "red",
+      []
+    ],
+    [
+      "r0:1",
+      "vehicleRed:A",
+      "red",
+      []
+    ],
+    [
+      "vehicleRed:C",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pico:GP16",
+      "r1:2",
+      "yellow",
+      []
+    ],
+    [
+      "r1:1",
+      "vehicleAmber:A",
+      "yellow",
+      []
+    ],
+    [
+      "vehicleAmber:C",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pico:GP17",
+      "r2:2",
+      "green",
+      []
+    ],
+    [
+      "r2:1",
+      "vehicleGreen:A",
+      "green",
+      []
+    ],
+    [
+      "vehicleGreen:C",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pico:GP18",
+      "r3:2",
+      "red",
+      []
+    ],
+    [
+      "r3:1",
+      "pedestrianRed:A",
+      "red",
+      []
+    ],
+    [
+      "pedestrianRed:C",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pico:GP19",
+      "r4:2",
+      "green",
+      []
+    ],
+    [
+      "r4:1",
+      "pedestrianGreen:A",
+      "green",
+      []
+    ],
+    [
+      "pedestrianGreen:C",
+      "pico:GND.1",
+      "black",
+      []
+    ],
+    [
+      "pico:GP20",
+      "request:1.l",
+      "blue",
+      []
+    ],
+    [
+      "request:2.l",
+      "pico:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

@@ -1,10 +1,10 @@
 {
   "year": 8,
-  "updated": "28 October 2026",
+  "updated": "8 November 2026",
   "meta": {
     "title": "Year 8 Python and connected systems",
     "route": "Python first, then Raspberry Pi Pico MicroPython in Wokwi; full Raspberry Pi computer concepts and hardware where available.",
-    "next": "Week 6 is ready: Build the memory-game lights. Use a ready-wired Pico in Wokwi; build from the lists and range loops taught in class. Binary/image objectives remain to be checked.",
+    "next": "Week 7 is prepared: a pedestrian crossing in MicroPython on a Raspberry Pi Pico. The separate Community Project starts with the engineering method and defining the Smart Beehive problem. Week 8 plans a guessing game plus project research; Week 9 continues coding plus project brainstorming. Each week has two 40-minute periods. Classroom completion has not yet been recorded.",
     "intro": "Students keep building confidence in Python, then use the same ideas to control a simulated device. They develop functions, data handling, 3D design and system testing before the major physical project."
   },
   "weeks": [
@@ -55,39 +55,40 @@
     },
     {
       "week": 6,
-      "title": "Build the memory-game lights",
-      "learn": "Lists, zero-based positions, counted range loops and len(); call a supplied hardware function.",
-      "make": "Play a three-light pattern, choose a sequence for a partner and make the same loop handle different lengths.",
-      "evidence": "Working Pico pattern player, short/long/repeated-item tests and an explanation of a list position.",
-      "codes": "ICT2 ICT3",
-      "status": "prepared project; classroom outcome not yet checked"
+      "title": "One LED, then traffic lights",
+      "learn": "Setup, a single LED output, on/off states and timing in MicroPython on a Raspberry Pi Pico. Traffic-light sequencing is the continuing extension.",
+      "make": "Retain the one-LED core already reported from class. Continue the three-light task at the student’s current stage; some students have finished it. Do not treat the prepared lesson as proof that everybody completed the extension.",
+      "evidence": "Actual saved one-LED program and explanation. Keep traffic-light tests only for students who have demonstrated them.",
+      "codes": "ICT2 ICT5",
+      "status": "classroom report: one-LED core completed; traffic lights continuing, some finished",
+      "link": "../week-6-light-memory-game/"
     },
     {
       "week": 7,
-      "title": "Memory game — Part 2",
-      "learn": "Continue the Week 6 project: supplied button-reading functions, list positions, counted range loops, comparison and scoring.",
-      "make": "Answer the light pattern with coloured buttons. Repair the order check. Optional: prepare a three-round game and final visitor scorecard for an exhibition helper.",
-      "evidence": "Correct, wrong and repeated-colour button runs, explained comparison and working score. Optional: stored round results, labelled totals and a clean start for the next visitor.",
-      "codes": "ICT2 ICT4 ICT5",
-      "status": "published lesson; classroom outcome not yet checked",
-      "link": "../week-7-copy-the-lights/"
+      "title": "Pedestrian crossing with MicroPython",
+      "learn": "Coding: button input, decisions and a clear crossing sequence in MicroPython on a Raspberry Pi Pico. Community Project: understand the engineering method and define a problem worth solving.",
+      "make": "Period 1 (40 minutes): extend a working traffic-light model with one pedestrian request and test the light states. Period 2 (40 minutes): open the separate Smart Beehive hub, introduce the engineering method and write a clear problem statement for the community project.",
+      "evidence": "A button/output test and personal code explanation; a short problem statement naming the user, need and reason it matters.",
+      "codes": "ICT2 ICT3 ICT5 DT1",
+      "status": "prepared lesson; classroom outcome not yet checked",
+      "link": "../week-7-pedestrian-crossing/"
     },
     {
       "week": 8,
-      "title": "Beat the light",
-      "learn": "Functions, elapsed time, input validation and repeatable tests.",
-      "make": "Build a reaction-time game from a working button input. Reject early presses and keep several valid results.",
-      "evidence": "Explained function, early/valid input tests and a usable results list.",
-      "codes": "ICT2 ICT3 ICT5 ICT8",
-      "status": "planned"
+      "title": "Build a guessing game",
+      "learn": "Coding: input, comparisons and clear correct/incorrect feedback in MicroPython on a Raspberry Pi Pico. Community Project: ask a useful research question and judge a source.",
+      "make": "Planned Period 1 (40 minutes): build a small guessing game with a bounded input route and test right, wrong and invalid guesses. Planned Period 2 (40 minutes): use the Research stage in the separate Smart Beehive hub to investigate the defined problem and record useful findings with their sources.",
+      "evidence": "Planned evidence: a working game, expected-versus-actual tests and an explained change; a research question, cited findings and what they suggest for the project.",
+      "codes": "ICT2 ICT3 ICT8 DT1",
+      "status": "planned; not yet taught"
     },
     {
       "week": 9,
       "title": "Turn readings into useful evidence",
-      "learn": "Lists/dictionaries, validation, CSV records, keys and a spreadsheet model.",
-      "make": "Record source, units and status; link a small device table to readings and check a summary chart. Recorded/simulated data is sufficient.",
-      "evidence": "Validated records, one checked lookup or query, formulas and a defensible conclusion.",
-      "codes": "ICT1 ICT2 ICT3 ICT6",
+      "learn": "Coding: Lists/dictionaries, validation, CSV records, keys and a spreadsheet model. Community Project: generate several possible responses to the researched problem.",
+      "make": "Planned Period 1 (40 minutes): Record source, units and status; link a small device table to readings and check a summary chart. Recorded/simulated data is sufficient. Planned Period 2 (40 minutes): use the Brainstorm stage in the separate Smart Beehive hub to sketch two possible ideas and explain how each could meet the need.",
+      "evidence": "Validated records, one checked lookup or query, formulas and a defensible conclusion. Community Project: two labelled ideas linked to the problem and research.",
+      "codes": "ICT1 ICT2 ICT3 ICT6 DT1",
       "status": "planned"
     },
     {
@@ -637,6 +638,7 @@
     "These are local selected outcomes informed by Cambridge, Pearson, England KS3 and IB design/ATL. They do not claim completion of several full programmes or use invented awarding-body objective codes. Detailed stage alignment needs the school’s licensed frameworks.",
     "Use practical portfolio evidence and individual explanations. A prepared lesson is not evidence that a class has completed it. Competition placing and money raised are not assessment grades.",
     "Confirm competition rules, deadline and equipment early in the spring project. If the event is later, complete a judged school demonstration by April and retain the entry package.",
-    "Year 9 direction for later agreement: applied AI and data, model evaluation/bias, automation and an independently managed impact project. AI literacy stays present in Years 7–8; specialist AI is a later progression, not a promise of a full Year 9 map here."
+    "Year 9 direction for later agreement: applied AI and data, model evaluation/bias, automation and an independently managed impact project. AI literacy stays present in Years 7–8; specialist AI is a later progression, not a promise of a full Year 9 map here.",
+    "Each week has two 40-minute periods: coding first, then the separate shared Community Project. In the Smart Beehive hub, Week 7 introduces the engineering method and defines the problem; Week 8 is research; Week 9 is brainstorm. One new project stage opens each week. The teacher operates the project board, including Trello if used; pupils need no accounts."
   ]
 }

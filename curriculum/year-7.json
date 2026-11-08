@@ -1,10 +1,10 @@
 {
   "year": 7,
-  "updated": "28 October 2026",
+  "updated": "8 November 2026",
   "meta": {
     "title": "Year 7 Arduino and invention",
     "route": "Arduino C++ in Wokwi and Tinkercad Circuits, with 3D design in Tinkercad.",
-    "next": "Week 6 is ready: Arcade countdown. Use a ready-wired Uno in Wokwi to learn Arduino C++ through a working start signal.",
+    "next": "Week 7 is prepared: a pedestrian crossing in Arduino C++ on an Uno. The separate Community Project starts with the engineering method and defining the Smart Beehive problem. Week 8 plans a guessing game plus project research; Week 9 continues coding plus project brainstorming. Each week has two 40-minute periods. Classroom completion has not yet been recorded.",
     "intro": "Students move from their earlier Scratch work into text-based code that controls a circuit. They learn how inputs, decisions and outputs produce a useful response, then design a case and explain the evidence behind their choices."
   },
   "weeks": [
@@ -55,39 +55,40 @@
     },
     {
       "week": 6,
-      "title": "Arcade countdown",
-      "learn": "Sequence, digital outputs and timing in Arduino C++; read and change one short working program.",
-      "make": "Run a supplied three-light start signal, change its timings and repair an overlapping-light fault.",
-      "evidence": "Working project, timing/order tests and an individual explanation of an output instruction.",
+      "title": "One LED, then traffic lights",
+      "learn": "Setup, a single LED output, on/off states and timing in Arduino C++ on an Uno. Traffic-light sequencing is the continuing extension.",
+      "make": "Retain the one-LED core already reported from class. Continue the three-light task at the student’s current stage; some students have finished it. Do not treat the prepared lesson as proof that everybody completed the extension.",
+      "evidence": "Actual saved one-LED program and explanation. Keep traffic-light tests only for students who have demonstrated them.",
       "codes": "ICT2 ICT5 ICT6",
-      "status": "prepared project; classroom outcome not yet checked"
+      "status": "classroom report: one-LED core completed; traffic lights continuing, some finished",
+      "link": "../week-6-arcade-countdown/"
     },
     {
       "week": 7,
-      "title": "Build a quiz-show buzzer",
-      "learn": "Digital input, variables and if/else; distinguish a pressed and released button.",
-      "make": "Build a quiz buzzer, adapt it for a quiet setting and repair a stuck output. Optional: keep the first team’s turn for a quiz host.",
-      "evidence": "Working input/output code, a live demonstration and an individual explanation. Optional: first-winner storage and a reset rule.",
-      "codes": "ICT2 ICT5 ICT6",
-      "status": "published lesson; classroom outcome not yet checked",
-      "link": "../week-7-quiz-buzzer/"
+      "title": "Pedestrian crossing with Arduino C++",
+      "learn": "Coding: button input, decisions and a clear crossing sequence in Arduino C++ on an Uno. Community Project: understand the engineering method and define a problem worth solving.",
+      "make": "Period 1 (40 minutes): extend a working traffic-light model with one pedestrian request and test the light states. Period 2 (40 minutes): open the separate Smart Beehive hub, introduce the engineering method and write a clear problem statement for the community project.",
+      "evidence": "A button/output test and personal code explanation; a short problem statement naming the user, need and reason it matters.",
+      "codes": "ICT2 ICT5 ICT6 DT1",
+      "status": "prepared lesson; classroom outcome not yet checked",
+      "link": "../week-7-pedestrian-crossing/"
     },
     {
       "week": 8,
-      "title": "Program a pattern you can reuse",
-      "learn": "Repetition with a for loop; a named function groups reusable instructions.",
-      "make": "Create a short signal pattern and call it from a simple control program. Change a count or timing variable.",
-      "evidence": "Working loop and named routine; a trace and one independent change.",
-      "codes": "ICT2 ICT6",
-      "status": "planned"
+      "title": "Build a guessing game",
+      "learn": "Coding: input, comparisons and clear correct/incorrect feedback in Arduino C++ on an Uno. Community Project: ask a useful research question and judge a source.",
+      "make": "Planned Period 1 (40 minutes): build a small guessing game with a bounded input route and test right, wrong and invalid guesses. Planned Period 2 (40 minutes): use the Research stage in the separate Smart Beehive hub to investigate the defined problem and record useful findings with their sources.",
+      "evidence": "Planned evidence: a working game, expected-versus-actual tests and an explained change; a research question, cited findings and what they suggest for the project.",
+      "codes": "ICT2 ICT6 DT1",
+      "status": "planned; not yet taught"
     },
     {
       "week": 9,
       "title": "Let a sensor make the decision",
-      "learn": "Analogue readings, Serial Monitor, thresholds and normal/boundary/fault behaviour.",
-      "make": "Use a simulated light or distance reading to control an indicator. Keep a manual stop and label supplied readings as simulated.",
-      "evidence": "Readings, a justified threshold and three test results.",
-      "codes": "ICT2 ICT5 ICT6 ICT7",
+      "learn": "Coding: Analogue readings, Serial Monitor, thresholds and normal/boundary/fault behaviour. Community Project: generate several possible responses to the researched problem.",
+      "make": "Planned Period 1 (40 minutes): Use a simulated light or distance reading to control an indicator. Keep a manual stop and label supplied readings as simulated. Planned Period 2 (40 minutes): use the Brainstorm stage in the separate Smart Beehive hub to sketch two possible ideas and explain how each could meet the need.",
+      "evidence": "Readings, a justified threshold and three test results. Community Project: two labelled ideas linked to the problem and research.",
+      "codes": "ICT2 ICT5 ICT6 ICT7 DT1",
       "status": "planned"
     },
     {
@@ -637,6 +638,7 @@
     "These are local selected outcomes informed by Cambridge, Pearson, England KS3 and IB design/ATL. They do not claim completion of several full programmes or use invented awarding-body objective codes. Detailed stage alignment needs the school’s licensed frameworks.",
     "Use practical portfolio evidence and individual explanations. A prepared lesson is not evidence that a class has completed it. Competition placing and money raised are not assessment grades.",
     "Confirm competition rules, deadline and equipment early in the spring project. If the event is later, complete a judged school demonstration by April and retain the entry package.",
-    "Year 9 direction for later agreement: applied AI and data, model evaluation/bias, automation and an independently managed impact project. AI literacy stays present in Years 7–8; specialist AI is a later progression, not a promise of a full Year 9 map here."
+    "Year 9 direction for later agreement: applied AI and data, model evaluation/bias, automation and an independently managed impact project. AI literacy stays present in Years 7–8; specialist AI is a later progression, not a promise of a full Year 9 map here.",
+    "Each week has two 40-minute periods: coding first, then the separate shared Community Project. In the Smart Beehive hub, Week 7 introduces the engineering method and defines the problem; Week 8 is research; Week 9 is brainstorm. One new project stage opens each week. The teacher operates the project board, including Trello if used; pupils need no accounts."
   ]
 }

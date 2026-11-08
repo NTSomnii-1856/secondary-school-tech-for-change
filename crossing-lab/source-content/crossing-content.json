@@ -1,0 +1,276 @@
+{
+  "7": {
+    "title": "Build a pedestrian crossing",
+    "intro": "Continue your own Arduino IDE traffic-light sketch. Add pedestrian lights and a request button.",
+    "sessions": [
+      "Crossing controller · 40 min"
+    ],
+    "goals": [
+      "Make traffic stop before pedestrians get green.",
+      "Use a button to request a crossing."
+    ],
+    "stages": [
+      {
+        "title": "Continue your traffic lights",
+        "minutes": "5 min",
+        "learn": [
+          {
+            "code": "digitalWrite(10, HIGH);",
+            "text": "Your existing Arduino commands control the car lights: red 8, amber 9, green 10."
+          },
+          {
+            "code": "delay(3000);",
+            "text": "3000 milliseconds is 3 seconds. Keep your own working code."
+          }
+        ],
+        "steps": [
+          "Open your own Week 6 .ino in Arduino IDE. Save a Week 7 copy.",
+          "Finish green for 3 seconds, amber for 1 second, then red for 1 second.",
+          "Run it. Switch each light off before the next starts."
+        ],
+        "result": "Your three car lights run green → amber → red, with only one on.",
+        "hint": "Still on one LED? Keep its on–wait–off commands. Add the same commands for the other two.",
+        "teacherQuestion": "What working code can you keep? Which command turns the previous light off?",
+        "teacherWatch": "Help unfinished learners get one clear three-light sequence. Use the diagram to check pins before changing code."
+      },
+      {
+        "title": "Add the crossing circuit",
+        "minutes": "10 min",
+        "learn": [
+          {
+            "code": "Pedestrian red: 6 · green: 7 · button: 2 → GND",
+            "text": "Each LED needs its own 330Ω resistor. Connect its A side through the resistor to its output, and C to GND."
+          },
+          {
+            "code": "pinMode(6, OUTPUT);",
+            "text": "Set both new pedestrian pins as outputs in setup(). During normal traffic, pedestrian red stays on and green stays off."
+          },
+          {
+            "code": "INPUT_PULLUP",
+            "text": "The supplied helper prepares the button. Pressed reads LOW; released reads HIGH. You do not need to write the button-reading code."
+          }
+        ],
+        "steps": [
+          "Save your own .ino first. Use setup help to place crossing.h and crossing.cpp beside your Week 7 .ino.",
+          "Follow the labelled diagram to add two pedestrian LEDs and the button. Wokwi is an optional circuit tester.",
+          "In Arduino IDE, add both pedestrian outputs in setup(). Start pedestrian red on and green off."
+        ],
+        "result": "You have five connected LEDs and a button. Pedestrian red is on during normal traffic.",
+        "hint": "Keep the .ino, crossing.h and crossing.cpp in one sketch folder. Match the diagram: car pins 8/9/10, pedestrian pins 6/7, button pin 2.",
+        "teacherQuestion": "Which pedestrian light tells people to wait? Trace one LED back to GND.",
+        "teacherWatch": "Check separate resistors, LED A/C polarity and button-to-GND wiring. Do not replace the learner’s own sketch."
+      },
+      {
+        "title": "Remember a button request",
+        "minutes": "10 min",
+        "learn": [
+          {
+            "code": "#include \"crossing.h\"",
+            "text": "Add this above setup(). crossing.h and crossing.cpp are supplied files beside your .ino, not a library to install."
+          },
+          {
+            "code": "Crossing.begin();",
+            "text": "Call this once inside setup() to prepare the button."
+          },
+          {
+            "code": "Crossing.pause(3000);",
+            "text": "Replace every delay with Crossing.pause using the same milliseconds. It remembers a tap of at least 0.1 seconds during waits."
+          }
+        ],
+        "steps": [
+          "Add the include line and call Crossing.begin() in setup().",
+          "Replace every normal delay(...) with Crossing.pause(...). Keep the same times.",
+          "Find the checkpoint after car red has waited 1 second. This is where your request decision goes next."
+        ],
+        "result": "Your traffic sequence still works. Its waits can now remember a button request.",
+        "hint": "A plain delay cannot check the button while it waits. Use the supplied pause helper for all waits.",
+        "teacherQuestion": "Why might a quick tap be missed during an ordinary delay? Where is our safe checkpoint?",
+        "teacherWatch": "Check all waits use the helper. A request waits for the red checkpoint; it must not turn pedestrian green on immediately."
+      },
+      {
+        "title": "Write the crossing decision",
+        "minutes": "15 min",
+        "learn": [
+          {
+            "code": "if (Crossing.requested()) {",
+            "text": "At the red checkpoint, run a crossing only if a request is waiting. Put your crossing commands inside this block."
+          },
+          {
+            "code": "Crossing.beginCrossing();\nCrossing.endCrossing();",
+            "text": "Put beginCrossing at the start and endCrossing at the end. The helper ignores presses during a crossing and prevents a held button repeating it."
+          },
+          {
+            "code": "digitalWrite(7, HIGH);\ndigitalWrite(7, LOW);",
+            "text": "These are the pedestrian green commands. They are only parts of your sequence, not a complete crossing."
+          }
+        ],
+        "steps": [
+          "At the red checkpoint, add the request if block. Begin the crossing; keep car red on, car amber/green off and pedestrian red on. Wait 1 second.",
+          "Turn pedestrian red off and green on. Wait 5 seconds using the helper.",
+          "Turn pedestrian green off and red on. Wait 1 second with cars still red, then end the crossing and resume your traffic sequence."
+        ],
+        "result": "A remembered request stops cars before pedestrians get green. Without a request, normal traffic continues.",
+        "hint": "Never leave car green on with pedestrian green. Keep every crossing command inside the if block and close it with }.",
+        "teacherQuestion": "Which lights must be off before pedestrians get green? What happens if nobody presses?",
+        "teacherWatch": "Test the two all-red pauses and pedestrian red during normal traffic. Arduino loop() keeps the controller running."
+      }
+    ],
+    "project": {
+      "title": "Test your crossing",
+      "brief": "Use your own traffic controller to serve one remembered pedestrian request safely.",
+      "requirements": [
+        "Normal: car green 3 seconds → amber 1 → red 1; pedestrian red stays on.",
+        "At the red checkpoint: all red 1 second → pedestrian green 5 → pedestrian red and car red 1, then resume.",
+        "Remember a tap during waits. Ignore presses during the crossing; a held button must not repeat it."
+      ],
+      "tests": [
+        "Tap for at least 0.1 seconds during a normal wait. It may take up to 5 seconds to reach the red checkpoint, then 1 all-red second before pedestrian green.",
+        "Watch a complete crossing. Car green and pedestrian green must never be on together.",
+        "Hold the button through a crossing, then release it. It must not start another crossing until a new tap."
+      ],
+      "teacherQuestion": "How can you show the request was remembered without letting pedestrians go too soon?",
+      "teacherWatch": "Try green-, amber- and red-phase taps, no request and a held button. Check every wait uses Crossing.pause."
+    },
+    "exit": [
+      "How did your program keep the two green lights apart?",
+      "What should happen if the button is held down?"
+    ]
+  },
+  "8": {
+    "title": "Build a pedestrian crossing",
+    "intro": "Continue your own traffic-light program. Add pedestrian lights and a request button.",
+    "sessions": [
+      "Crossing controller · 40 min"
+    ],
+    "goals": [
+      "Make traffic stop before pedestrians get green.",
+      "Use a button to request a crossing."
+    ],
+    "stages": [
+      {
+        "title": "Continue your traffic lights",
+        "minutes": "5 min",
+        "learn": [
+          {
+            "code": "green.on()\ngreen.off()",
+            "text": "Keep your own Pin outputs: red GP15, amber GP16 and green GP17."
+          },
+          {
+            "code": "for cycle in range(3):",
+            "text": "Use this complete supplied repeat line. Keep your traffic sequence indented below it."
+          }
+        ],
+        "steps": [
+          "Open your own Week 6 project. Save a copy for Week 7.",
+          "Finish green for 3 seconds, amber for 1 second, then red for 1 second.",
+          "Run three rounds. Switch each light off before the next starts."
+        ],
+        "result": "Your three car lights run green → amber → red, with only one on.",
+        "hint": "Still on one LED? Keep its on–wait–off commands. Add the same commands for the other two.",
+        "teacherQuestion": "What working code can you keep? Which command turns the previous light off?",
+        "teacherWatch": "Help unfinished learners get one clear three-light sequence. Supply the complete range line; no other loop form is needed."
+      },
+      {
+        "title": "Add the crossing circuit",
+        "minutes": "10 min",
+        "learn": [
+          {
+            "code": "Pedestrian red: GP18 · green: GP19 · button: GP20 → GND",
+            "text": "Each LED needs its own 330Ω resistor. Connect its A side through the resistor to its output, and C to GND."
+          },
+          {
+            "code": "ped_red = Pin(18, Pin.OUT)\nped_green = Pin(19, Pin.OUT)",
+            "text": "Prepare the pedestrian outputs. During normal traffic, pedestrian red stays on and green stays off."
+          },
+          {
+            "code": "Pin.PULL_UP",
+            "text": "The supplied helper prepares the button. Pressed reads 0; released reads 1. You do not need to write the button-reading code."
+          }
+        ],
+        "steps": [
+          "Save your own main.py first. Download and unzip the Week 7 student files.",
+          "In your Wokwi file menu, upload diagram.json and crossing.py. Keep your own main.py.",
+          "Add the two pedestrian outputs. Start pedestrian red on and green off."
+        ],
+        "result": "You have five connected LEDs and a button. Pedestrian red is on during normal traffic.",
+        "hint": "Compare the labelled diagram. Keep car red GP15, amber GP16 and green GP17. The helper sets up button GP20.",
+        "teacherQuestion": "Which pedestrian light tells people to wait? Trace one LED back to GND.",
+        "teacherWatch": "Check separate resistors, LED A/C polarity and button-to-GND wiring. Do not replace the learner’s own main.py."
+      },
+      {
+        "title": "Remember a button request",
+        "minutes": "10 min",
+        "learn": [
+          {
+            "code": "from machine import Pin",
+            "text": "Keep the built-in Pin import for your outputs. Nothing to install."
+          },
+          {
+            "code": "from crossing import pause, requested, begin_crossing, end_crossing",
+            "text": "crossing.py is the supplied local helper file. Keep it beside main.py."
+          },
+          {
+            "code": "pause(3)",
+            "text": "Replace every sleep with pause using the same seconds. It remembers a tap of at least 0.1 seconds during waits."
+          }
+        ],
+        "steps": [
+          "Add the crossing import at the top of main.py. Keep the Pin import.",
+          "Replace every normal sleep(...) with pause(...). Keep the same times.",
+          "Find the checkpoint after car red has waited 1 second. This is where your request decision goes next."
+        ],
+        "result": "Your traffic sequence still works. Its waits can now remember a button request.",
+        "hint": "A plain sleep cannot check the button while it waits. Use the supplied pause helper for all waits.",
+        "teacherQuestion": "Why might a quick tap be missed during an ordinary sleep? Where is our safe checkpoint?",
+        "teacherWatch": "Check all waits use the helper. A request waits for the red checkpoint; it must not turn pedestrian green on immediately."
+      },
+      {
+        "title": "Write the crossing decision",
+        "minutes": "15 min",
+        "learn": [
+          {
+            "code": "if requested():",
+            "text": "At the red checkpoint, run a crossing only if a request is waiting. Indent your crossing commands below this line."
+          },
+          {
+            "code": "begin_crossing()\nend_crossing()",
+            "text": "Put begin_crossing at the start and end_crossing at the end. The helper ignores presses during a crossing and prevents a held button repeating it."
+          },
+          {
+            "code": "ped_green.on()\nped_green.off()",
+            "text": "These are the pedestrian green commands. They are only parts of your sequence, not a complete crossing."
+          }
+        ],
+        "steps": [
+          "At the red checkpoint, add the request if. Begin the crossing; keep car red on, car amber/green off and pedestrian red on. Wait 1 second.",
+          "Turn pedestrian red off and green on. Wait 5 seconds using the helper.",
+          "Turn pedestrian green off and red on. Wait 1 second with cars still red, then end the crossing. After three rounds, finish with both reds on and all other lights off."
+        ],
+        "result": "A remembered request stops cars before pedestrians get green. The three-round test finishes with both reds on.",
+        "hint": "Never leave car green on with pedestrian green. Keep crossing commands inside the if, within your supplied range block.",
+        "teacherQuestion": "Which lights must be off before pedestrians get green? What happens if nobody presses?",
+        "teacherWatch": "Test the two all-red pauses and pedestrian red during normal traffic. This test runs three rounds; Stop then Run starts it again."
+      }
+    ],
+    "project": {
+      "title": "Test your crossing",
+      "brief": "Use your own traffic controller to serve one remembered pedestrian request safely.",
+      "requirements": [
+        "Normal: car green 3 seconds → amber 1 → red 1; pedestrian red stays on.",
+        "At the red checkpoint: all red 1 second → pedestrian green 5 → pedestrian red and car red 1. After three rounds, leave both reds on.",
+        "Remember a tap during waits. Ignore presses during the crossing; a held button must not repeat it."
+      ],
+      "tests": [
+        "Tap for at least 0.1 seconds during a normal wait. It may take up to 5 seconds to reach the red checkpoint, then 1 all-red second before pedestrian green.",
+        "Watch a complete crossing. Car green and pedestrian green must never be on together.",
+        "Hold the button through a crossing, then release it. No extra crossing should follow. Stop then Run for a fresh three-round test."
+      ],
+      "teacherQuestion": "How can you show the request was remembered without letting pedestrians go too soon?",
+      "teacherWatch": "Try green-, amber- and red-phase taps, no request and a held button. Check every wait uses pause and the test finishes with both reds on."
+    },
+    "exit": [
+      "How did your program keep the two green lights apart?",
+      "What should happen if the button is held down?"
+    ]
+  }
+}

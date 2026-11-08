@@ -1,0 +1,138 @@
+{
+  "title": "Tech for Change Community Project: Smart Beehive",
+  "intro": "Year 7 and Year 8 share one community project. Open this week’s topic and prepare your team’s Trello card here.",
+  "topics": [
+    {
+      "week": 7,
+      "title": "Engineering method and the problem",
+      "learn": [
+        "Ask → Research → Imagine → Plan → Make → Test → Improve. Start with the need, not a chosen gadget.",
+        "Who might need help: bees, a beekeeper or both? Name one possible problem and what evidence you still need. An idea is not yet a proven problem."
+      ],
+      "steps": [
+        "Choose who you want to help. Write one sentence about a possible problem.",
+        "Write what you already know and one thing you need to find out. Label assumptions.",
+        "Prepare one team card with an owner, a due date and the next question. Use the card form below, then copy it for your teacher or save your team card."
+      ],
+      "result": "One clear problem question. You have not chosen a final solution yet.",
+      "cardTitle": "Our beehive problem brief",
+      "cardChecklist": [
+        "Who needs help and what might be difficult?",
+        "What evidence do we have, and what is still an assumption?",
+        "What will we investigate next, who owns it and when is it due?"
+      ],
+      "teacherQuestion": "Whose problem is this? What could show that your first assumption is wrong?",
+      "teacherWatch": "Keep the question small and open. Do not let a preferred sensor become the problem. Use Ask to define the problem now; research opens next week."
+    },
+    {
+      "week": 8,
+      "title": "Research a real DIY build",
+      "learn": [
+        "Find a documented DIY hive or hive-monitoring build. Look at parts, materials, dimensions and access, not just the sensor.",
+        "Record the source and units. Separate reported dimensions from your own ideas. If a size is missing, ask; do not invent it or use an AI guess."
+      ],
+      "steps": [
+        "Choose one actual build with photos, plans or a parts list. Save its source link.",
+        "Record one useful finding about a part, material or stated dimension. Link it to your Week 7 question.",
+        "Add one unanswered question and a next task to your team card. Include an owner and due date."
+      ],
+      "result": "A source-backed physical-design finding and a clear next research question.",
+      "cardTitle": "Evidence from a DIY build",
+      "cardChecklist": [
+        "Source link and what the build is for.",
+        "One supported finding about a part, material or dimension, with units where needed.",
+        "One limitation or missing detail, plus the next task, owner and due date."
+      ],
+      "teacherQuestion": "What does the source actually show? Which size or material choice still needs evidence?",
+      "teacherWatch": "Check that the source supports the finding. Research informs a classroom prototype; it does not prove bee health or justify unapproved work on a real hive."
+    },
+    {
+      "week": 9,
+      "title": "Brainstorm and compare ideas",
+      "learn": [
+        "Imagine more than one response to the problem. A simple housing or access change may be useful alongside an electronic idea.",
+        "Compare ideas using the need and your evidence. A labelled sketch can show parts, position and access; it need not be a polished drawing."
+      ],
+      "steps": [
+        "Make two different ideas for your problem. Sketch and label each one.",
+        "Compare how each could help, what evidence supports it and what still needs testing.",
+        "Choose a provisional direction. Add one small next test to your team card with an owner and due date."
+      ],
+      "result": "Two compared ideas, an evidence-based provisional choice and a next test.",
+      "cardTitle": "Two ideas and our next test",
+      "cardChecklist": [
+        "Two labelled ideas linked to our problem.",
+        "One evidence-backed reason for the provisional choice and one limitation.",
+        "The next small test, its owner and due date."
+      ],
+      "teacherQuestion": "How are the two ideas different? What test could change your choice?",
+      "teacherWatch": "Reward evidence and alternatives, not complexity. Keep missing dimensions as questions until researched; do not present an untested design as field-ready."
+    },
+    {
+      "week": 10,
+      "title": "Plan a small prototype",
+      "learn": [
+        "Choose one idea that answers your problem. Use researched constraints to plan parts, materials, access and a simple cost estimate.",
+        "Use a labelled sketch. Cite copied dimensions; label your own model dimensions as planned. Follow a verified plan for real hive sizes rather than inventing them."
+      ],
+      "steps": [
+        "Choose one idea and link it to your problem and research.",
+        "Draw the smallest useful model. List materials, sourced or planned sizes and estimated costs.",
+        "Add three checks for the model, then assign the next making task and due date."
+      ],
+      "result": "A feasible model plan with a sketch, materials, estimated costs and three checks.",
+      "cardTitle": "Our prototype plan",
+      "cardChecklist": [
+        "Chosen idea and its link to the problem and evidence.",
+        "Labelled sketch, materials, dimensions with their source or planned status, and estimated costs.",
+        "Three checks and the next making task with an owner and due date."
+      ],
+      "teacherQuestion": "What is the smallest model that can answer your question? Which constraint comes from research?",
+      "teacherWatch": "Keep scope achievable. Separate cited hive dimensions from classroom-model choices and estimates; do not treat an AI suggestion as a verified plan."
+    },
+    {
+      "week": 11,
+      "title": "Make a small model",
+      "learn": [
+        "Build a small digital or cardboard prototype from your plan. A model can test a useful idea without a real hive or live bees.",
+        "Keep evidence of the process: one before photo or screenshot, one change and one after image. Explain what the model can and cannot show."
+      ],
+      "steps": [
+        "Check the plan and gather the approved materials or digital tools.",
+        "Make the smallest working part. Save a before photo or screenshot.",
+        "Improve one detail, save an after image and note the next test on your card."
+      ],
+      "result": "A small prototype with before-and-after evidence and a test to run next.",
+      "cardTitle": "Our first prototype",
+      "cardChecklist": [
+        "Photo or screenshot of the first version.",
+        "One explained change and an after image.",
+        "What the model demonstrates, one limit and the next test with an owner and due date."
+      ],
+      "teacherQuestion": "Which part of the problem can this model help you test? What would it not prove?",
+      "teacherWatch": "Use approved classroom materials and tools. No live bees or real-hive intervention; digital simulations and cardboard models must be labelled honestly."
+    },
+    {
+      "week": 12,
+      "title": "Test and improve with evidence",
+      "learn": [
+        "Run the three checks from your plan. Record what you expected and what actually happened, including failures.",
+        "Use the results to choose one improvement. Repeat the relevant check and explain the difference. A successful model is evidence about the model, not proof of bee health."
+      ],
+      "steps": [
+        "Run three planned checks, such as fit or access, function or clarity, and repeated use. Record results.",
+        "Change one important detail and repeat the affected check. Keep both results.",
+        "Summarise what works, one remaining limit and the next task after the review."
+      ],
+      "result": "Three test results, an evidence-led improvement and a clear next step.",
+      "cardTitle": "Our tests and next step",
+      "cardChecklist": [
+        "Three checks with expected and actual results.",
+        "One change with before-and-after test evidence.",
+        "What works, one limitation and the next task with an owner and due date."
+      ],
+      "teacherQuestion": "Which result supports your claim? Did the change improve the same test?",
+      "teacherWatch": "Keep failures visible. Check claims against actual results and preserve the original evidence. Do not describe a classroom model as ready for real-hive use."
+    }
+  ]
+}
