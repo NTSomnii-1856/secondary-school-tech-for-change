@@ -22,11 +22,11 @@
   const textarea=(label,name,value)=>`<label class="field">${esc(label)}<textarea data-card="${name}">${esc(value)}</textarea></label>`;
   function topicButton(topic,index,side=false){
     const open=released(topic),selected=S.topic===index,status=open?u('released'):teacher?u('preview')+' · '+dateLabel(topic.opensOn):u('locked')+' '+dateLabel(topic.opensOn);
-    if(side)return `<button data-topic="${index}" class="${selected?'active':''}" ${!accessible(topic)?'disabled':''} ${selected?'aria-current="page"':''}><small>${esc(u('week'))} ${topic.week} · ${esc(status)}</small>${t(topic.title)}</button>`;
-    return `<button class="topic-card ${!open?'locked':''} ${selected?'active':''}" data-topic="${index}" ${!accessible(topic)?'disabled':''}><span class="topic-week">${esc(u('week'))} ${topic.week}</span><b>${t(topic.title)}</b><span class="topic-status">${esc(status)}</span></button>`;
+    if(side)return `<button data-topic="${index}" class="${selected?'active':''}" ${!accessible(topic)?'disabled':''} ${selected?'aria-current="page"':''}><small>${esc(u('lesson'))} ${topic.lesson} · ${esc(status)}</small>${t(topic.title)}</button>`;
+    return `<button class="topic-card ${!open?'locked':''} ${selected?'active':''}" data-topic="${index}" ${!accessible(topic)?'disabled':''}><span class="topic-week">${esc(u('lesson'))} ${topic.lesson}</span><b>${t(topic.title)}</b><span class="topic-status">${esc(status)}</span></button>`;
   }
   function home(){
-    return `<p class="eyebrow">TECH FOR CHANGE / YEAR 7 + YEAR 8</p><h1>${t(D.title)}</h1><p class="lead">${t(D.intro)}</p><div class="topic-list">${D.topics.map((x,i)=>topicButton(x,i)).join('')}</div><p class="small">${esc(u('releaseNote'))}</p><div class="actions">${button(u('downloadCard'),'download-cards')}${button(u('loadCards'),'load-cards')}</div>`;
+    return `<div class="lesson-cover"><div><p class="eyebrow">${esc(u('projectSpace'))}</p><h1>${esc(u('beehiveTitle'))}</h1><p class="lead">${t(D.intro)}</p></div>${H.photo('beehive')}</div><div class="topic-list">${D.topics.map((x,i)=>topicButton(x,i)).join('')}</div><p class="small">${esc(u('releaseNote'))}</p><div class="actions">${button(u('downloadCard'),'download-cards')}${button(u('loadCards'),'load-cards')}</div>`;
   }
   function sources(){
     return `<details class="paper"><summary>${esc(u('sources'))}</summary><div class="sources"><a class="btn" target="_blank" rel="noopener" href="https://bees.caes.uga.edu/beekeeping-resources/getting-started-topics/getting-started-beekeeping-equipment.html">University of Georgia · Hive parts ↗</a><a class="btn" target="_blank" rel="noopener" href="https://www.bbka.org.uk/becoming-a-beekeeper">British Beekeepers Association ↗</a><a class="btn" target="_blank" rel="noopener" href="https://www.teachengineering.org/popular-topics/engineering-design-process">TeachEngineering · Design process ↗</a></div></details>`;
@@ -37,14 +37,14 @@
   }
   function topicView(){
     const topic=D.topics[S.topic];
-    return `<div class="topic-return">${button('← '+u('returnTopics'),'home')}</div><p class="eyebrow">${esc(u('week'))} ${topic.week}${!released(topic)?' · '+esc(u('preview')):''}</p><h1>${t(topic.title)}</h1><div class="phase">${button(u('learn'),'learn',S.phase==='learn',`aria-pressed="${S.phase==='learn'}"`)}${button(u('try'),'try',S.phase==='try',`aria-pressed="${S.phase==='try'}"`)}</div><article class="paper guidecard">${S.phase==='learn'?`<div class="learning-text">${topic.learn.map(x=>`<p>${t(x)}</p>`).join('')}</div><div class="actions">${button(u('try')+' →','try',true)}</div>`:`<ol class="steps">${topic.steps.map(x=>`<li>${t(x)}</li>`).join('')}</ol><aside class="check"><h3>${esc(u('expected'))}</h3><p>${t(topic.result)}</p><label class="checklabel"><input id="topic-checked" type="checkbox" ${S.checks[topic.week]?'checked':''}>${esc(u('cardReady'))}</label></aside>`}</article>${S.phase==='try'?cardForm(topic):''}${topic.week>=8?sources():''}`;
+    return `<div class="topic-return">${button('← '+u('returnTopics'),'home')}</div><p class="eyebrow">${esc(u('lesson'))} ${topic.lesson}${!released(topic)?' · '+esc(u('preview')):''}</p><h1>${t(topic.title)}</h1><div class="phase">${button(u('learn'),'learn',S.phase==='learn',`aria-pressed="${S.phase==='learn'}"`)}${button(u('try'),'try',S.phase==='try',`aria-pressed="${S.phase==='try'}"`)}</div><article class="paper guidecard">${S.phase==='learn'?`<div class="learning-text">${topic.learn.map(x=>`<p>${t(x)}</p>`).join('')}</div><div class="actions">${button(u('try')+' →','try',true)}</div>`:`<ol class="steps">${topic.steps.map(x=>`<li>${t(x)}</li>`).join('')}</ol><aside class="check"><h3>${esc(u('expected'))}</h3><p>${t(topic.result)}</p><label class="checklabel"><input id="topic-checked" type="checkbox" ${S.checks[topic.week]?'checked':''}>${esc(u('cardReady'))}</label></aside>`}</article>${S.phase==='try'?cardForm(topic):''}${topic.week>=8?sources():''}`;
   }
   function teacherEntry(){return S.topic<0?teacherData?.overview:teacherData?.topics[S.topic];}
   function boardKit(){
-    return ['Tech for Change Community Project: Smart Beehive','PRIVATE TEACHER BOARD','Lists: To do | Doing | Check | Done','',...D.topics.flatMap(topic=>[u('week')+' '+topic.week+': '+H.text(topic.cardTitle),'Owner: [team responsibility]','Due: [agreed date]','Checklist:',...topic.cardChecklist.map(x=>'- '+H.text(x)), ''])].join('\n');
+    return ['Tech for Change Community Project: Smart Beehive','PRIVATE TEACHER BOARD','Lists: To do | Doing | Check | Done','',...D.topics.flatMap(topic=>[u('lesson')+' '+topic.lesson+': '+H.text(topic.cardTitle),'Owner: [team responsibility]','Due: [agreed date]','Checklist:',...topic.cardChecklist.map(x=>'- '+H.text(x)), ''])].join('\n');
   }
   function teacherBoard(){
-    return `<details class="paper teacher-board"><summary>${esc(u('boardSetup'))}</summary><p>${esc(u('trelloAge'))} <a target="_blank" rel="noopener" href="https://www.atlassian.com/legal/atlassian-customer-agreement">Atlassian · §3.4 ↗</a></p><p>${esc(u('boardSteps'))}</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://trello.com/">${esc(u('openTrello'))}</a>${button(u('boardKit'),'copy-kit')}</div><p class="small">${esc(u('releaseNote'))}</p><table class="release-table"><tbody>${D.topics.map(x=>`<tr><td>${esc(u('week'))} ${x.week}</td><td>${t(x.title)}</td><td>${esc(dateLabel(x.opensOn))}</td></tr>`).join('')}</tbody></table></details>`;
+    return `<details class="paper teacher-board"><summary>${esc(u('boardSetup'))}</summary><p>${esc(u('trelloAge'))} <a target="_blank" rel="noopener" href="https://www.atlassian.com/legal/atlassian-customer-agreement">Atlassian · §3.4 ↗</a></p><p>${esc(u('boardSteps'))}</p><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://trello.com/">${esc(u('openTrello'))}</a>${button(u('boardKit'),'copy-kit')}</div><p class="small">${esc(u('teacherReleaseNote'))}</p><table class="release-table"><tbody>${D.topics.map(x=>`<tr><td>${esc(u('week'))} ${x.week} / ${esc(u('lesson'))} ${x.lesson}</td><td>${t(x.title)}</td><td>${esc(dateLabel(x.opensOn))}</td></tr>`).join('')}</tbody></table></details>`;
   }
   async function toggleTeacher(){
     if(teacher){teacher=false;if(S.topic>=0&&!released(D.topics[S.topic]))S.topic=-1;render(true);return;}
@@ -63,7 +63,7 @@
   }
   function cardText(){
     const topic=D.topics[S.topic],c=card(topic);
-    return [u('week')+' '+topic.week+' · '+H.text(topic.cardTitle),u('team')+': '+S.team,u('owner')+': '+c.owner,u('due')+': '+c.due,'Trello: '+c.list,'',...topic.cardChecklist.map(x=>'- [ ] '+H.text(x)),'',u('response')+':',c.notes,u('source')+': '+c.source,u('nextJob')+': '+c.next].join('\n');
+    return [u('lesson')+' '+topic.lesson+' · '+H.text(topic.cardTitle),u('team')+': '+S.team,u('owner')+': '+c.owner,u('due')+': '+c.due,'Trello: '+c.list,'',...topic.cardChecklist.map(x=>'- [ ] '+H.text(x)),'',u('response')+':',c.notes,u('source')+': '+c.source,u('nextJob')+': '+c.next].join('\n');
   }
   function downloadCards(){H.download('Smart-Beehive-team-cards.json',JSON.stringify({format:'ntsomnii-smart-beehive-cards-v1',team:S.team,cards:S.cards,checks:S.checks},null,2),'application/json');}
   function validateBackup(value){

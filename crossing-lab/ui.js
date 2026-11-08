@@ -1,7 +1,7 @@
 /* Shared labels: English, Russian, Simplified Chinese, Hebrew. */
 window.CROSSING_UI = {
   tabs: [
-    ['This week','На этой неделе','本周','השבוע'],
+    ['Our lesson','Наш урок','本课','השיעור שלנו'],
     ['Learning guide','Учебное руководство','学习指南','מדריך הלמידה'],
     ['Crossing challenge','Задача: переход','行人过街挑战','אתגר מעבר החצייה'],
     ['Community project ↗','Общий проект ↗','社区项目 ↗','פרויקט קהילתי ↗'],
@@ -59,12 +59,20 @@ window.CROSSING_UI = {
   solution:['Your project link or your code','Ссылка на проект или твой код','你的项目链接或代码','קישור לפרויקט או הקוד שלך'],
   change:['What did you change, and why?','Что ты изменил(а) и почему?','你改了什么？为什么？','מה שיניתם ולמה?'],
   part:['Part','Часть','部分','חלק'], week:['Week','Неделя','周','שבוע'],
+  lesson:['Lesson','Урок','课','שיעור'],
+  lessons:['Your lessons','Твои уроки','你的课程','השיעורים שלך'],
+  photo:['Photo','Фото','照片','צילום'],
+  unoPhoto:['An Arduino Uno-compatible board and its connections.','Плата, совместимая с Arduino Uno, и её контакты.','兼容 Arduino Uno 的开发板及其接口。','לוח תואם Arduino Uno והחיבורים שלו.'],
+  picoPhoto:['A Raspberry Pi Pico, front and back.','Raspberry Pi Pico с двух сторон.','Raspberry Pi Pico 的正面与背面。','Raspberry Pi Pico, מלפנים ומאחור.'],
+  hivePhoto:['Look closely: boxes, lids and entrances.','Посмотри внимательно: корпуса, крышки и летки.','仔细看看：箱体、箱盖和入口。','מסתכלים מקרוב: תיבות, מכסים ופתחים.'],
+  beehiveTitle:['Smart Beehive','Умный улей','智能蜂箱','כוורת חכמה'],
+  projectSpace:['Community project','Общий проект','社区项目','פרויקט קהילתי'],
   community:['Community project: Smart Beehive','Общий проект: умный улей','社区项目：智能蜂箱','פרויקט קהילתי: כוורת חכמה'],
-  nextWeek:['Next week: guessing game','На следующей неделе: игра-угадайка','下周：猜谜游戏','בשבוע הבא: משחק ניחושים'],
-  topics:['Weekly topics','Темы по неделям','每周主题','נושאים שבועיים'],
+  nextWeek:['Next lesson: guessing game','Следующий урок: игра-угадайка','下节课：猜谜游戏','בשיעור הבא: משחק ניחושים'],
+  topics:['Our project lessons','Уроки нашего проекта','我们的项目课程','שיעורי הפרויקט שלנו'],
   released:['Available','Открыто','已开放','זמין'], locked:['Opens','Откроется','开放日期','נפתח'],
   preview:['Teacher preview','Просмотр для учителя','教师预览','תצוגה מקדימה למורה'],
-  topicLocked:['This topic opens in a later week. Start with an available topic.','Эта тема откроется позже. Начни с доступной темы.','本主题将在后续周开放。请先学习已开放的主题。','הנושא ייפתח בשבוע מאוחר יותר. התחילו בנושא זמין.'],
+  topicLocked:['This lesson opens later. Start with an available lesson.','Этот урок откроется позже. Начни с доступного урока.','本课稍后开放。请先学习已开放的课程。','השיעור ייפתח בהמשך. התחילו בשיעור זמין.'],
   topicStart:['Start this topic','Начать тему','开始本主题','מתחילים בנושא'],
   card:['Prepare your Trello card','Подготовь карточку Trello','准备 Trello 卡片','מכינים כרטיס ל-Trello'],
   cardNote:['Prepare this with your team. Your teacher transfers it to Trello, or use the school-approved class board.','Подготовь с командой. Учитель перенесёт в Trello, либо используй одобренную школой доску.','与团队一起准备。由老师将内容放入 Trello，或使用学校批准的班级看板。','הכינו עם הצוות. המורה יעביר ל-Trello, או השתמשו בלוח הכיתה המאושר.'],
@@ -85,7 +93,8 @@ window.CROSSING_UI = {
   boardSteps:['Create one private board called “Smart Beehive”. Add four lists: To do, Doing, Check, Done. Make one card per team task. Add an owner, due date and evidence checklist. Paste the team’s copied card into its description.','Создайте закрытую доску «Smart Beehive». Добавьте списки: To do, Doing, Check, Done. Одна карточка — одна задача команды. Укажите ответственного, срок и проверку доказательств. Вставьте скопированную карточку команды в описание.','创建名为“Smart Beehive”的私密看板，添加 To do、Doing、Check、Done 四个列表。每项团队任务建一张卡，添加负责人、截止日期及证据检查清单。将团队复制的卡片内容粘贴到描述中。','צרו לוח פרטי בשם “Smart Beehive”. הוסיפו ארבע רשימות: To do, Doing, Check, Done. כרטיס אחד לכל משימת צוות. הוסיפו אחראי, תאריך יעד ורשימת בדיקת ראיות. הדביקו בתיאור את הכרטיס שהצוות העתיק.'],
   openTrello:['Open Trello ↗','Открыть Trello ↗','打开 Trello ↗','פותחים Trello ↗'],
   boardKit:['Copy board setup kit','Копировать шаблон доски','复制看板设置模板','מעתיקים ערכת הקמת לוח'],
-  releaseNote:['One topic opens each Monday, starting 9 November 2026. Teacher mode previews future topics.','Каждый понедельник открывается тема, начиная с 9 ноября 2026. Режим учителя позволяет просматривать будущие темы.','从 2026 年 11 月 9 日起，每周一开放一个主题。教师模式可预览后续主题。','נושא נפתח בכל יום שני, החל מ-9 בנובמבר 2026. מצב מורה מאפשר תצוגה מקדימה של נושאים עתידיים.'],
-  returnTopics:['Back to weekly topics','К темам по неделям','返回每周主题','חוזרים לנושאים השבועיים'],
+  releaseNote:['More lessons open as our project moves forward.','Новые уроки открываются по мере работы над проектом.','随着项目推进，后续课程会陆续开放。','שיעורים נוספים נפתחים עם התקדמות הפרויקט.'],
+  teacherReleaseNote:['One topic opens each Monday, starting 9 November 2026. Teacher mode previews future topics.','Каждый понедельник открывается тема, начиная с 9 ноября 2026. Режим учителя позволяет просматривать будущие темы.','从 2026 年 11 月 9 日起，每周一开放一个主题。教师模式可预览后续主题。','נושא נפתח בכל יום שני, החל מ-9 בנובמבר 2026. מצב מורה מאפשר תצוגה מקדימה של נושאים עתידיים.'],
+  returnTopics:['Back to project lessons','К урокам проекта','返回项目课程','חוזרים לשיעורי הפרויקט'],
   classroomModel:['Classroom model','Учебная модель','课堂模型','דגם כיתתי']
 };

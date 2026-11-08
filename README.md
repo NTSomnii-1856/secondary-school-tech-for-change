@@ -39,6 +39,8 @@ Week 5 contains its student files and the locally bundled Scratch block renderer
 
 ## Week 7 and the community project
 
+Student pages use **Lesson** numbers. The year lessons keep their existing sequence; the beehive project starts at Lesson 1 and continues through Lesson 6. Calendar weeks, routes and release metadata remain unchanged for teacher planning. Saved work and backup IDs are preserved. Each student space shows only its own navigation, with the logo returning to the main hub. The real board and hive photographs have visible credits; their sources and individual licences are recorded in `assets/photos/credits.json` and `assets/photos/README.md`.
+
 The crossing pages use the clean Year 7 layout. Students finish their own traffic lights, add two pedestrian LEDs and a button, then write the crossing decision. Each LED has its own 330Ω resistor. The starter ZIPs contain hardware setup and a supplied button helper, with no completed traffic or crossing sequence. The helper remembers a short press while waiting, debounces it and prevents a held button from repeating a crossing. Requests are served at the next safe red checkpoint, within five seconds of acceptance. Arduino runs continuously through `loop()`; the Pico teaching example runs three rounds and finishes with both red lights on.
 
 Teacher mode starts off on every load. It fetches prompts and worked code only when enabled. It is a classroom display toggle, not an authentication boundary. Earlier quiz-buzzer and memory-game pages remain as alternatives; the class homes now link to the pedestrian crossing. Week 8's guessing game is planned in the maps.

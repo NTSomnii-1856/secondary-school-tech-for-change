@@ -30,9 +30,15 @@
   }
   function header({year, teacher, big, hub = false}) {
     return `<a class="skip" href="#main">${esc(u(hub ? 'topics' : 'learn'))}</a>
-      <header class="top"><a href="${hub ? '../../' : '../'}" class="brand"><span class="brandmark" aria-hidden="true">↯</span><span>NTSOMNII<br><b>TECH FOR CHANGE</b></span></a>
-      <div class="tools"><span class="badge">${hub ? 'COMMUNITY PROJECT' : 'YEAR '+year+' · WEEK 7'}</span><label class="langlabel">Language<select id="language">${langs.map((x,i) => `<option value="${x}" ${x===lang?'selected':''}>${names[i]}</option>`).join('')}</select></label>${button(u('big'),'big',false,`aria-pressed="${big}"`)}${button(u('teacher'),'teacher',teacher,`aria-pressed="${teacher}"`)}</div></header>
-      <nav class="section-tabs" aria-label="Tech for Change"><a href="../../year-7/" ${year===7?'aria-current="page"':''}>Year 7 · Arduino C++</a><a href="../../year-8/" ${year===8?'aria-current="page"':''}>Year 8 · Pico Python</a><a href="../../community-project/smart-beehive/" ${hub?'aria-current="page"':'target="_blank" rel="noopener"'}>${esc(u('community'))}</a></nav>`;
+      <header class="top"><a href="../../" class="brand" aria-label="NTSOMNII · Tech for Change"><span class="brandmark" aria-hidden="true">↯</span><span>NTSOMNII<br><b>TECH FOR CHANGE</b></span></a>
+      <div class="tools"><span class="badge">${hub ? 'SMART BEEHIVE' : 'YEAR '+year+' · '+esc(u('lesson'))+' 7'}</span><label class="langlabel">Language<select id="language">${langs.map((x,i) => `<option value="${x}" ${x===lang?'selected':''}>${names[i]}</option>`).join('')}</select></label>${button(u('big'),'big',false,`aria-pressed="${big}"`)}${button(u('teacher'),'teacher',teacher,`aria-pressed="${teacher}"`)}</div></header>`;
+  }
+  function photo(area) {
+    const file=area==='beehive'?'beehive.jpg':area===7?'arduino-workbench.jpg':'pico-workbench.jpg';
+    const entry=window.LESSON_PHOTOS?.find(item=>item.file===file);
+    if(!entry)return '';
+    const caption=u(area==='beehive'?'hivePhoto':area===7?'unoPhoto':'picoPhoto');
+    return `<figure class="lesson-image ${area==='beehive'?'hive-image':''}"><img src="../../assets/photos/${file}" alt="${esc(caption)}" width="${entry.width}" height="${entry.height}" decoding="async"><figcaption><span>${esc(caption)}</span><span class="image-credit"><a target="_blank" rel="noopener" href="${esc(entry.sourcePage)}">${esc(u('photo'))}: ${esc(entry.author)}</a> · <a target="_blank" rel="noopener" href="${esc(entry.licenseURL)}">${esc(entry.license)}</a></span></figcaption></figure>`;
   }
   function codebox(code) { return `<div class="codebox"><div class="codehead"><b>${esc(u('worked'))}</b>${button(u('copy'),'copy-teacher')}</div><pre dir="ltr"><code>${esc(code)}</code></pre></div>`; }
   function teacherPanel(entry) {
@@ -40,5 +46,5 @@
     return `<section class="paper teacher-panel"><p class="eyebrow">${esc(u('teacherOn'))}</p><h2>${esc(u('guidance'))}</h2><p><strong>${esc(u('ask'))}</strong> ${t(entry.question)}</p><p><strong>${esc(u('watch'))}</strong> ${t(entry.watch)}</p>${entry.code?`<details class="teacher-code"><summary>${esc(u('worked'))}</summary><p class="small">${esc(u('workedNote'))}</p>${codebox(entry.code)}</details>`:''}<div class="actions">${button(u('teacherOff'),'teacher')}</div></section>`;
   }
   function footer() { return `<footer><p role="status">${esc(u(storage?'saved':'unsaved'))}</p></footer>`; }
-  window.CrossingUI = {langs, text, t, esc, u, button, list, read, save, setLang, documentLanguage, toast, copy, download, header, codebox, teacherPanel, footer, getLang:()=>lang};
+  window.CrossingUI = {langs, text, t, esc, u, button, list, read, save, setLang, documentLanguage, toast, copy, download, header, photo, codebox, teacherPanel, footer, getLang:()=>lang};
 })();

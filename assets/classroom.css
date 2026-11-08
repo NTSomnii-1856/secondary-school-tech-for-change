@@ -1,0 +1,26 @@
+/* The student spaces: real materials, quiet pages and room to work. */
+:root{--deep:#294e43;--lime:#e5d496;--accent:#e5d496;--paper:#f8f6ef;--line:#dedbd0;--soft:#eeefe5;--shadow:0 4px 18px #3c392109}
+body{background:#f8f6ef;background-image:none}
+body[data-year="8"]{--deep:#315466;--accent:#d6e6e7;--lime:#d6e6e7;--soft:#edf1f1;--line:#d9dedc;--paper:#f8f6ef}
+body[data-space="beehive"]{--deep:#66502b;--lime:#efdfad;--soft:#f4efdf;--line:#ded8c6}
+h1,h2{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.025em}
+h1{font-size:clamp(32px,3.5vw,46px);line-height:1.12}
+.brandmark{transform:none;border-radius:9px}.brand{letter-spacing:.045em}.top{padding-top:23px;padding-bottom:23px}
+.paper,.card{background:#fffefa;border:1px solid var(--line);border-radius:12px;box-shadow:0 4px 18px #3c392109}
+.paper{padding:26px 28px}.paper h2{font-size:26px}.badge{background:var(--lime);color:var(--deep);border-radius:20px;padding:6px 12px;letter-spacing:.02em}
+.btn{border-radius:8px;box-shadow:none}.btn.primary{background:var(--deep);border-color:var(--deep)}
+.path button{border:1px solid var(--line);background:#fffefa;border-radius:9px;padding:15px 17px}.path span,.steps li:before{border-radius:50%;background:var(--soft);border-color:#b4beaa}
+.scope-home{display:block;margin:22px 10px;font-size:14px;color:var(--deep);text-decoration:none}.scope-home:hover{text-decoration:underline}
+.lesson-cover{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,285px);gap:28px;align-items:center;margin:12px 0 24px}
+.lesson-cover h1{margin:13px 0 18px}.lesson-cover .lead{font-size:19px;line-height:1.65;margin:18px 0}.lesson-cover .platform{font-size:13px;line-height:1.5}
+.lesson-image{margin:0;min-width:0}.lesson-image img{display:block;width:100%;height:230px;object-fit:contain;background:#f0efe8;border-radius:10px}
+.lesson-image.hive-image img{object-fit:cover}.lesson-image figcaption{font-size:13px;line-height:1.5;margin-top:10px;color:#5c6358}.lesson-image figcaption>span{display:block}.image-credit{font-size:11px;margin-top:5px}.image-credit a{color:#626a5f;text-underline-offset:3px}
+.topic-list{grid-template-columns:1fr 1fr;gap:13px}.topic-card{grid-template-columns:1fr;gap:7px;padding:19px;border-radius:11px}.topic-card .topic-week{font-size:12px;letter-spacing:.03em}.topic-card .topic-status{grid-column:1;font-size:13px}.topic-card b{font-size:18px;line-height:1.4;font-weight:650}.topic-card.locked{background:#f1eee6;color:#65675e}.topic-card.active{border-width:2px}.topic-card:not(:disabled):hover{background:#f4f2e8}.topic-sidenav button{border-radius:8px}.topic-sidenav button small{font-size:11px;margin-bottom:4px}
+.snippet,.command-note pre{border-radius:7px;background:#f1f2e9}.check{border-radius:4px 9px 9px 4px}.codebox{border-radius:9px}.guidecard .steps li{line-height:1.7}
+.landing{max-width:1120px}.landing h1,.landing .card h2,.landing .card h3{font-family:Georgia,'Times New Roman',serif}.landing h1{font-size:clamp(36px,5vw,58px);margin-bottom:25px}.landing .card h2{font-size:29px}.landing .card{padding:25px}.landing .lessoncard{display:block}.class-hubs{align-items:stretch}
+.space-photo{margin:0 0 20px;width:100%}.space-photo img{display:block;width:100%;height:185px;object-fit:contain;background:#f0efe8;border-radius:9px;margin:0}.space-photo[data-photo="beehive.jpg"] img{object-fit:cover}.space-photo figcaption{font:11px/1.5 'Segoe UI',Arial,sans-serif;color:#626a5f;margin-top:8px}.space-photo figcaption a{color:inherit;text-underline-offset:3px}
+.lessoncard>.space-photo{float:inline-end;width:40%;max-width:285px;margin:0 0 20px 25px}.lessoncard>.space-photo img{height:220px}.lessoncard:after{content:'';display:block;clear:both}.lessoncard .badge{margin-bottom:12px}.platform-note{font-size:16px}
+@media(max-width:1080px){.lesson-cover{grid-template-columns:minmax(0,1fr) 220px;gap:20px}.lesson-image img{height:200px}}
+@media(max-width:850px){.class-hubs .space-photo img{height:200px}}
+@media(max-width:740px){.lesson-cover{grid-template-columns:1fr;margin-top:8px;gap:12px}.lesson-cover h1{font-size:34px}.lesson-image{max-width:440px}.lesson-image img{height:180px}.lesson-image.hive-image img{height:210px}.topic-list{grid-template-columns:1fr}.paper{padding:21px 19px}.paper h2{font-size:24px}.topic-sidenav{margin-bottom:16px}.scope-home{font-size:13px;margin:10px}.lesson-cover .lead{font-size:18px}.lessoncard>.space-photo{float:none;width:100%;max-width:none;margin:0 0 20px}.lessoncard>.space-photo img{height:190px}.landing .card{padding:21px}.landing .card h2{font-size:27px}}
+@media print{.lesson-image,.space-photo,.scope-home{display:none}body{background:white}}

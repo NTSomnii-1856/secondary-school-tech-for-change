@@ -28,7 +28,7 @@
     return `<details class="sequence-help"><summary>${esc(u('sequence'))}</summary><p>${esc(u('normal'))}</p><p>${esc(u('request'))}</p><ol class="signal-sequence"><li>${esc(u('allRed'))}</li><li>${esc(u('walk'))}</li><li>${esc(u('resume'))}</li></ol>${year===8?`<p class="small">${esc(u('picoRounds'))}</p>`:''}</details>`;
   }
   function home() {
-    return `<p class="eyebrow">YEAR ${year} / WEEK 7 / ${esc(u('classroomModel'))}</p><h1>${t(D.title)}</h1><p class="platform">${year===7?'Arduino IDE · C++ · Arduino Uno':'Python · MicroPython · Raspberry Pi Pico'}</p><p class="lead">${t(D.intro)}</p><article class="paper"><h2>${esc(u('goals'))}</h2>${list(D.goals)}<div class="actions">${button(u('begin'),'begin',true)}${button(u('project'),'challenge')}</div></article><div class="path">${D.stages.map((s,i)=>`<button data-step="${i}"><span>${i+1}</span>${t(s.title)}</button>`).join('')}</div><p class="small tab-note"><a target="_blank" rel="noopener" href="../../community-project/smart-beehive/">${esc(u('community'))} ↗</a></p>`;
+    return `<div class="lesson-cover"><div><p class="eyebrow">${esc(u('lesson'))} ${D.lesson}</p><h1>${t(D.title)}</h1><p class="platform">${year===7?'Arduino IDE · C++ · Arduino Uno':'Python · MicroPython · Raspberry Pi Pico'}</p><p class="lead">${t(D.intro)}</p></div>${H.photo(year)}</div><article class="paper"><h2>${esc(u('goals'))}</h2>${list(D.goals)}<div class="actions">${button(u('begin'),'begin',true)}${button(u('project'),'challenge')}</div></article><div class="path">${D.stages.map((s,i)=>`<button data-step="${i}"><span>${i+1}</span>${t(s.title)}</button>`).join('')}</div>`;
   }
   function guide() {
     const s = D.stages[S.step];
@@ -71,18 +71,19 @@
   }
   function render(focus=false) {
     H.documentLanguage(); document.body.classList.toggle('large',S.big);
-    document.title=H.text(D.title)+' · Year '+year+' · Week 7 · NTSOMNII';
-    const nav=window.CROSSING_UI.tabs.map((x,i)=>i===3?`<a class="nav" href="../../community-project/smart-beehive/" target="_blank" rel="noopener"><span>04</span>${t(x)}</a>`:`<button class="nav ${S.tab===i?'active':''}" data-tab="${i}" ${S.tab===i?'aria-current="page"':''}><span>0${i+1}</span>${t(x)}</button>`).join('');
-    document.getElementById('app').innerHTML=H.header({year,teacher,big:S.big})+`<div class="shell"><aside><nav aria-label="Lesson">${nav}</nav><details class="help"><summary>${esc(u('starter'))}</summary><a download href="${LAB}/resources/year-${year}/student-starter.zip">${esc(u('starter'))} ↓</a></details></aside><main id="main" tabindex="-1">${S.tab===0?home():S.tab===1?guide():S.tab===2?challenge():S.tab===4?reference():exit()}${teacher?H.teacherPanel(currentTeacher()):''}${H.footer()}</main></div><p id="toast" role="status"></p>`;
+    document.title=H.text(D.title)+' · Year '+year+' · Lesson '+D.lesson+' · NTSOMNII';
+    let visibleIndex=0;
+    const nav=window.CROSSING_UI.tabs.map((x,i)=>i===3?'':`<button class="nav ${S.tab===i?'active':''}" data-tab="${i}" ${S.tab===i?'aria-current="page"':''}><span>0${++visibleIndex}</span>${t(x)}</button>`).join('');
+    document.getElementById('app').innerHTML=H.header({year,teacher,big:S.big})+`<div class="shell"><aside><nav aria-label="Lesson">${nav}</nav><a class="scope-home" href="../">← ${esc(u('lessons'))} · Year ${year}</a><details class="help"><summary>${esc(u('starter'))}</summary><a download href="${LAB}/resources/year-${year}/student-starter.zip">${esc(u('starter'))} ↓</a></details></aside><main id="main" tabindex="-1">${S.tab===0?home():S.tab===1?guide():S.tab===2?challenge():S.tab===4?reference():exit()}${teacher?H.teacherPanel(currentTeacher()):''}${H.footer()}</main></div><p id="toast" role="status"></p>`;
     save(); if(focus) document.getElementById('main').focus();
   }
   function download() {
-    const lines=[`NTSOMNII · Year ${year} · Week 7`,H.text(D.title)];
+    const lines=[`NTSOMNII · Year ${year} · ${u('lesson')} ${D.lesson}`,H.text(D.title)];
     D.stages.forEach((s,i)=>lines.push(`${i+1}. ${H.text(s.title)}: ${S.checks[i]?'✓':'—'}`));
     D.project.tests.forEach((x,i)=>lines.push('\n'+H.text(x),S.tests[i]?'✓':'—',S.observations[i]));
     lines.push('\n'+u('solution'),S.solution,u('change'),S.change);
     D.exit.forEach((x,i)=>lines.push('\n'+H.text(x),S.exit[i]));
-    H.download(`Year-${year}-Week-7-my-crossing.txt`,lines.join('\n'));
+    H.download(`Year-${year}-Lesson-${D.lesson}-my-crossing.txt`,lines.join('\n'));
   }
   document.addEventListener('click',async event=>{
     const el=event.target.closest('button'); if(!el) return;

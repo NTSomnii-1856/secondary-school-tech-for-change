@@ -45,6 +45,11 @@ async function coding(browser, year) {
   assert.equal(teacherFetches, 0, `Y${year} fetched teacher material for a student`);
   assert.equal(await page.locator('.teacher-panel').count(), 0);
   assert.equal(await page.locator('.teacher-code').count(), 0);
+  assert.equal(await page.locator('.top .brand').evaluate(a=>a.href),BASE+'/');
+  assert.equal(await page.locator('a[href*="community-project"], .section-tabs').count(),0);
+  assert.ok((await page.locator('body').innerText()).includes('Lesson 7'));
+  assert.equal(/\bweek\b/i.test(await page.locator('body').innerText()),false);
+  await page.waitForFunction(()=>[...document.querySelectorAll('.lesson-image img')].every(img=>img.complete&&img.naturalWidth>0));
   const teacherSource = clean(fs.readFileSync(path.join(ROOT, `crossing-lab/teacher-sources/year${year}-solution.${year === 7 ? 'ino' : 'py'}`), 'utf8'));
   assert.equal((await page.locator('body').innerText()).includes(teacherSource), false);
 
@@ -118,6 +123,9 @@ async function hub(browser, date, releasedCount, interactive = false) {
   await page.goto(`${BASE}/community-project/smart-beehive/`);
   await page.locator('.topic-card').first().waitFor();
   assert.equal(await page.locator('.topic-card').count(),6);
+  assert.deepEqual(await page.locator('.topic-card .topic-week').allTextContents(),['Lesson 1','Lesson 2','Lesson 3','Lesson 4','Lesson 5','Lesson 6']);
+  assert.equal(/\bweek\b/i.test(await page.locator('body').innerText()),false);
+  assert.equal(await page.locator('.top .brand').evaluate(a=>a.href),BASE+'/');
   assert.equal(await page.locator('.topic-card:not([disabled])').count(),releasedCount, `Wrong release count at ${date}`);
   for(let i=0;i<6;i++) assert.equal(await page.locator(`.topic-card[data-topic="${i}"]`).isEnabled(),i<releasedCount);
   assert.equal(teacherFetches,0);
@@ -182,11 +190,15 @@ async function hub(browser, date, releasedCount, interactive = false) {
 
 async function navigation(browser){
   const page=await browser.newPage();
-  for(const [url,href] of [['/','community-project/smart-beehive/'],['/year-7/','../community-project/smart-beehive/'],['/year-8/','../community-project/smart-beehive/']]){
+  for(const url of ['/','/year-7/','/year-8/']){
     await page.goto(BASE+url);
-    assert.equal(await page.locator(`a[href="${href}"]`).count(),1,`Missing/duplicate shared hub entry at ${url}`);
-    const resolved=await page.locator(`a[href="${href}"]`).evaluate(a=>a.href);
-    assert.equal(resolved,BASE+'/community-project/smart-beehive/');
+    await page.waitForFunction(()=>[...document.images].every(img=>img.complete&&img.naturalWidth>0));
+    if(url==='/')assert.deepEqual(await page.locator('.class-hubs article .btn').evaluateAll(es=>es.map(a=>a.getAttribute('href'))),['year-7/','year-8/','community-project/smart-beehive/']);
+    else{
+      assert.equal(await page.locator('a[href*="community-project"],a[href*="curriculum-map"]').count(),0);
+      assert.equal(await page.locator('header .brand').evaluate(a=>a.href),BASE+'/');
+      assert.equal(/\bweek\b/i.test(await page.locator('body').innerText()),false);
+    }
     for(const width of [320,390]){
       await page.setViewportSize({width,height:850});
       await noOverflow(page,'Class hub '+url+'/'+width);
@@ -194,12 +206,13 @@ async function navigation(browser){
     await page.setViewportSize({width:1280,height:900});
   }
   for(const year of [7,8]){
-    await page.goto(`${BASE}/year-${year}/curriculum-map/`);
-    assert.equal(await page.locator('#community-project a').evaluate(a=>a.href),BASE+'/community-project/smart-beehive/');
     await page.goto(`${BASE}/year-${year}/week-7-pedestrian-crossing/`);
-    assert.equal(await page.locator('.section-tabs a').nth(2).evaluate(a=>a.href),BASE+'/community-project/smart-beehive/');
+    assert.equal(await page.locator('a[href*="community-project"], .section-tabs').count(),0);
+    assert.equal(await page.locator('.top .brand').evaluate(a=>a.href),BASE+'/');
   }
-  console.log('PASS cross-site navigation: one root/class hub entry, correct map and coding-page shared URLs.');
+  await page.goto(BASE+'/community-project/smart-beehive/');
+  assert.equal(await page.locator('a[href*="year-7"],a[href*="year-8"],.section-tabs').count(),0);
+  console.log('PASS focused spaces: root has three choices; lesson labels and loaded photos; area navigation stays within the selected space, with the logo returning to the main hub.');
   await page.close();
 }
 

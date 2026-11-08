@@ -24,7 +24,7 @@
           }
         ],
         "steps": [
-          "Open your own Week 6 .ino in Arduino IDE. Save a Week 7 copy.",
+          "Open your .ino from last lesson in Arduino IDE. Save a copy for this lesson.",
           "Finish green for 3 seconds, amber for 1 second, then red for 1 second.",
           "Verify and upload your sketch. Check that each light switches off before the next starts."
         ],
@@ -51,7 +51,7 @@
           }
         ],
         "steps": [
-          "Save your own .ino first. Use setup help to place crossing.h and crossing.cpp beside your Week 7 .ino.",
+          "Save your own .ino first. Use setup help to put crossing.h and crossing.cpp beside this lesson’s .ino.",
           "Follow the labelled diagram to add two pedestrian LEDs and the button. Wokwi is an optional circuit tester.",
           "In Arduino IDE, add both pedestrian outputs in setup(). Start pedestrian red on and green off."
         ],
@@ -161,7 +161,7 @@
           }
         ],
         "steps": [
-          "Open your own Week 6 project. Save a copy for Week 7.",
+          "Open your project from last lesson. Save a copy for this lesson.",
           "Finish green for 3 seconds, amber for 1 second, then red for 1 second.",
           "Run three rounds. Switch each light off before the next starts."
         ],
@@ -188,7 +188,7 @@
           }
         ],
         "steps": [
-          "Save your own main.py first. Download and unzip the Week 7 student files.",
+          "Save your own main.py first. Download and unzip this lesson’s starter files.",
           "In your Wokwi file menu, upload diagram.json and crossing.py. Keep your own main.py.",
           "Add the two pedestrian outputs. Start pedestrian red on and green off."
         ],

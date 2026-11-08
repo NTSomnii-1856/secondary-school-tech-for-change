@@ -1,0 +1,44 @@
+[
+  {
+    "file": "arduino-workbench.jpg",
+    "title": "Arduino Uno board",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Arduino_Uno_board.jpg",
+    "author": "JrawX",
+    "authorURL": "https://commons.wikimedia.org/wiki/User:JrawX",
+    "license": "CC0 1.0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "caption": "An Arduino Uno-compatible controller board with its connections visible.",
+    "changes": "Wikimedia-generated 960px preview; no further edits.",
+    "downloadURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Arduino_Uno_board.jpg/960px-Arduino_Uno_board.jpg",
+    "width": 960,
+    "height": 722
+  },
+  {
+    "file": "pico-workbench.jpg",
+    "title": "Raspberry pi pico",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Raspberry_pi_pico.jpg",
+    "author": "Michael H. (Laserlicht)",
+    "authorURL": "https://commons.wikimedia.org/wiki/User:Laserlicht",
+    "license": "CC BY-SA 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "The front and back of a Raspberry Pi Pico, showing the board and pin labels.",
+    "changes": "Commons source version includes a crop by Koavf. Wikimedia-generated 960px preview; no further edits. This photograph remains under CC BY-SA 4.0.",
+    "downloadURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Raspberry_pi_pico.jpg/960px-Raspberry_pi_pico.jpg",
+    "width": 960,
+    "height": 796
+  },
+  {
+    "file": "beehive.jpg",
+    "title": "A row of beehives",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:A_row_of_beehives_(48414296736).jpg",
+    "author": "Ivan Radic",
+    "authorURL": "https://www.flickr.com/people/26344495@N05",
+    "license": "CC BY 2.0",
+    "licenseURL": "https://creativecommons.org/licenses/by/2.0/",
+    "caption": "A row of wooden beehives outdoors, showing the boxes, lids and entrances.",
+    "changes": "Wikimedia-generated 960px preview; no further edits.",
+    "downloadURL": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/A_row_of_beehives_%2848414296736%29.jpg/960px-A_row_of_beehives_%2848414296736%29.jpg",
+    "width": 960,
+    "height": 640
+  }
+]
