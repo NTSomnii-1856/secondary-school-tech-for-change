@@ -4,25 +4,34 @@
   "topics": [
     {
       "week": 7,
-      "title": "Engineering method and the problem",
+      "title": "What problem are we trying to solve?",
       "learn": [
-        "Ask → Research → Imagine → Plan → Make → Test → Improve. Start with the need, not a chosen gadget.",
-        "Who might need help: bees, a beekeeper or both? Name one possible problem and what evidence you still need. An idea is not yet a proven problem."
+        "Think about who might need help and what might be difficult. Your question will guide your research in Lesson 2.",
+        "An observation is a detail you can point to in a photo. An assumption is an explanation you haven’t checked yet."
       ],
       "steps": [
-        "Choose who you want to help. Write one sentence about a possible problem.",
-        "Write what you already know and one thing you need to find out. Label assumptions.",
-        "Prepare one team card with an owner, a due date and the next question. Use the card form below, then copy it for your teacher or save your team card."
+        "Look at each photo. Write one detail you can point to in each.",
+        "Choose bees, a beekeeper or both. Write one possible difficulty. Mark what you are still guessing.",
+        "On your team card, write one question for Lesson 2, who will investigate it and the due date."
       ],
-      "result": "One clear problem question. You have not chosen a final solution yet.",
-      "cardTitle": "Our beehive problem brief",
+      "result": "Your team has observations from the photos, a possible problem and one question for Lesson 2.",
+      "cardTitle": "Our beehive question",
       "cardChecklist": [
-        "Who needs help and what might be difficult?",
-        "What evidence do we have, and what is still an assumption?",
-        "What will we investigate next, who owns it and when is it due?"
+        "One detail you can point to in each photo.",
+        "Who might need help, one possible difficulty and what is still a guess.",
+        "One question for Lesson 2, who will investigate it and when it’s due."
       ],
-      "teacherQuestion": "Whose problem is this? What could show that your first assumption is wrong?",
-      "teacherWatch": "Keep the question small and open. Do not let a preferred sensor become the problem. Use Ask to define the problem now; research opens next week."
+      "teacherQuestion": "If you see a brick on the lid, what can you point to? What are you guessing about its job?",
+      "teacherWatch": "Model: “I can see a brick on the lid” is an observation. “It might keep the lid from moving” is an assumption. Ask what evidence could check that explanation. Save solution ideas for later.",
+      "cycle": [
+        "Ask",
+        "Research",
+        "Imagine",
+        "Plan",
+        "Make",
+        "Test",
+        "Improve"
+      ]
     },
     {
       "week": 8,

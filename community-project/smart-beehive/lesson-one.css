@@ -1,0 +1,29 @@
+/* Lesson 1: two observations, one cycle, then the team task. */
+.lesson-one-observation{margin:0 0 24px}
+.lesson-one-observation h2,.lesson-one-cycle h2{font-size:1.28rem;margin:0 0 8px}
+.lesson-one-observation>p{margin:0 0 14px;max-width:62ch}
+.lesson-one-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.lesson-one-photos.single{grid-template-columns:minmax(0,1fr);max-width:440px}
+.lesson-one-photo{min-width:0;margin:0}
+.lesson-one-photo img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;background:#f0eee5;border-radius:9px}
+.lesson-one-photo figcaption{font-size:.86rem;line-height:1.45;margin-top:7px;overflow-wrap:anywhere}
+.lesson-one-photo .image-credit{display:block;font-size:.72rem;margin-top:2px}
+.lesson-one-cycle{margin:24px 0 18px;padding:16px 17px;background:var(--soft);border:1px solid var(--line);border-radius:10px}
+.lesson-one-cycle img{display:block;width:100%;height:auto;margin:8px 0}
+.lesson-one-cycle figcaption{font-size:.86rem;font-weight:650;color:var(--deep);margin-top:8px}
+.lesson-one-cycle-steps{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:12px 0;padding:0}
+.lesson-one-cycle-steps li{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:7px;background:#fffefa;padding:5px 8px;font-size:.85rem}
+.lesson-one-cycle-steps li:first-child{background:var(--lime);color:var(--deep);font-weight:700}
+.lesson-one-cycle-steps li>span{font-size:.75em;font-weight:700;color:var(--deep)}
+.lesson-one-cycle-steps.cycle-small{display:none}
+.lesson-one-printables,.lesson-one-teacher-download{margin-top:15px;gap:8px}
+.lesson-one-printables .btn,.lesson-one-teacher-download .btn{font-size:.83rem}
+@media(max-width:480px){
+  .lesson-one-observation{margin-bottom:18px}
+  .lesson-one-photos{grid-template-columns:1fr;gap:14px}
+  .lesson-one-cycle{margin:18px 0 14px;padding:12px}
+}
+@media(max-width:620px){
+  .lesson-one-cycle .cycle-diagram{display:none}
+  .lesson-one-cycle-steps.cycle-small{display:flex}
+}

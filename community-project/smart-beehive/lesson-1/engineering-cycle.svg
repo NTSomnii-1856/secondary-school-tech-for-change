@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 235" role="img" aria-labelledby="cycle-title cycle-description">
+<title id="cycle-title">Engineering design cycle</title>
+<desc id="cycle-description">Ask, Research, Imagine, Plan, Make, Test and Improve. An arrow returns from Improve to Ask. Ask is highlighted for Lesson 1.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#526357"/></marker></defs>
+<g fill="none" stroke="#526357" stroke-width="2.4" marker-end="url(#arrow)">
+<polyline points="183,44 207,44"/>
+<polyline points="368,44 392,44"/>
+<polyline points="553,44 577,44"/>
+<polyline points="657.5,76 657.5,137"/>
+<polyline points="577,169 553,169"/>
+<polyline points="392,169 368,169"/>
+<polyline points="207,169 102.5,169 102.5,76"/>
+</g>
+<rect x="22" y="12" width="161" height="64" rx="8" fill="#f1e3ae" stroke="#8a722e" stroke-width="2"/>
+<text x="102.5" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#202b25">Ask</text>
+<text x="102.5" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#43544a">Find the need</text>
+<rect x="207" y="12" width="161" height="64" rx="8" fill="#f5f5ef" stroke="#aeb8ad" stroke-width="1"/>
+<text x="287.5" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#202b25">Research</text>
+<text x="287.5" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#43544a">Look for evidence</text>
+<rect x="392" y="12" width="161" height="64" rx="8" fill="#f5f5ef" stroke="#aeb8ad" stroke-width="1"/>
+<text x="472.5" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#202b25">Imagine</text>
+<text x="472.5" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#43544a">Sketch several ideas</text>
+<rect x="577" y="12" width="161" height="64" rx="8" fill="#f5f5ef" stroke="#aeb8ad" stroke-width="1"/>
+<text x="657.5" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#202b25">Plan</text>
+<text x="657.5" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#43544a">Choose an idea</text>
+<rect x="577" y="137" width="161" height="64" rx="8" fill="#f5f5ef" stroke="#aeb8ad" stroke-width="1"/>
+<text x="657.5" y="165" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#202b25">Make</text>
+<text x="657.5" y="185" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#43544a">Build a model</text>
+<rect x="392" y="137" width="161" height="64" rx="8" fill="#f5f5ef" stroke="#aeb8ad" stroke-width="1"/>
+<text x="472.5" y="165" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#202b25">Test</text>
+<text x="472.5" y="185" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#43544a">See how it works</text>
+<rect x="207" y="137" width="161" height="64" rx="8" fill="#f5f5ef" stroke="#aeb8ad" stroke-width="1"/>
+<text x="287.5" y="165" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#202b25">Improve</text>
+<text x="287.5" y="185" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#43544a">Change and test again</text>
+<text x="380" y="225" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#43544a">Use what you learned to revisit an earlier step.</text></svg>
