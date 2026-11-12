@@ -5,6 +5,7 @@
   const languages = [['en', 'English'], ['ru', 'Русский'], ['zh-Hans', '简体中文'], ['he', 'עברית']];
   const app = document.getElementById('app');
   let language = 'en';
+  let notebookOpen = window.matchMedia('(min-width: 960px)').matches;
   try { language = localStorage.getItem('ntsomnii-language') || 'en'; } catch {}
 
   function text(value) {
@@ -19,6 +20,21 @@
 
   const translate = value => escape(text(value));
   const label = name => translate(ui[name]);
+
+  function notebook(challenge) {
+    const examples = cards => `<dl class="command-list">${cards.map(({command, meaning, example}) => `
+      <div class="command-card"><dt><code dir="ltr">${escape(command)}</code></dt>
+      <dd><p>${translate(meaning)}</p><pre dir="ltr"><code>${escape(example)}</code></pre></dd></div>`).join('')}</dl>`;
+    const {main, extra} = lesson.notebook;
+    return `<aside class="code-notebook" aria-labelledby="notebook-title">
+      <details ${notebookOpen ? 'open' : ''}>
+        <summary id="notebook-title">${label('notebook')}</summary>
+        <div class="notebook-entries">${examples(main)}
+          ${challenge && extra.length ? `<h2>${label('notebookExtra')}</h2>${examples(extra)}` : ''}
+        </div>
+      </details>
+    </aside>`;
+  }
 
   function picture(task) {
     const {file, caption} = task.figure;
@@ -79,6 +95,8 @@
           `<option value="${code}"${code === language ? ' selected' : ''}>${name}</option>`).join('')}</select></label>
         </div>
       </header>
+      <div class="lesson-layout">
+      ${notebook(challenge)}
       <main class="focus-lesson" id="main" tabindex="-1">
         <p class="lesson-number">Year ${lesson.year} · Week ${lesson.lesson} · ${translate(lesson.platform)}</p>
         <nav class="task-nav" aria-label="Lesson tasks">
@@ -99,8 +117,12 @@
         <a class="btn" href="${challenge ? '#main-task' : '#challenge'}">${label(challenge ? 'back' : 'extraLink')}</a>
         <p id="toast" role="status"></p>
       </main>
+      </div>
       <div class="print-handout">${handout(lesson.main, lesson.title, 'main')}${handout(lesson.extra, lesson.extra.title, 'challenge')}</div>`;
     if (focus) document.getElementById('main').focus();
+    app.querySelector('.code-notebook details').addEventListener('toggle', event => {
+      notebookOpen = event.currentTarget.open;
+    });
 
     app.querySelector('[data-print]').addEventListener('click', async () => {
       await Promise.allSettled([...app.querySelectorAll('.print-handout img')].map(img => img.decode()));
