@@ -20,13 +20,47 @@
   const translate = value => escape(text(value));
   const label = name => translate(ui[name]);
 
+  function picture(task) {
+    const {file, caption} = task.figure;
+    const url = `../../lesson-focus/diagrams/${escape(file)}`;
+    return `<figure class="task-figure"><a href="${url}" target="_blank" rel="noopener"><img src="${url}" alt="${translate(caption)}"></a><figcaption>${translate(caption)}</figcaption></figure>`;
+  }
+
+  function steps(task) {
+    return `<ol class="steps">${task.steps.map((step, index) =>
+      `<li>${translate(step)}<span class="step-note">${translate(task.notes[index])}</span></li>`).join('')}</ol>`;
+  }
+
   function codeHelp(task) {
     return `<details class="code-help">
       <summary>${label('help')}</summary>
       <p>${translate(task.facts)}</p>
       <div class="codebox"><pre dir="ltr"><code>${escape(task.code)}</code></pre></div>
-      <button class="btn" type="button" data-copy>${label('copy')}</button>
+      <button class="btn" type="button" data-copy="code">${label('copy')}</button>
     </details>`;
+  }
+
+  function starter(task) {
+    if (!task.starter) return '';
+    return `<details class="code-help"><summary>${label('starter')}</summary>
+      <div class="codebox"><pre dir="ltr"><code>${escape(task.starter)}</code></pre></div>
+      <button class="btn" type="button" data-copy="starter">${label('copy')}</button></details>`;
+  }
+
+  function handout(task, title, name) {
+    const link = task.project && links[task.project];
+    const website = lesson.url;
+    return `<section class="print-sheet">
+      <p class="sheet-meta">Year ${lesson.year} · Week ${lesson.lesson} · ${translate(lesson.platform)} · ${label(name)}</p>
+      <h1>${translate(title)}</h1>
+      <p><strong>${label('learn')}</strong> ${translate(task.learn)}</p>
+      <p>${translate(task.start)}</p>
+      ${picture(task)}
+      ${steps(task)}
+      <div class="print-help"><strong>${label('help')}</strong> ${translate(task.facts)}<pre dir="ltr"><code>${escape(task.code)}</code></pre></div>
+      <p class="check"><strong>${label('show')}</strong> ${translate(task.done)}</p>
+      <p class="sheet-links"><a href="${escape(website)}">${label(task.starter ? 'starterOnline' : 'online')}</a>${link ? ` · <a href="${escape(link)}">${translate(task.open)}</a>` : ''}<br>${escape(website)}</p>
+    </section>`;
   }
 
   function render(focus = false) {
@@ -36,15 +70,17 @@
     const project = task.project ? links[task.project] : null;
     document.documentElement.lang = language;
     document.documentElement.dir = language === 'he' ? 'rtl' : 'ltr';
-    document.title = `${text(heading)} · Year ${lesson.year} · Lesson ${lesson.lesson}`;
+    document.title = `Year ${lesson.year} · Week ${lesson.lesson} · ${text(lesson.title)}`;
     app.innerHTML = `
       <header class="top focus-header">
         <a class="brand" href="../">NTSOMNII · TECH FOR CHANGE</a>
+        <div class="tools"><button class="btn" type="button" data-print>${label('print')}</button>
         <label class="langlabel">Language<select id="language">${languages.map(([code, name]) =>
           `<option value="${code}"${code === language ? ' selected' : ''}>${name}</option>`).join('')}</select></label>
+        </div>
       </header>
       <main class="focus-lesson" id="main" tabindex="-1">
-        <p class="lesson-number">Year ${lesson.year} · Lesson ${lesson.lesson}</p>
+        <p class="lesson-number">Year ${lesson.year} · Week ${lesson.lesson} · ${translate(lesson.platform)}</p>
         <nav class="task-nav" aria-label="Lesson tasks">
           <a class="btn ${challenge ? '' : 'primary'}" href="#main-task" ${challenge ? '' : 'aria-current="page"'}>${label('main')}</a>
           <a class="btn ${challenge ? 'primary' : ''}" href="#challenge" ${challenge ? 'aria-current="page"' : ''}>${label('challenge')}</a>
@@ -54,19 +90,26 @@
         <article class="paper task-card">
           <p>${translate(task.start)}</p>
           ${project ? `<a class="btn primary launch" href="${escape(project)}" target="_blank" rel="noopener">${translate(task.open)} ↗</a>` : ''}
-          <ol class="steps">${task.steps.map(step => `<li>${translate(step)}</li>`).join('')}</ol>
+          ${picture(task)}
+          ${steps(task)}
+          ${starter(task)}
           ${codeHelp(task)}
           <p class="check"><strong>${label('show')}</strong> ${translate(task.done)}</p>
         </article>
         <a class="btn" href="${challenge ? '#main-task' : '#challenge'}">${label(challenge ? 'back' : 'extraLink')}</a>
         <p id="toast" role="status"></p>
-      </main>`;
+      </main>
+      <div class="print-handout">${handout(lesson.main, lesson.title, 'main')}${handout(lesson.extra, lesson.extra.title, 'challenge')}</div>`;
     if (focus) document.getElementById('main').focus();
 
-    app.querySelector('[data-copy]').addEventListener('click', async () => {
+    app.querySelector('[data-print]').addEventListener('click', async () => {
+      await Promise.allSettled([...app.querySelectorAll('.print-handout img')].map(img => img.decode()));
+      window.print();
+    });
+    for (const button of app.querySelectorAll('[data-copy]')) button.addEventListener('click', async () => {
       const message = document.getElementById('toast');
       try {
-        await navigator.clipboard.writeText(task.code);
+        await navigator.clipboard.writeText(task[button.dataset.copy]);
         message.textContent = text(ui.copied);
       } catch {
         message.textContent = text(ui.copyFail);

@@ -68,6 +68,58 @@
   margin: 0;
 }
 
+.step-note {
+  display: block;
+  margin-top: 4px;
+  color: #4d6259;
+  font-size: .89em;
+}
+
+.task-figure {
+  margin: 16px 0 20px;
+}
+
+.task-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 410px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #eef4ef;
+}
+
+.task-figure figcaption {
+  margin-top: 7px;
+  font-size: .84em;
+  color: #435951;
+}
+
+.print-handout { display: none; }
+
+@page { size: A4; margin: 14mm 15mm; }
+
+@media print {
+  :root { background: white; color: #192e27; font-size: 10.5pt; line-height: 1.35; }
+  .focus-header, .focus-lesson { display: none !important; }
+  .print-handout { display: block; }
+  .print-sheet + .print-sheet { break-before: page; }
+  .print-sheet h1 { font-size: 23pt; margin: 2mm 0 3mm; }
+  .print-sheet p { margin: 2mm 0; }
+  .print-sheet .sheet-meta { font-size: 9pt; font-weight: 700; color: #3b6252; }
+  .print-sheet .task-figure { margin: 3mm 0; break-inside: avoid; }
+  .print-sheet .task-figure img { max-height: 61mm; }
+  .print-sheet .task-figure img[src$=".png"] { max-height: 93mm; }
+  .print-sheet .steps { margin: 3mm 0; padding-inline-start: 7mm; }
+  .print-sheet .steps li { margin: 1.8mm 0; break-inside: avoid; }
+  .print-sheet .steps li::before { width: 5mm; height: 5mm; font-size: 9pt; inset-inline-start: -6.5mm; }
+  .print-help { margin-top: 3mm; break-inside: avoid; }
+  .print-help pre { margin-top: 2mm; padding: 2mm 3mm; border: 1px solid #bdc8be; font-size: 8pt; line-height: 1.22; white-space: pre-wrap; }
+  .print-sheet .check { padding: 2mm 3mm; break-inside: avoid; }
+  .sheet-links { font-size: 8.5pt; overflow-wrap: anywhere; }
+  .print-sheet img, .print-sheet .steps li::before { print-color-adjust: exact; }
+}
+
 @media (max-width: 540px) {
   .focus-lesson { padding-inline: 16px; }
   .task-card { padding: 16px; }
