@@ -1,10 +1,10 @@
 {
   "year": 8,
-  "updated": "8 November 2026",
+  "updated": "12 November 2026",
   "meta": {
     "title": "Year 8 Python and connected systems",
     "route": "Python first, then Raspberry Pi Pico MicroPython in Wokwi; full Raspberry Pi computer concepts and hardware where available.",
-    "next": "Week 7 is prepared: a pedestrian crossing in MicroPython on a Raspberry Pi Pico. The separate Community Project starts with the engineering method and defining the Smart Beehive problem. Week 8 plans a guessing game plus project research; Week 9 continues coding plus project brainstorming. Each week has two 40-minute periods. Classroom completion has not yet been recorded.",
+    "next": "Lesson 7 finishes the traffic lights, with a pedestrian crossing for early finishers. Lesson 8 is Type the light pattern. Smart Beehive continues in the separate Community Project hub.",
     "intro": "Students keep building confidence in Python, then use the same ideas to control a simulated device. They develop functions, data handling, 3D design and system testing before the major physical project."
   },
   "weeks": [
@@ -57,30 +57,31 @@
       "week": 6,
       "title": "One LED, then traffic lights",
       "learn": "Setup, a single LED output, on/off states and timing in MicroPython on a Raspberry Pi Pico. Traffic-light sequencing is the continuing extension.",
-      "make": "Retain the one-LED core already reported from class. Continue the three-light task at the student’s current stage; some students have finished it. Do not treat the prepared lesson as proof that everybody completed the extension.",
-      "evidence": "Actual saved one-LED program and explanation. Keep traffic-light tests only for students who have demonstrated them.",
+      "make": "The class started the three-light sequence. Students continue from their own working code in Lesson 7.",
+      "evidence": "A working light or completed traffic sequence shown in class.",
       "codes": "ICT2 ICT5",
-      "status": "classroom report: one-LED core completed; traffic lights continuing, some finished",
+      "status": "classroom report: traffic lights started; most students still finishing",
       "link": "../week-6-light-memory-game/"
     },
     {
       "week": 7,
-      "title": "Pedestrian crossing with MicroPython",
-      "learn": "Coding: button input, decisions and a clear crossing sequence in MicroPython on a Raspberry Pi Pico. Community Project: understand the engineering method and define a problem worth solving.",
-      "make": "Period 1 (40 minutes): extend a working traffic-light model with one pedestrian request and test the light states. Period 2 (40 minutes): open the separate Smart Beehive hub, introduce the engineering method and write a clear problem statement for the community project.",
-      "evidence": "A button/output test and personal code explanation; a short problem statement naming the user, need and reason it matters.",
+      "title": "Finish your traffic lights",
+      "learn": "Coding: control the order and timing of three outputs in MicroPython. Extra: coordinate pedestrian lights with car red. Community Project: understand the engineering method and define a problem worth solving.",
+      "make": "Period 1 (40 minutes): finish the traffic-light project. Early finishers extend the ready-wired pedestrian crossing in Wokwi. Period 2 (40 minutes): use the separate Smart Beehive hub to define the community problem.",
+      "evidence": "A live run showing green, amber and red in order. For the extra, demonstrate a crossing request. Community evidence: a problem statement naming a user and need.",
       "codes": "ICT2 ICT3 ICT5 DT1",
       "status": "prepared lesson; classroom outcome not yet checked",
       "link": "../week-7-pedestrian-crossing/"
     },
     {
       "week": 8,
-      "title": "Build a guessing game",
-      "learn": "Coding: input, comparisons and clear correct/incorrect feedback in MicroPython on a Raspberry Pi Pico. Community Project: ask a useful research question and judge a source.",
-      "make": "Planned Period 1 (40 minutes): build a small guessing game with a bounded input route and test right, wrong and invalid guesses. Planned Period 2 (40 minutes): use the Research stage in the separate Smart Beehive hub to investigate the defined problem and record useful findings with their sources.",
-      "evidence": "Planned evidence: a working game, expected-versus-actual tests and an explained change; a research question, cited findings and what they suggest for the project.",
+      "title": "Type the light pattern",
+      "learn": "Coding: read typed text with input() and use equality to check a stored light sequence. Community Project: ask a useful research question and judge a source.",
+      "make": "Period 1 (40 minutes): build a three-flash memory game with typed answers in Wokwi. Period 2 (40 minutes): use the Research stage in the separate Smart Beehive hub.",
+      "evidence": "Show the correct order passing and a reordered answer failing. Community evidence: a research question and useful cited findings.",
       "codes": "ICT2 ICT3 ICT8 DT1",
-      "status": "planned; not yet taught"
+      "status": "prepared lesson; classroom outcome not yet checked",
+      "link": "../week-8-memory-game/"
     },
     {
       "week": 9,

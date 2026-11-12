@@ -1,0 +1,75 @@
+.focus-header {
+  max-width: 960px;
+  padding-block: 18px;
+}
+
+.focus-lesson {
+  max-width: 800px;
+  padding: 0 24px 50px;
+  margin: auto;
+}
+
+.lesson-number {
+  margin: 0 0 12px;
+  color: #496055;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.task-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.focus-lesson h1 {
+  margin: 0 0 14px;
+}
+
+.lesson-learn {
+  margin: 0 0 18px;
+  max-width: 62ch;
+}
+
+.lesson-learn strong,
+.task-card .check strong {
+  display: block;
+}
+
+.task-card {
+  padding: 20px 26px;
+  margin: 0 0 18px;
+}
+
+.task-card > p:first-child {
+  margin-top: 0;
+}
+
+.task-card .steps li {
+  margin-block: 15px;
+  line-height: 1.5;
+}
+
+.task-card .check {
+  margin: 0;
+  padding: 12px 16px;
+}
+
+.task-card .codebox {
+  margin: 10px 0;
+}
+
+.task-card details.code-help {
+  padding-block: 10px 14px;
+}
+
+.code-help p {
+  margin: 0;
+}
+
+@media (max-width: 540px) {
+  .focus-lesson { padding-inline: 16px; }
+  .task-card { padding: 16px; }
+  .focus-header { align-items: center; }
+}

@@ -1,10 +1,10 @@
 {
   "year": 7,
-  "updated": "8 November 2026",
+  "updated": "12 November 2026",
   "meta": {
     "title": "Year 7 Arduino and invention",
     "route": "Arduino C++ in Wokwi and Tinkercad Circuits, with 3D design in Tinkercad.",
-    "next": "Week 7 is prepared: a pedestrian crossing in Arduino C++ on an Uno. The separate Community Project starts with the engineering method and defining the Smart Beehive problem. Week 8 plans a guessing game plus project research; Week 9 continues coding plus project brainstorming. Each week has two 40-minute periods. Classroom completion has not yet been recorded.",
+    "next": "Lesson 7 finishes the traffic lights, with a pedestrian crossing for early finishers. Lesson 8 is Quiz-show buzzer. Smart Beehive continues in the separate Community Project hub.",
     "intro": "Students move from their earlier Scratch work into text-based code that controls a circuit. They learn how inputs, decisions and outputs produce a useful response, then design a case and explain the evidence behind their choices."
   },
   "weeks": [
@@ -57,30 +57,31 @@
       "week": 6,
       "title": "One LED, then traffic lights",
       "learn": "Setup, a single LED output, on/off states and timing in Arduino C++ on an Uno. Traffic-light sequencing is the continuing extension.",
-      "make": "Retain the one-LED core already reported from class. Continue the three-light task at the student’s current stage; some students have finished it. Do not treat the prepared lesson as proof that everybody completed the extension.",
-      "evidence": "Actual saved one-LED program and explanation. Keep traffic-light tests only for students who have demonstrated them.",
+      "make": "The class started the three-light sequence. Students continue from their own working code in Lesson 7.",
+      "evidence": "A working light or completed traffic sequence shown in class.",
       "codes": "ICT2 ICT5 ICT6",
-      "status": "classroom report: one-LED core completed; traffic lights continuing, some finished",
+      "status": "classroom report: traffic lights started; most students still finishing",
       "link": "../week-6-arcade-countdown/"
     },
     {
       "week": 7,
-      "title": "Pedestrian crossing with Arduino C++",
-      "learn": "Coding: button input, decisions and a clear crossing sequence in Arduino C++ on an Uno. Community Project: understand the engineering method and define a problem worth solving.",
-      "make": "Period 1 (40 minutes): extend a working traffic-light model with one pedestrian request and test the light states. Period 2 (40 minutes): open the separate Smart Beehive hub, introduce the engineering method and write a clear problem statement for the community project.",
-      "evidence": "A button/output test and personal code explanation; a short problem statement naming the user, need and reason it matters.",
+      "title": "Finish your traffic lights",
+      "learn": "Coding: control the order and timing of three outputs in Arduino C++. Extra: coordinate pedestrian lights with car red. Community Project: understand the engineering method and define a problem worth solving.",
+      "make": "Period 1 (40 minutes): finish the traffic-light project. Early finishers extend the ready-wired pedestrian crossing in Wokwi. Period 2 (40 minutes): use the separate Smart Beehive hub to define the community problem.",
+      "evidence": "A live run showing green, amber and red in order. For the extra, demonstrate a crossing request. Community evidence: a problem statement naming a user and need.",
       "codes": "ICT2 ICT5 ICT6 DT1",
       "status": "prepared lesson; classroom outcome not yet checked",
       "link": "../week-7-pedestrian-crossing/"
     },
     {
       "week": 8,
-      "title": "Build a guessing game",
-      "learn": "Coding: input, comparisons and clear correct/incorrect feedback in Arduino C++ on an Uno. Community Project: ask a useful research question and judge a source.",
-      "make": "Planned Period 1 (40 minutes): build a small guessing game with a bounded input route and test right, wrong and invalid guesses. Planned Period 2 (40 minutes): use the Research stage in the separate Smart Beehive hub to investigate the defined problem and record useful findings with their sources.",
-      "evidence": "Planned evidence: a working game, expected-versus-actual tests and an explained change; a research question, cited findings and what they suggest for the project.",
+      "title": "Quiz-show buzzer",
+      "learn": "Coding: read a push button and use conditions to control LEDs and a buzzer. Community Project: ask a useful research question and judge a source.",
+      "make": "Period 1 (40 minutes): add a second team to a quiz buzzer in Wokwi. Period 2 (40 minutes): use the Research stage in the separate Smart Beehive hub.",
+      "evidence": "Show both buttons working and the output stopping on release. Community evidence: a research question and useful cited findings.",
       "codes": "ICT2 ICT6 DT1",
-      "status": "planned; not yet taught"
+      "status": "prepared lesson; classroom outcome not yet checked",
+      "link": "../week-8-quiz-buzzer/"
     },
     {
       "week": 9,
