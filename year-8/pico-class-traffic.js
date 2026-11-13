@@ -2,154 +2,92 @@
   'use strict';
 
   const {lesson, links} = window.FOCUSED_LESSON;
-  const lights = [
-    {name: 'red', pin: 15, left: 0},
-    {name: 'yellow', pin: 13, left: 100},
-    {name: 'green', pin: 14, left: 200}
-  ];
-  const diagram = {
-    version: 1,
-    author: 'NTSOMNII · Tech for Change',
-    editor: 'wokwi',
-    parts: [
-      {type: 'wokwi-pi-pico', id: 'pico', top: 170, left: 100, attrs: {}},
-      ...lights.flatMap(({name, left}) => [
-        {type: 'wokwi-led', id: name, top: 15, left, attrs: {color: name}},
-        {type: 'wokwi-resistor', id: `r-${name}`, top: 85, left: left - 7, rotate: 90, attrs: {value: '330'}}
-      ])
-    ],
-    connections: lights.flatMap(({name, pin}) => [
-      [`pico:GP${pin}`, `r-${name}:2`, name, []],
-      [`r-${name}:1`, `${name}:A`, name, []],
-      [`${name}:C`, 'pico:GND.4', 'black', []]
-    ]),
-    dependencies: {}
-  };
+  const circuit = window.PICO_CLASS_CIRCUIT;
+  links[circuit.project] = window.PICO_CLASS_WOKWI;
 
-  const circuit = {
-    open: true,
-    label: ['Set up a new Wokwi circuit', 'Настрой новый проект Wokwi', '设置新的 Wokwi 电路', 'הגדירו מעגל Wokwi חדש'],
-    instructions: ['Already have the class circuit? Keep it. For a new project, copy the wiring below. In Wokwi, replace everything in diagram.json with it, then return to main.py.', 'Если у тебя уже есть схема с урока, открой её. Для нового проекта скопируй схему ниже. В Wokwi замени содержимое diagram.json и вернись в main.py.', '已有课堂电路？继续使用它。若新建项目，请复制下面的接线。在 Wokwi 中替换 diagram.json 的全部内容，再返回 main.py。', 'אם כבר יש לכם מעגל מהשיעור, המשיכו איתו. בפרויקט חדש העתיקו את החיווט למטה. ב־Wokwi החליפו את כל התוכן של diagram.json וחזרו ל־main.py.'],
-    copy: ['Copy wiring', 'Скопировать схему', '复制接线', 'העתיקו חיווט'],
-    copied: ['Wiring copied', 'Схема скопирована', '已复制接线', 'החיווט הועתק'],
-    copyFail: ['Open Show wiring, then select and copy the text.', 'Открой «Показать схему», выдели и скопируй текст.', '打开“显示接线”，再选中并复制文本。', 'פתחו ״הציגו חיווט״, סמנו והעתיקו את הטקסט.'],
-    show: ['Show wiring', 'Показать схему', '显示接线', 'הציגו חיווט'],
-    json: JSON.stringify(diagram, null, 2)
-  };
-
-  const figure = {
-    file: 'pico-class-traffic.svg',
-    caption: ['Red GP15, yellow GP13, green GP14. Each LED has its own 330 Ω resistor and connects back to GND.', 'Красный — GP15, жёлтый — GP13, зелёный — GP14. У каждого светодиода свой резистор 330 Ом и соединение с GND.', '红灯 GP15，黄灯 GP13，绿灯 GP14。每盏灯使用一个 330 Ω 电阻并接回 GND。', 'אדום GP15, צהוב GP13, ירוק GP14. לכל נורית נגד 330 Ω משלה וחיבור ל־GND.']
-  };
-
-  const common = {
-    project: 'traffic8',
-    open: ['Open a new Pico in Wokwi', 'Открыть новый Pico в Wokwi', '在 Wokwi 中新建 Pico', 'פתחו Pico חדש ב־Wokwi'],
-    figure,
-    circuit
-  };
-
-  const redBlink = `from machine import Pin
-rled = Pin(15, Pin.OUT)
+  const setup = `from machine import Pin
 import time
 
-for loop1 in range(11):
-    rled.value(1)
-    time.sleep(1)
-    rled.value(0)
-    time.sleep(1)`;
+rled = Pin(15, Pin.OUT)
+yled = Pin(13, Pin.OUT)
+gled = Pin(14, Pin.OUT)`;
 
-  const blinkTask = {
-    ...common,
-    start: ['Open your class Pico project. Start with the red LED on GP15.', 'Открой проект Pico с урока. Начни с красного светодиода на GP15.', '打开课堂 Pico 项目。从 GP15 上的红灯开始。', 'פתחו את פרויקט ה־Pico מהשיעור. התחילו בנורית האדומה ב־GP15.'],
-    learn: ['Make one LED flash 11 times.', 'Заставь один светодиод мигнуть 11 раз.', '让一盏 LED 闪烁 11 次。', 'גרמו לנורית אחת להבהב 11 פעמים.'],
+  const blink = {
+    ...circuit,
+    start: ['Start with the red LED on GP15.', 'Начни с красного светодиода на GP15.', '从 GP15 上的红灯开始。', 'התחילו בנורית האדומה ב־GP15.'],
+    learn: ['Turn an LED on, wait, then turn it off.', 'Включи светодиод, подожди и выключи его.', '点亮 LED，等待，再熄灭。', 'הדליקו נורית, המתינו וכבו אותה.'],
     steps: [
       ['Set up rled as an output on GP15.', 'Настрой rled как выход на GP15.', '将 GP15 上的 rled 设为输出。', 'הגדירו את rled כפלט ב־GP15.'],
-      ['Put on, wait, off, wait inside range(11).', 'Помести включение, паузу, выключение и паузу внутрь range(11).', '在 range(11) 的缩进部分写上开灯、等待、关灯、等待。', 'הכניסו ללולאת range(11) הדלקה, המתנה, כיבוי והמתנה.'],
-      ['Run main.py. Count the red flashes.', 'Запусти main.py и посчитай красные вспышки.', '运行 main.py，数一数红灯闪了几次。', 'הריצו main.py וספרו את ההבהובים האדומים.']
+      ['Turn it on, wait one second, then turn it off.', 'Включи, подожди секунду и выключи.', '开灯，等一秒，再关灯。', 'הדליקו, המתינו שנייה וכבו.'],
+      ['Run main.py. Watch the red light.', 'Запусти main.py и посмотри на красный свет.', '运行 main.py，观察红灯。', 'הריצו main.py וצפו באור האדום.']
     ],
     notes: [
-      ['Use from machine import Pin and import time.', 'Используй from machine import Pin и import time.', '使用 from machine import Pin 和 import time。', 'השתמשו ב־from machine import Pin וב־import time.'],
-      ['Indent all four lines. Each wait is one second.', 'Сделай отступ у всех четырёх строк. Каждая пауза длится секунду.', '四行都要缩进。每次等待一秒。', 'הזיחו את כל ארבע השורות. כל המתנה נמשכת שנייה אחת.'],
-      ['The red LED ends off.', 'В конце красный светодиод погаснет.', '最后红灯熄灭。', 'בסוף הנורית האדומה כבויה.']
+      ['Start with from machine import Pin and import time.', 'Начни с from machine import Pin и import time.', '先写 from machine import Pin 和 import time。', 'התחילו ב־from machine import Pin וב־import time.'],
+      ['Use .value(1), time.sleep(1) and .value(0).', 'Используй .value(1), time.sleep(1) и .value(0).', '使用 .value(1)、time.sleep(1) 和 .value(0)。', 'השתמשו ב־.value(1), ב־time.sleep(1) וב־.value(0).'],
+      ['If it stays dark, check the wire to GP15.', 'Если не горит, проверь провод к GP15.', '如果灯没亮，检查 GP15 的接线。', 'אם הנורית נשארת כבויה, בדקו את החיבור ל־GP15.']
     ],
-    done: ['Red flashes 11 times and ends off.', 'Красный светодиод мигает 11 раз и гаснет.', '红灯闪烁 11 次，最后熄灭。', 'האדום מהבהב 11 פעמים ונשאר כבוי.'],
-    facts: ['This is the red blink from class. The next task adds the other colours.', 'Так красный светодиод мигал на уроке. В следующем задании добавятся другие цвета.', '这是课堂上的红灯闪烁代码。下一项任务将加入另外两种颜色。', 'כך הנורית האדומה הבהבה בשיעור. במשימה הבאה מוסיפים את הצבעים האחרים.'],
-    code: redBlink
+    done: ['Red comes on for one second and goes off.', 'Красный горит секунду и гаснет.', '红灯亮一秒后熄灭。', 'האור האדום דולק שנייה ונכבה.'],
+    facts: ['These lines set up the red LED. Add the three commands for the blink below them.', 'Эти строки настраивают красный светодиод. Добавь под ними три команды для мигания.', '这几行设置红灯。在下面添加让它闪一下的三条命令。', 'השורות האלה מגדירות את הנורית האדומה. הוסיפו מתחתיהן את שלוש פקודות ההבהוב.'],
+    code: `from machine import Pin
+import time
+
+rled = Pin(15, Pin.OUT)`
   };
 
-  const trafficTask = {
-    ...common,
-    start: ['Open the red blink project from class. Keep the 11 flashes at the top of main.py.', 'Открой проект с красным миганием. Оставь 11 вспышек в начале main.py.', '打开课堂的红灯闪烁项目。保留 main.py 开头的 11 次闪烁。', 'פתחו את פרויקט ההבהוב האדום מהשיעור. השאירו את 11 ההבהובים בראש main.py.'],
-    learn: ['Add three steady lights after the red flashes.', 'Добавь три непрерывных сигнала после красных вспышек.', '在红灯闪烁结束后，让三盏灯依次常亮。', 'הוסיפו שלושה אורות רציפים אחרי ההבהובים האדומים.'],
+  const traffic = {
+    ...circuit,
+    start: ['Build this cycle in main.py.', 'Собери этот цикл в main.py.', '在 main.py 中编写这个循环。', 'בנו את המחזור הזה ב־main.py.'],
+    signalSequence: [
+      {lights: ['red'], label: ['Red', 'Красный', '红', 'אדום']},
+      {lights: ['red', 'yellow'], label: ['Red + yellow', 'Красный и жёлтый', '红和黄', 'אדום וצהוב']},
+      {lights: ['green'], label: ['Green', 'Зелёный', '绿', 'ירוק']},
+      {lights: ['yellow'], label: ['Yellow', 'Жёлтый', '黄', 'צהוב']},
+      {lights: ['red'], label: ['Back to red', 'Снова красный', '回到红灯', 'חזרה לאדום']}
+    ],
+    learn: ['Choose which LEDs stay on at each stage of the traffic-light cycle.', 'Выбери, какие лампы горят на каждом этапе цикла светофора.', '决定交通灯每个阶段亮哪些 LED。', 'בחרו אילו נוריות נשארות דולקות בכל שלב של מחזור הרמזור.'],
+    starter: setup,
     steps: [
-      ['Set up yled on GP13 and gled on GP14 above the loop.', 'Перед циклом настрой yled на GP13 и gled на GP14.', '在循环前设置 GP13 的 yled 和 GP14 的 gled。', 'הגדירו לפני הלולאה את yled ב־GP13 ואת gled ב־GP14.'],
-      ['After the loop, turn on red for 5 seconds, yellow for 3, then green for 10.', 'После цикла включи красный на 5 секунд, жёлтый на 3, затем зелёный на 10.', '循环结束后，红灯亮 5 秒，黄灯亮 3 秒，再让绿灯亮 10 秒。', 'אחרי הלולאה הדליקו אדום ל־5 שניות, צהוב ל־3, ואז ירוק ל־10.'],
-      ['Run the program. Check that each light goes off before the next one turns on.', 'Запусти программу. Убедись, что каждая лампа гаснет перед включением следующей.', '运行程序。检查每盏灯都在下一盏亮起前熄灭。', 'הריצו את התוכנית. בדקו שכל אור כבה לפני שהבא נדלק.']
+      ['Turn on red for 5 seconds. Keep red on and add yellow for 1 second.', 'Включи красный на 5 секунд. Оставь его включённым и добавь жёлтый на 1 секунду.', '先让红灯亮 5 秒。保持红灯亮，再打开黄灯 1 秒。', 'הדליקו אדום ל־5 שניות. השאירו אותו דולק והוסיפו צהוב לשנייה.'],
+      ['Turn red and yellow off. Turn on green for 10 seconds.', 'Выключи красный и жёлтый. Включи зелёный на 10 секунд.', '关掉红灯和黄灯。打开绿灯 10 秒。', 'כבו את האדום והצהוב. הדליקו ירוק ל־10 שניות.'],
+      ['Turn green off. Turn on yellow for 3 seconds. Then turn yellow off and red on.', 'Выключи зелёный. Включи жёлтый на 3 секунды. Затем выключи жёлтый и включи красный.', '关掉绿灯。打开黄灯 3 秒。接着关掉黄灯，打开红灯。', 'כבו את הירוק. הדליקו צהוב ל־3 שניות. אחר כך כבו צהוב והדליקו אדום.']
     ],
     notes: [
-      ['Set both pins to Pin.OUT.', 'Для обоих выводов используй Pin.OUT.', '两个引脚都设为 Pin.OUT。', 'הגדירו את שני הפינים כ־Pin.OUT.'],
-      ['Start these lines at the left margin so they run once.', 'Начни эти строки без отступа, чтобы они выполнились один раз.', '这些行从最左边开始，这样它们只运行一次。', 'התחילו את השורות בשוליים כדי שהן ירוצו פעם אחת.'],
-      ['Use the same on, wait, off pattern for each colour.', 'Для каждого цвета повтори «включи, подожди, выключи».', '每种颜色都使用相同的开灯、等待、关灯顺序。', 'לכל צבע השתמשו באותו סדר: הדלקה, המתנה, כיבוי.']
+      ['Use the Starter code to set up the three pins. Code help shows the first two stages.', 'Начальный код настраивает три вывода. Подсказка показывает первые два этапа.', '使用起始代码设置三个引脚。代码提示展示前两个阶段。', 'קוד ההתחלה מגדיר את שלושת הפינים. העזרה בקוד מציגה את שני השלבים הראשונים.'],
+      ['Green is the only LED on during this stage.', 'На этом этапе горит только зелёный.', '这个阶段只亮绿灯。', 'בשלב הזה רק הירוק דולק.'],
+      ['Run once and watch all the way back to red.', 'Запусти и проследи весь цикл до красного.', '运行一次，观察灯光直到回到红灯。', 'הריצו פעם אחת וצפו עד שהאור חוזר לאדום.']
     ],
-    done: ['Red flashes 11 times. Then red stays on for 5 seconds, yellow for 3 and green for 10. At the end all lights are off.', 'Красный мигает 11 раз. Затем красный горит 5 секунд, жёлтый 3, зелёный 10. В конце все лампы погаснут.', '红灯闪 11 次。然后红灯亮 5 秒、黄灯亮 3 秒、绿灯亮 10 秒。最后全部熄灭。', 'האדום מהבהב 11 פעמים. אחר כך האדום דולק 5 שניות, הצהוב 3 והירוק 10. בסוף כל האורות כבויים.'],
-    facts: ['Use the same three lines for each colour. This example is the steady red section after the loop.', 'Для каждого цвета используй те же три команды. Здесь показан постоянный красный сигнал после цикла.', '每种颜色都用同样的三行。这里演示循环结束后的红灯常亮。', 'השתמשו באותן שלוש שורות לכל צבע. הדוגמה מראה את האור האדום הרציף אחרי הלולאה.'],
+    done: ['Red → red + yellow → green → yellow → red.', 'Красный → красный и жёлтый → зелёный → жёлтый → красный.', '红 → 红和黄 → 绿 → 黄 → 红。', 'אדום, אדום וצהוב יחד, ירוק, צהוב, ואז שוב אדום.'],
+    facts: ['After setting up the pins, begin like this. Use the steps to finish the cycle.', 'После настройки выводов начни с этих строк. Дальше следуй шагам задания.', '设置引脚后，从这几行开始。再按步骤完成整个循环。', 'אחרי הגדרת הפינים, התחילו כך. המשיכו לפי השלבים כדי להשלים את המחזור.'],
     code: `rled.value(1)
 time.sleep(5)
-rled.value(0)`
+yled.value(1)
+time.sleep(1)`
   };
 
   const notebook = [
-    {command: 'Imports', example: 'from machine import Pin\nimport time', meaning: ['Pin controls the Pico pins. time gives us sleep.', 'Pin управляет выводами Pico. Модуль time даёт команду sleep.', 'Pin 控制 Pico 引脚。time 提供 sleep。', 'Pin שולט בפינים של ה־Pico. המודול time נותן לנו את sleep.']},
+    {command: 'Imports', example: 'from machine import Pin\nimport time', meaning: ['Pin controls the Pico pins. time lets you use sleep.', 'Pin управляет выводами Pico. Модуль time даёт команду sleep.', 'Pin 控制 Pico 引脚。time 提供 sleep。', 'Pin שולט בפינים של ה־Pico. המודול time נותן לנו את sleep.']},
     {command: 'Pin()', example: 'rled = Pin(15, Pin.OUT)\nyled = Pin(13, Pin.OUT)\ngled = Pin(14, Pin.OUT)', meaning: ['Set up the red, yellow and green pins as outputs.', 'Настраивает красный, жёлтый и зелёный выводы как выходы.', '把红、黄、绿三盏灯的引脚设为输出。', 'מגדיר את הפינים של האדום, הצהוב והירוק כפלטים.']},
-    {command: '.value()', example: 'rled.value(1)\nrled.value(0)', meaning: ['For this circuit, 1 turns the LED on and 0 turns it off.', 'В этой схеме 1 включает светодиод, а 0 выключает.', '在这个电路中，1 开灯，0 关灯。', 'במעגל הזה 1 מדליק את הנורית ו־0 מכבה אותה.']},
-    {command: 'time.sleep()', example: 'time.sleep(1)', meaning: ['Waits in seconds. Here the pause is one second.', 'Ждёт в секундах. Здесь пауза длится одну секунду.', '按秒等待。这里等待一秒。', 'ממתינה בשניות. כאן ההמתנה נמשכת שנייה אחת.']},
-    {command: 'for … in range()', example: 'for loop1 in range(11):\n    rled.value(1)\n    time.sleep(1)\n    rled.value(0)\n    time.sleep(1)', meaning: ['The four indented lines run 11 times. loop1 counts from 0 to 10.', 'Четыре строки с отступом выполняются 11 раз. loop1 принимает значения от 0 до 10.', '缩进的四行运行 11 次。loop1 从 0 数到 10。', 'ארבע השורות המוזחות רצות 11 פעמים. loop1 סופר מ־0 עד 10.']}
+    {command: '.value()', example: 'rled.value(1)\nrled.value(0)', meaning: ['1 turns the LED on. 0 turns it off. It keeps that state until you change it.', '1 включает светодиод. 0 выключает. Состояние сохраняется до следующей команды.', '1 开灯。0 关灯。灯会保持这个状态，直到你改动它。', '1 מדליק את הנורית. 0 מכבה אותה. היא נשארת במצב הזה עד שמשנים אותו.']},
+    {command: 'time.sleep()', example: 'time.sleep(1)', meaning: ['Wait one second. During the wait, every LED stays as it is.', 'Подожди секунду. Во время паузы состояние ламп сохраняется.', '等待一秒。等待时，每盏灯保持当前状态。', 'המתינו שנייה. בזמן ההמתנה מצב האורות נשאר כפי שהוא.']}
   ];
 
-  links.traffic8 = 'https://wokwi.com/projects/new/micropython-pi-pico';
-  lesson.notebook.main = notebook;
-
   if (lesson.lesson === 6) {
-    lesson.main = blinkTask;
-    lesson.extra = {...trafficTask, title: lesson.extra.title};
+    lesson.main = blink;
+    lesson.extra = {...traffic, title: lesson.extra.title};
   } else {
     lesson.main = {
-      ...trafficTask,
-      facts: ['This is the class program. Trace what each light does before you run it.', 'Это программа с урока. Перед запуском проследи, что делает каждый светодиод.', '这是课堂程序。运行前，先按顺序看看每盏灯会怎么亮。', 'זו התוכנית מהשיעור. לפני ההרצה עקבו אחר הפעולות של כל נורית.'],
-      code: `from machine import Pin
-rled = Pin(15, Pin.OUT)
-import time
-yled = Pin(13, Pin.OUT)
-gled = Pin(14, Pin.OUT)
-
-for loop1 in range(11):
-    rled.value(1)
-    time.sleep(1)
-    rled.value(0)
-    time.sleep(1)
-
-rled.value(1)
-time.sleep(5)
-rled.value(0)
-yled.value(1)
-time.sleep(3)
-yled.value(0)
-gled.value(1)
-time.sleep(10)
-gled.value(0)`
+      ...traffic,
+      start: ['Open your Lesson 6 project and finish the cycle.', 'Открой проект урока 6 и закончи цикл.', '打开第 6 课项目并完成循环。', 'פתחו את הפרויקט משיעור 6 והשלימו את המחזור.'],
+      steps: [...traffic.steps, ['Once one cycle works, use range(3) to repeat the whole cycle three times.', 'Когда один цикл работает, повтори весь цикл трижды с range(3).', '一个循环成功后，用 range(3) 把整个循环重复三次。', 'כשמחזור אחד עובד, השתמשו ב־range(3) כדי לחזור על כל המחזור שלוש פעמים.']],
+      notes: [...traffic.notes, ['Keep pin setup above the loop. Indent the light changes and their waits inside it.', 'Оставь настройку выводов перед циклом. Добавь отступ у переключений ламп и пауз внутри цикла.', '引脚设置放在循环上方。循环内的开关灯和等待都要缩进。', 'השאירו את הגדרות הפינים מעל הלולאה. הזיחו את פקודות האורות וההמתנות בתוכה.']],
+      done: ['The full cycle runs three times and ends on red.', 'Весь цикл проходит три раза и заканчивается красным.', '完整循环运行三次，最后停在红灯。', 'המחזור המלא רץ שלוש פעמים ומסתיים באדום.']
     };
-
-    lesson.extra.start = [
-      'Open the separate crossing project. Press the button while cars are moving. The starter remembers the press and waits for car red.',
-      'Открой отдельный проект перехода. Нажми кнопку, пока машины едут. Заготовка запомнит нажатие и дождётся красного для машин.',
-      '打开独立的行人过街项目。在车辆通行时按按钮。起始程序会记住按键并等到车灯变红。',
-      'פתחו את פרויקט מעבר החצייה. לחצו על הכפתור בזמן שהמכוניות נוסעות. הפרויקט זוכר את הלחיצה וממתין לאדום למכוניות.'
-    ];
-    lesson.extra.notebook = [
-      {command: '.on() / .off()', example: 'ped_red.off()\nped_green.on()', meaning: ['This crossing starter uses these commands to switch the pedestrian lights.', 'В проекте перехода эти команды переключают свет для пешеходов.', '在过街项目中，这两个命令用来开关行人灯。', 'בפרויקט מעבר החצייה הפקודות האלה מדליקות ומכבות את אורות הולכי הרגל.']},
-      ...lesson.notebook.extra
-    ];
-    lesson.notebook.extra = [];
+    notebook.push({
+      command: 'for … in range()',
+      example: 'for cycle in range(3):\n    rled.value(1)\n    time.sleep(5)\n    # Add the rest of the cycle here.',
+      meaning: ['The indented lines run three times. Put all four stages inside the loop.', 'Строки с отступом выполняются три раза. Помести все четыре этапа в цикл.', '缩进的代码运行三次。把四个阶段都放进循环。', 'השורות המוזחות רצות שלוש פעמים. הכניסו ללולאה את כל ארבעת השלבים.']
+    });
   }
+
+  lesson.notebook.main = notebook;
 })();

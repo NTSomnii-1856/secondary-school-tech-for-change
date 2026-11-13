@@ -43,6 +43,13 @@
     return `<figure class="task-figure"><a href="${url}" target="_blank" rel="noopener"><img src="${url}" alt="${translate(caption)}"></a><figcaption>${translate(caption)}</figcaption></figure>`;
   }
 
+  function signalSequence(task) {
+    if (!task.signalSequence) return '';
+    return `<ol class="signal-sequence">${task.signalSequence.map(({lights, label}) => `
+      <li><span class="signal-lights" aria-hidden="true">${['red', 'yellow', 'green'].map(light =>
+        `<span class="signal-light${lights.includes(light) ? ` ${light}` : ''}"></span>`).join('')}</span><span>${translate(label)}</span></li>`).join('')}</ol>`;
+  }
+
   function steps(task) {
     return `<ol class="steps">${task.steps.map((step, index) =>
       `<li>${translate(step)}<span class="step-note">${translate(task.notes[index])}</span></li>`).join('')}</ol>`;
@@ -85,6 +92,7 @@
       <h1>${translate(title)}</h1>
       <p><strong>${label('learn')}</strong> ${translate(task.learn)}</p>
       <p>${translate(task.start)}</p>
+      ${signalSequence(task)}
       ${picture(task)}
       ${steps(task)}
       <div class="print-help"><strong>${label('help')}</strong> ${translate(task.facts)}<pre dir="ltr"><code>${escape(task.code)}</code></pre></div>
@@ -121,6 +129,7 @@
         <p class="lesson-learn"><strong>${label('learn')}</strong> ${translate(task.learn)}</p>
         <article class="paper task-card">
           <p>${translate(task.start)}</p>
+          ${signalSequence(task)}
           ${project ? `<a class="btn primary launch" href="${escape(project)}" target="_blank" rel="noopener">${translate(task.open)} ↗</a>` : ''}
           ${circuitSetup(task)}
           ${picture(task)}

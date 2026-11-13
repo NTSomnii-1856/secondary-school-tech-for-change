@@ -184,7 +184,7 @@
   .print-help pre { margin-top: 2mm; padding: 2mm 3mm; border: 1px solid #bdc8be; font-size: 8pt; line-height: 1.22; white-space: pre-wrap; }
   .print-sheet .check { padding: 2mm 3mm; break-inside: avoid; }
   .sheet-links { font-size: 8.5pt; overflow-wrap: anywhere; }
-  .print-sheet img, .print-sheet .steps li::before { print-color-adjust: exact; }
+  .print-sheet img, .print-sheet .steps li::before, .signal-lights { print-color-adjust: exact; }
 }
 
 @media (max-width: 540px) {
@@ -192,3 +192,35 @@
   .task-card { padding: 16px; }
   .focus-header { align-items: center; }
 }
+.signal-sequence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  padding: 0;
+  list-style: none;
+}
+.signal-sequence li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.signal-lights {
+  display: inline-flex;
+  gap: 0.2rem;
+  padding: 0.28rem;
+  border-radius: 0.4rem;
+  background: #283732;
+  direction: ltr;
+}
+.signal-light {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 50%;
+  background: #67736e;
+}
+.signal-light.red { background: #ff7874; }
+.signal-light.yellow { background: #ffda60; }
+.signal-light.green { background: #8be3a0; }
