@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 294" role="img" aria-labelledby="title desc">
+  <title id="title">Pico traffic light wiring</title>
+  <desc id="desc">Red uses GP15, yellow uses GP13, and green uses GP14. Each pin connects through a 330 ohm resistor to its LED's positive leg. Each negative leg connects to GND.</desc>
+  <rect width="560" height="294" rx="16" fill="#f0f4ef"/>
+  <g font-family="Arial, sans-serif" fill="#233e36">
+    <g font-size="18" font-weight="700" text-anchor="middle">
+      <text x="73" y="34">Pico pin</text>
+      <text x="219" y="34">Resistor</text>
+      <text x="359" y="34">LED</text>
+      <text x="489" y="34">Pico ground</text>
+    </g>
+    <g fill="#fff" stroke="#c8d6ce">
+      <rect x="16" y="50" width="528" height="70" rx="9"/>
+      <rect x="16" y="128" width="528" height="70" rx="9"/>
+      <rect x="16" y="206" width="528" height="70" rx="9"/>
+    </g>
+    <g stroke="#426158" stroke-width="2.5" fill="none">
+      <path d="M113 85h58m95 0h51m85 0h44"/>
+      <path d="M113 163h58m95 0h51m85 0h44"/>
+      <path d="M113 241h58m95 0h51m85 0h44"/>
+    </g>
+    <g fill="#e8efe9" stroke="#b6cabd">
+      <rect x="33" y="67" width="80" height="36" rx="7"/>
+      <rect x="33" y="145" width="80" height="36" rx="7"/>
+      <rect x="33" y="223" width="80" height="36" rx="7"/>
+      <rect x="446" y="67" width="86" height="36" rx="7"/>
+      <rect x="446" y="145" width="86" height="36" rx="7"/>
+      <rect x="446" y="223" width="86" height="36" rx="7"/>
+    </g>
+    <g fill="#f8ebd6" stroke="#bda171">
+      <rect x="171" y="67" width="95" height="36" rx="7"/>
+      <rect x="171" y="145" width="95" height="36" rx="7"/>
+      <rect x="171" y="223" width="95" height="36" rx="7"/>
+    </g>
+    <rect x="317" y="67" width="85" height="36" rx="7" fill="#fae4e3" stroke="#c26163"/>
+    <rect x="317" y="145" width="85" height="36" rx="7" fill="#fff1cd" stroke="#b78017"/>
+    <rect x="317" y="223" width="85" height="36" rx="7" fill="#ddf1e3" stroke="#568c68"/>
+    <g font-size="19" font-weight="700" text-anchor="middle">
+      <text x="73" y="92">GP15</text><text x="73" y="170">GP13</text><text x="73" y="248">GP14</text>
+      <text x="218" y="92">330 Ω</text><text x="218" y="170">330 Ω</text><text x="218" y="248">330 Ω</text>
+      <text x="359" y="92">Red</text><text x="359" y="170">Yellow</text><text x="359" y="248">Green</text>
+      <text x="489" y="92">GND</text><text x="489" y="170">GND</text><text x="489" y="248">GND</text>
+      <text x="303" y="77">+</text><text x="303" y="155">+</text><text x="303" y="233">+</text>
+      <text x="416" y="77">−</text><text x="416" y="155">−</text><text x="416" y="233">−</text>
+    </g>
+  </g>
+</svg>

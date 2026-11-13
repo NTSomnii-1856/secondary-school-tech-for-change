@@ -26,10 +26,11 @@
       <div class="command-card"><dt><code dir="ltr">${escape(command)}</code></dt>
       <dd><p>${translate(meaning)}</p><pre dir="ltr"><code>${escape(example)}</code></pre></dd></div>`).join('')}</dl>`;
     const {main, extra} = lesson.notebook;
+    const cards = challenge && lesson.extra.notebook ? lesson.extra.notebook : main;
     return `<aside class="code-notebook" aria-labelledby="notebook-title">
       <details ${notebookOpen ? 'open' : ''}>
         <summary id="notebook-title">${label('notebook')}</summary>
-        <div class="notebook-entries">${examples(main)}
+        <div class="notebook-entries">${examples(cards)}
           ${challenge && extra.length ? `<h2>${label('notebookExtra')}</h2>${examples(extra)}` : ''}
         </div>
       </details>
@@ -61,6 +62,19 @@
     return `<details class="code-help"><summary>${label('starter')}</summary>
       <div class="codebox"><pre dir="ltr"><code>${escape(task.starter)}</code></pre></div>
       <button class="btn" type="button" data-copy="starter">${label('copy')}</button></details>`;
+  }
+
+  function circuitSetup(task) {
+    if (!task.circuit) return '';
+    return `<details class="code-help" ${task.circuit.open ? 'open' : ''}>
+      <summary>${translate(task.circuit.label)}</summary>
+      <p>${translate(task.circuit.instructions)}</p>
+      <button class="btn" type="button" data-copy="diagram">${translate(task.circuit.copy)}</button>
+      <span id="circuit-feedback" role="status"></span>
+      <details class="code-help"><summary>${translate(task.circuit.show)}</summary>
+        <div class="codebox"><pre dir="ltr"><code>${escape(task.circuit.json)}</code></pre></div>
+      </details>
+    </details>`;
   }
 
   function handout(task, title, name) {
@@ -108,6 +122,7 @@
         <article class="paper task-card">
           <p>${translate(task.start)}</p>
           ${project ? `<a class="btn primary launch" href="${escape(project)}" target="_blank" rel="noopener">${translate(task.open)} ↗</a>` : ''}
+          ${circuitSetup(task)}
           ${picture(task)}
           ${steps(task)}
           ${starter(task)}
@@ -129,12 +144,13 @@
       window.print();
     });
     for (const button of app.querySelectorAll('[data-copy]')) button.addEventListener('click', async () => {
-      const message = document.getElementById('toast');
+      const diagram = button.dataset.copy === 'diagram';
+      const message = document.getElementById(diagram ? 'circuit-feedback' : 'toast');
       try {
-        await navigator.clipboard.writeText(task[button.dataset.copy]);
-        message.textContent = text(ui.copied);
+        await navigator.clipboard.writeText(diagram ? task.circuit.json : task[button.dataset.copy]);
+        message.textContent = diagram ? text(task.circuit.copied) : text(ui.copied);
       } catch {
-        message.textContent = text(ui.copyFail);
+        message.textContent = diagram ? text(task.circuit.copyFail) : text(ui.copyFail);
       }
     });
   }
