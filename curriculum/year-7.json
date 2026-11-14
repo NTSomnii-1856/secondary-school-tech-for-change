@@ -1,6 +1,6 @@
 {
   "year": 7,
-  "updated": "12 November 2026",
+  "updated": "14 November 2026",
   "meta": {
     "title": "Year 7 Arduino and invention",
     "route": "Arduino Uno and C++ in Tinkercad Circuits, with 3D design in Tinkercad.",
@@ -67,8 +67,8 @@
       "week": 7,
       "title": "Finish your traffic lights",
       "learn": "Coding: control the order and timing of three outputs in Arduino C++. Extra: coordinate pedestrian lights with car red. Community Project: understand the engineering method and define a problem worth solving.",
-      "make": "Period 1 (40 minutes): finish the traffic-light project. Early finishers extend their Arduino circuit with a pedestrian crossing in Tinkercad. Period 2 (40 minutes): use the separate Smart Beehive hub to define the community problem.",
-      "evidence": "A live run showing green, amber and red in order. For the extra, demonstrate a crossing request. Community evidence: a problem statement naming a user and need.",
+      "make": "Period 1 (40 minutes): finish the traffic lights. Early finishers add a timed walk signal after cars stop. Period 2 (40 minutes): define the Smart Beehive problem.",
+      "evidence": "A working light sequence. The extra keeps car red on throughout the walk signal. Community evidence: define a user and need.",
       "codes": "ICT2 ICT5 ICT6 DT1",
       "status": "prepared lesson; classroom outcome not yet checked",
       "link": "../week-7-pedestrian-crossing/"
@@ -76,9 +76,9 @@
     {
       "week": 8,
       "title": "Quiz-show buzzer",
-      "learn": "Coding: read a push button and use conditions to control LEDs and a buzzer. Community Project: ask a useful research question and judge a source.",
-      "make": "Period 1 (40 minutes): add a second team to a quiz buzzer in Tinkercad. Period 2 (40 minutes): use the Research stage in the separate Smart Beehive hub.",
-      "evidence": "Show both buttons working and the output stopping on release. Community evidence: a research question and useful cited findings.",
+      "learn": "Read one Arduino button with digitalRead() and use if / else for light and sound. Extra: add a second team with else if.",
+      "make": "Period 1 (40 minutes): build a one-button quiz buzzer in Tinkercad. Early finishers add a second team. Period 2 (40 minutes): research the Smart Beehive project.",
+      "evidence": "The red light and sound start on press and stop on release. Community evidence: a research question and useful cited findings.",
       "codes": "ICT2 ICT6 DT1",
       "status": "prepared lesson; classroom outcome not yet checked",
       "link": "../week-8-quiz-buzzer/"

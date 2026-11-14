@@ -1,10 +1,10 @@
 {
   "year": 8,
-  "updated": "12 November 2026",
+  "updated": "14 November 2026",
   "meta": {
     "title": "Year 8 Python and connected systems",
     "route": "Python first, then Raspberry Pi Pico MicroPython in Wokwi; full Raspberry Pi computer concepts and hardware where available.",
-    "next": "Lesson 7 finishes the traffic lights, with a pedestrian crossing for early finishers. Lesson 8 is Type the light pattern. Smart Beehive continues in the separate Community Project hub.",
+    "next": "Lesson 7 finishes the traffic lights, with a pedestrian crossing for early finishers. Lesson 8 is Guess the light order. Smart Beehive continues in the separate Community Project hub.",
     "intro": "Students keep building confidence in Python, then use the same ideas to control a simulated device. They develop functions, data handling, 3D design and system testing before the major physical project."
   },
   "weeks": [
@@ -67,18 +67,18 @@
       "week": 7,
       "title": "Finish your traffic lights",
       "learn": "Coding: control the order and timing of three outputs in MicroPython. Extra: coordinate pedestrian lights with car red. Community Project: understand the engineering method and define a problem worth solving.",
-      "make": "Period 1 (40 minutes): finish the traffic-light project. Early finishers extend the ready-wired pedestrian crossing in Wokwi. Period 2 (40 minutes): use the separate Smart Beehive hub to define the community problem.",
-      "evidence": "A live run showing green, amber and red in order. For the extra, demonstrate a crossing request. Community evidence: a problem statement naming a user and need.",
+      "make": "Period 1 (40 minutes): finish the traffic lights. Early finishers add a timed walk signal after cars stop. Period 2 (40 minutes): define the Smart Beehive problem.",
+      "evidence": "A working light sequence. The extra keeps car red on throughout the walk signal. Community evidence: define a user and need.",
       "codes": "ICT2 ICT3 ICT5 DT1",
       "status": "prepared lesson; classroom outcome not yet checked",
       "link": "../week-7-pedestrian-crossing/"
     },
     {
       "week": 8,
-      "title": "Type the light pattern",
-      "learn": "Coding: read typed text with input() and use equality to check a stored light sequence. Community Project: ask a useful research question and judge a source.",
-      "make": "Period 1 (40 minutes): build a three-flash memory game with typed answers in Wokwi. Period 2 (40 minutes): use the Research stage in the separate Smart Beehive hub.",
-      "evidence": "Show the correct order passing and a reordered answer failing. Community evidence: a research question and useful cited findings.",
+      "title": "Guess the light order",
+      "learn": "Use the familiar list and counted for loop to play lights. Teach input() and compare a typed guess with the pattern.",
+      "make": "Period 1 (40 minutes): add a guess check to the Pico starter. Early finishers add a fourth flash. Period 2 (40 minutes): research the Smart Beehive project.",
+      "evidence": "Show 132 passing and 123 failing. Community evidence: a research question and useful cited findings.",
       "codes": "ICT2 ICT3 ICT8 DT1",
       "status": "prepared lesson; classroom outcome not yet checked",
       "link": "../week-8-memory-game/"
