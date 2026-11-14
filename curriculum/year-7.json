@@ -66,9 +66,9 @@
     {
       "week": 7,
       "title": "Finish your traffic lights",
-      "learn": "Coding: control the order and timing of three outputs in Arduino C++. Extra: coordinate pedestrian lights with car red. Community Project: understand the engineering method and define a problem worth solving.",
-      "make": "Period 1 (40 minutes): finish the traffic lights. Early finishers add a timed walk signal after cars stop. Period 2 (40 minutes): define the Smart Beehive problem.",
-      "evidence": "A working light sequence. The extra keeps car red on throughout the walk signal. Community evidence: define a user and need.",
+      "learn": "Coding: control the order and timing of three outputs in Arduino C++. Extra: use INPUT_PULLUP to start a crossing when a button is pressed. Community Project: understand the engineering method and define a problem worth solving.",
+      "make": "Period 1 (40 minutes): finish the traffic lights. Early finishers add a button that starts the crossing. Period 2 (40 minutes): define the Smart Beehive problem.",
+      "evidence": "Show the light sequence. For the extra, tap the button and show that car red stays on throughout the walk signal. Community evidence: define a user and need.",
       "codes": "ICT2 ICT5 ICT6 DT1",
       "status": "prepared lesson; classroom outcome not yet checked",
       "link": "../week-7-pedestrian-crossing/"
