@@ -64,12 +64,16 @@
     </details>`;
   }
 
-  function scoreChallenge(task) {
-    if (!task.bonus) return '';
-    const bonus = task.bonus;
-    return `<details class="paper score-challenge"><summary>${translate(bonus.title)}</summary>
+  function optionalChallenge(task, key) {
+    if (!task[key]) return '';
+    const bonus = task[key];
+    const className = key === 'bonus' ? 'score-challenge' : 'shuffle-challenge';
+    const definitions = bonus.definitions || [];
+    return `<details class="paper ${className}"><summary>${translate(bonus.title)}</summary>
       <p>${translate(bonus.start)}</p><p><strong>${label('learn')}</strong> ${translate(bonus.learn)}</p>
-      ${steps(bonus)}${codeHelp(bonus, 'bonus')}
+      ${steps(bonus)}
+      ${definitions.length ? `<ul>${definitions.map(item => `<li><code dir="ltr">${escape(item.command)}</code>: ${translate(item.meaning)}</li>`).join('')}</ul>` : ''}
+      ${codeHelp(bonus, key)}
       <p class="check"><strong>${label('show')}</strong> ${translate(bonus.done)}</p></details>`;
   }
 
@@ -102,7 +106,7 @@
       <p><strong>${label('learn')}</strong> ${translate(task.learn)}</p>
       <p>${translate(task.start)}</p>
       ${signalSequence(task)}
-      ${picture(task)}
+      ${task.printFigure === false ? '' : picture(task)}
       ${steps(task)}
       <div class="print-help"><strong>${label('help')}</strong> ${translate(task.facts)}<pre dir="ltr"><code>${escape(task.code)}</code></pre></div>
       <p class="check"><strong>${label('show')}</strong> ${translate(task.done)}</p>
@@ -147,12 +151,12 @@
           ${codeHelp(task)}
           <p class="check"><strong>${label('show')}</strong> ${translate(task.done)}</p>
         </article>
-        ${scoreChallenge(task)}
+        ${optionalChallenge(task, 'bonus')}${optionalChallenge(task, 'shuffle')}
         <a class="btn" href="${challenge ? '#main-task' : '#challenge'}">${label(challenge ? 'back' : 'extraLink')}</a>
         <p id="toast" role="status"></p>
       </main>
       </div>
-      <div class="print-handout">${handout(lesson.main, lesson.title, 'main')}${handout(lesson.extra, lesson.extra.title, 'challenge')}${lesson.extra.bonus ? handout(lesson.extra.bonus, lesson.extra.bonus.title, 'scoreChallenge') : ''}</div>`;
+      <div class="print-handout">${handout(lesson.main, lesson.title, 'main')}${handout(lesson.extra, lesson.extra.title, 'challenge')}${lesson.extra.bonus ? handout(lesson.extra.bonus, lesson.extra.bonus.title, 'scoreChallenge') : ''}${lesson.extra.shuffle ? handout(lesson.extra.shuffle, lesson.extra.shuffle.title, 'shuffleChallenge') : ''}</div>`;
     if (focus) document.getElementById('main').focus();
     app.querySelector('.code-notebook details').addEventListener('toggle', event => {
       notebookOpen = event.currentTarget.open;
@@ -166,7 +170,7 @@
       const diagram = button.dataset.copy === 'diagram';
       const message = document.getElementById(diagram ? 'circuit-feedback' : 'toast');
       try {
-        await navigator.clipboard.writeText(diagram ? task.circuit.json : button.dataset.copy === 'bonus' ? task.bonus.code : task[button.dataset.copy]);
+        await navigator.clipboard.writeText(diagram ? task.circuit.json : ['bonus', 'shuffle'].includes(button.dataset.copy) ? task[button.dataset.copy].code : task[button.dataset.copy]);
         message.textContent = diagram ? text(task.circuit.copied) : text(ui.copied);
       } catch {
         message.textContent = diagram ? text(task.circuit.copyFail) : text(ui.copyFail);

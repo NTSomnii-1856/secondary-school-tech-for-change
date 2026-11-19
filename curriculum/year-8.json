@@ -76,9 +76,9 @@
     {
       "week": 8,
       "title": "Guess the light order",
-      "learn": "Sequence direct LED commands and check a typed guess with input() and if / else. Optional: explicitly teach while playing to repeat until a wrong guess, shorten waits and count correct answers.",
-      "make": "Period 1 (40 minutes): build red, green and yellow flashes and check 132. Early finishers add faster replay until a wrong answer, then scoring. Period 2 (40 minutes): research the Smart Beehive project.",
-      "evidence": "Show 132 passing and 123 failing. For the challenge, demonstrate shorter waits and game over on a wrong answer. A scored version earns one point per correct answer. Community evidence: useful research findings.",
+      "learn": "Sequence direct LED commands and check a typed guess with input() and if / else. Optional: explicitly teach while playing to repeat until a wrong guess, shorten waits and count correct answers. Challenge 3 introduces random.choice() and a for loop over the digits of a chosen pattern.",
+      "make": "Period 1 (40 minutes): build red, green and yellow flashes and check 132. Early finishers add faster replay until a wrong answer, then scoring and a random order each round. Period 2 (40 minutes): research the Smart Beehive project.",
+      "evidence": "Show 132 passing and 123 failing. Challenges: demonstrate shorter waits, one point per correct answer and game over on a wrong guess. The random version must flash and check the same chosen pattern. Community evidence: useful research findings.",
       "codes": "ICT2 ICT3 ICT8 DT1",
       "status": "prepared lesson; classroom outcome not yet checked",
       "link": "../week-8-memory-game/"
