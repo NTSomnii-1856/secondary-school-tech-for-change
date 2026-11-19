@@ -1,6 +1,6 @@
 {
   "year": 8,
-  "updated": "14 November 2026",
+  "updated": "19 November 2026",
   "meta": {
     "title": "Year 8 Python and connected systems",
     "route": "Python first, then Raspberry Pi Pico MicroPython in Wokwi; full Raspberry Pi computer concepts and hardware where available.",
@@ -76,9 +76,9 @@
     {
       "week": 8,
       "title": "Guess the light order",
-      "learn": "Use the familiar list and counted for loop to play lights. Teach input() and compare a typed guess with the pattern.",
-      "make": "Period 1 (40 minutes): add a guess check to the Pico starter. Early finishers add a fourth flash. Period 2 (40 minutes): research the Smart Beehive project.",
-      "evidence": "Show 132 passing and 123 failing. Community evidence: a research question and useful cited findings.",
+      "learn": "Sequence direct LED commands and check a typed guess with input() and if / else. Optional: explicitly teach while playing to repeat until a wrong guess, shorten waits and count correct answers.",
+      "make": "Period 1 (40 minutes): build red, green and yellow flashes and check 132. Early finishers add faster replay until a wrong answer, then scoring. Period 2 (40 minutes): research the Smart Beehive project.",
+      "evidence": "Show 132 passing and 123 failing. For the challenge, demonstrate shorter waits and game over on a wrong answer. A scored version earns one point per correct answer. Community evidence: useful research findings.",
       "codes": "ICT2 ICT3 ICT8 DT1",
       "status": "prepared lesson; classroom outcome not yet checked",
       "link": "../week-8-memory-game/"

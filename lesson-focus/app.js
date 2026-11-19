@@ -55,13 +55,22 @@
       `<li>${translate(step)}<span class="step-note">${translate(task.notes[index])}</span></li>`).join('')}</ol>`;
   }
 
-  function codeHelp(task) {
+  function codeHelp(task, copyKey = 'code') {
     return `<details class="code-help">
       <summary>${label('help')}</summary>
       <p>${translate(task.facts)}</p>
       <div class="codebox"><pre dir="ltr"><code>${escape(task.code)}</code></pre></div>
-      <button class="btn" type="button" data-copy="code">${label('copy')}</button>
+      <button class="btn" type="button" data-copy="${copyKey}">${label('copy')}</button>
     </details>`;
+  }
+
+  function scoreChallenge(task) {
+    if (!task.bonus) return '';
+    const bonus = task.bonus;
+    return `<details class="paper score-challenge"><summary>${translate(bonus.title)}</summary>
+      <p>${translate(bonus.start)}</p><p><strong>${label('learn')}</strong> ${translate(bonus.learn)}</p>
+      ${steps(bonus)}${codeHelp(bonus, 'bonus')}
+      <p class="check"><strong>${label('show')}</strong> ${translate(bonus.done)}</p></details>`;
   }
 
   function starter(task) {
@@ -138,11 +147,12 @@
           ${codeHelp(task)}
           <p class="check"><strong>${label('show')}</strong> ${translate(task.done)}</p>
         </article>
+        ${scoreChallenge(task)}
         <a class="btn" href="${challenge ? '#main-task' : '#challenge'}">${label(challenge ? 'back' : 'extraLink')}</a>
         <p id="toast" role="status"></p>
       </main>
       </div>
-      <div class="print-handout">${handout(lesson.main, lesson.title, 'main')}${handout(lesson.extra, lesson.extra.title, 'challenge')}</div>`;
+      <div class="print-handout">${handout(lesson.main, lesson.title, 'main')}${handout(lesson.extra, lesson.extra.title, 'challenge')}${lesson.extra.bonus ? handout(lesson.extra.bonus, lesson.extra.bonus.title, 'scoreChallenge') : ''}</div>`;
     if (focus) document.getElementById('main').focus();
     app.querySelector('.code-notebook details').addEventListener('toggle', event => {
       notebookOpen = event.currentTarget.open;
@@ -156,7 +166,7 @@
       const diagram = button.dataset.copy === 'diagram';
       const message = document.getElementById(diagram ? 'circuit-feedback' : 'toast');
       try {
-        await navigator.clipboard.writeText(diagram ? task.circuit.json : task[button.dataset.copy]);
+        await navigator.clipboard.writeText(diagram ? task.circuit.json : button.dataset.copy === 'bonus' ? task.bonus.code : task[button.dataset.copy]);
         message.textContent = diagram ? text(task.circuit.copied) : text(ui.copied);
       } catch {
         message.textContent = diagram ? text(task.circuit.copyFail) : text(ui.copyFail);
