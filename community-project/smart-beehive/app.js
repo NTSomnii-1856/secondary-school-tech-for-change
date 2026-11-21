@@ -85,10 +85,28 @@
   function lessonOnePrintables(){
     return `<div class="actions lesson-one-printables" role="group" aria-label="${t(lessonOne.print)}">${lessonOneDownload('student-worksheet.pdf',lessonOne.worksheet)}${lessonOneDownload('engineering-cycle.pdf',lessonOne.printCycle)}</div>`;
   }
+  function brainstormTools(topic){
+    const map=topic.mindMap;
+    if(!map)return '';
+    return `<section class="brainstorm-tools" aria-labelledby="mind-map-title">
+      <h2 id="mind-map-title">${t(map.title)}</h2><p>${t(map.intro)}</p>
+      <a class="btn primary" href="${esc(map.url)}" target="_blank" rel="noopener">${t(map.open)} ↗</a>
+      <p class="small">${t(map.how)}</p>
+      <div class="mindmap-starter"><p class="mindmap-centre">${t(map.center)}</p>
+        <ul class="mindmap-branches">${map.branches.map(branch=>`<li><strong>${t(branch.title)}</strong><span>${t(branch.prompt)}</span></li>`).join('')}</ul>
+      </div>
+    </section>`;
+  }
+  function researchToBrainstorm(topic){
+    if(topic.week!==8||S.phase!=='try')return '';
+    const map=D.topics.find(item=>item.week===9)?.mindMap;
+    if(!map)return '';
+    return `<section class="paper research-next"><h2>${t(map.transitionTitle)}</h2><p>${t(map.transitionText)}</p><a class="btn" href="${esc(map.url)}" target="_blank" rel="noopener">${t(map.open)} ↗</a></section>`;
+  }
   function topicView(){
     const topic=D.topics[S.topic];
     const first=topic.lesson===1;
-    return `<div class="topic-return">${button('← '+u('returnTopics'),'home')}</div><p class="eyebrow">${esc(u('lesson'))} ${topic.lesson}${!released(topic)?' · '+esc(u('preview')):''}</p><h1>${t(topic.title)}</h1><div class="phase">${button(u('learn'),'learn',S.phase==='learn',`aria-pressed="${S.phase==='learn'}"`)}${button(u('try'),'try',S.phase==='try',`aria-pressed="${S.phase==='try'}"`)}</div><article class="paper guidecard">${S.phase==='learn'?`${first?lessonOneLearn(topic):`<div class="learning-text">${topic.learn.map(x=>`<p>${t(x)}</p>`).join('')}</div>`}<div class="actions">${button(u('try')+' →','try',true)}</div>`:`<ol class="steps">${topic.steps.map(x=>`<li>${t(x)}</li>`).join('')}</ol><aside class="check"><h3>${esc(u('expected'))}</h3><p>${t(topic.result)}</p><label class="checklabel"><input id="topic-checked" type="checkbox" ${S.checks[topic.week]?'checked':''}>${esc(u('cardReady'))}</label></aside>${first?lessonOnePrintables():''}`}</article>${S.phase==='try'?cardForm(topic):''}${topic.week>=8?sources():''}`;
+    return `<div class="topic-return">${button('← '+u('returnTopics'),'home')}</div><p class="eyebrow">${esc(u('lesson'))} ${topic.lesson}${!released(topic)?' · '+esc(u('preview')):''}</p><h1>${t(topic.title)}</h1><div class="phase">${button(u('learn'),'learn',S.phase==='learn',`aria-pressed="${S.phase==='learn'}"`)}${button(u('try'),'try',S.phase==='try',`aria-pressed="${S.phase==='try'}"`)}</div><article class="paper guidecard">${S.phase==='learn'?`${first?lessonOneLearn(topic):`<div class="learning-text">${topic.learn.map(x=>`<p>${t(x)}</p>`).join('')}</div>`}${brainstormTools(topic)}<div class="actions">${button(u('try')+' →','try',true)}</div>`:`${brainstormTools(topic)}<ol class="steps">${topic.steps.map(x=>`<li>${t(x)}</li>`).join('')}</ol><aside class="check"><h3>${esc(u('expected'))}</h3><p>${t(topic.result)}</p><label class="checklabel"><input id="topic-checked" type="checkbox" ${S.checks[topic.week]?'checked':''}>${esc(u('cardReady'))}</label></aside>${first?lessonOnePrintables():''}`}</article>${researchToBrainstorm(topic)}${S.phase==='try'?cardForm(topic):''}${topic.week>=8?sources():''}`;
   }
   function teacherEntry(){return S.topic<0?teacherData?.overview:teacherData?.topics[S.topic];}
   function boardKit(){
