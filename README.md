@@ -2,6 +2,14 @@
 
 NTSOMNII independent ICT lessons. Each class has its own page and ordered lessons.
 
+## Writing lessons
+
+- Give every lesson its own project, equipment list, wiring diagram, imports and starter. Students should be able to begin directly from that lesson's page.
+- Write as a teacher speaking to a student. Use short directions that say what to open, where to add a line and what to check.
+- Introduce one new idea at a time. Explain the command in the Code Notebook beside the task, then give students a small change to make themselves.
+- Give each step an observable result and a short troubleshooting hint. Keep complete worked programs in the teacher guide.
+- Follow the curriculum map. Plan each new lesson as a separate task with its own files and examples.
+
 ## Open your class
 
 - [Year 7](https://ntsomnii-1856.github.io/secondary-school-tech-for-change/year-7/)

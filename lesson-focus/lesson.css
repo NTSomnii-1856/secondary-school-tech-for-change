@@ -181,7 +181,7 @@
   .print-sheet .steps li { margin: 1.8mm 0; break-inside: avoid; }
   .print-sheet .steps li::before { width: 5mm; height: 5mm; font-size: 9pt; inset-inline-start: -6.5mm; }
   .print-help { margin-top: 3mm; break-inside: avoid; }
-  .print-help pre { margin-top: 2mm; padding: 2mm 3mm; border: 1px solid #bdc8be; font-size: 8pt; line-height: 1.22; white-space: pre-wrap; }
+  .print-help pre, .print-stage pre, .print-setup pre { margin-top: 2mm; padding: 2mm 3mm; border: 1px solid #bdc8be; font-size: 8pt; line-height: 1.22; white-space: pre-wrap; }
   .print-sheet .check { padding: 2mm 3mm; break-inside: avoid; }
   .sheet-links { font-size: 8.5pt; overflow-wrap: anywhere; }
   .print-sheet img, .print-sheet .steps li::before, .signal-lights { print-color-adjust: exact; }
@@ -252,7 +252,13 @@
 .build-stage .check strong { display: block; margin-bottom: 4px; }
 .snippet-label { margin: 18px 0 0; font-size: 14px; font-weight: 650; }
 .stage-controls { display: flex; flex-wrap: wrap; gap: 10px; }
+.step-help { margin-block: 16px; }
+.step-help > summary { font-size: 15px; }
+.step-help p { margin-block: 8px; }
+.code-notebook .notebook-help > summary { padding: 4px 0; font-size: 13px; }
 .stage-setup { margin-block: 12px; }
+.stage-setup .steps { padding-inline-start: 28px; }
+.stage-setup .steps li { margin-block: 12px; }
 .stage-setup > summary { font-size: 16px; }
 .stage-setup .launch { margin-block: 12px; }
 .teacher-guide { border-inline-start: 4px solid var(--deep); }

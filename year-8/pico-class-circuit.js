@@ -29,7 +29,7 @@
   const circuit = {
     open: true,
     label: ['Set up a new Wokwi circuit', 'Настрой новый проект Wokwi', '设置新的 Wokwi 电路', 'הגדירו מעגל Wokwi חדש'],
-    instructions: ['Already have the class circuit? Keep it. For a new project, copy the wiring below. In Wokwi, replace everything in diagram.json with it, then return to main.py.', 'Если у тебя уже есть схема с урока, открой её. Для нового проекта скопируй схему ниже. В Wokwi замени содержимое diagram.json и вернись в main.py.', '已有课堂电路？继续使用它。若新建项目，请复制下面的接线。在 Wokwi 中替换 diagram.json 的全部内容，再返回 main.py。', 'אם כבר יש לכם מעגל מהשיעור, המשיכו איתו. בפרויקט חדש העתיקו את החיווט למטה. ב־Wokwi החליפו את כל התוכן של diagram.json וחזרו ל־main.py.'],
+    instructions: ['Open a new Pico project in Wokwi. Copy the wiring below. In Wokwi, open diagram.json, select all its text and paste. Then open main.py.', 'Открой новый проект Pico в Wokwi. Скопируй схему ниже. В Wokwi открой diagram.json, выдели весь текст и вставь скопированную схему. Затем открой main.py.', '在 Wokwi 中新建 Pico 项目。复制下方接线内容。在 Wokwi 中打开 diagram.json，选中全部文本并粘贴，然后打开 main.py。', 'פתחו פרויקט Pico חדש ב־Wokwi. העתיקו את החיווט שלמטה. ב־Wokwi פתחו את diagram.json, סמנו את כל הטקסט והדביקו. לאחר מכן פתחו את main.py.'],
     copy: ['Copy wiring', 'Скопировать схему', '复制接线', 'העתיקו חיווט'],
     copied: ['Wiring copied', 'Схема скопирована', '已复制接线', 'החיווט הועתק'],
     copyFail: ['Open Show wiring, then select and copy the text.', 'Открой «Показать схему», выдели и скопируй текст.', '打开“显示接线”，再选中并复制文本。', 'פתחו ״הציגו חיווט״, סמנו והעתיקו את הטקסט.'],

@@ -86,7 +86,7 @@ rled.value(1)      # Back to red`
   } else {
     lesson.main = {
       ...traffic,
-      start: ['Open your Lesson 6 project and finish the cycle.', 'Открой проект урока 6 и закончи цикл.', '打开第 6 课项目并完成循环。', 'פתחו את הפרויקט משיעור 6 והשלימו את המחזור.'],
+      start: ['Start a new Pico project in Wokwi. Follow the wiring panel, then paste this lesson’s Starter code into main.py. Build one complete traffic-light cycle.', 'Открой новый проект Pico в Wokwi. Следуй панели схемы, затем вставь стартовый код этого урока в main.py. Собери один полный цикл светофора.', '在 Wokwi 中新建 Pico 项目。按接线面板完成接线，再把本课的起始代码粘贴到 main.py。编写一个完整的交通灯循环。', 'פתחו פרויקט Pico חדש ב־Wokwi. פעלו לפי לוח החיווט, ואז הדביקו את קוד ההתחלה של השיעור ב־main.py. בנו מחזור רמזור מלא אחד.'],
       steps: [...traffic.steps, ['Once one cycle works, use range(0, 3) to repeat the whole cycle three times.', 'Когда один цикл работает, повтори весь цикл трижды с range(0, 3).', '一个循环成功后，用 range(0, 3) 把整个循环重复三次。', 'כשמחזור אחד עובד, השתמשו ב־range(0, 3) כדי לחזור על כל המחזור שלוש פעמים.']],
       notes: [...traffic.notes, ['Keep pin setup above the loop. Indent the light changes and their waits inside it.', 'Оставь настройку выводов перед циклом. Добавь отступ у переключений ламп и пауз внутри цикла.', '引脚设置放在循环上方。循环内的开关灯和等待都要缩进。', 'השאירו את הגדרות הפינים מעל הלולאה. הזיחו את פקודות האורות וההמתנות בתוכה.']],
       done: ['The full cycle runs three times and ends on red.', 'Весь цикл проходит три раза и заканчивается красным.', '完整循环运行三次，最后停在红灯。', 'המחזור המלא רץ שלוש פעמים ומסתיים באדום.']

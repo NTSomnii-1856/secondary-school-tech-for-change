@@ -25,7 +25,9 @@
     digit: ['Player types', 'Игрок вводит', '玩家输入', 'השחקן מקליד'],
     red: ['Red', 'Красный', '红', 'אדום'],
     yellow: ['Yellow', 'Жёлтый', '黄', 'צהוב'],
-    green: ['Green', 'Зелёный', '绿', 'ירוק']
+    green: ['Green', 'Зелёный', '绿', 'ירוק'],
+    help: ['If it does not work', 'Если не работает', '如果无法运行', 'אם זה לא עובד'],
+    checkExample: ['Try this', 'Попробуй', '试一试', 'נסו זאת']
   };
 
   function text(value) {
@@ -50,9 +52,12 @@
   }
 
   function notebook(challenge) {
-    const examples = cards => `<dl class="command-list">${cards.map(({command, meaning, example}) => `
+    const examples = cards => `<dl class="command-list">${cards.map(({command, meaning, example, check, help}) => `
       <div class="command-card"><dt><code dir="ltr">${escape(command)}</code></dt>
-      <dd><p>${translate(meaning)}</p><pre dir="ltr"><code>${escape(example)}</code></pre></dd></div>`).join('')}</dl>`;
+      <dd><p>${translate(meaning)}</p><pre dir="ltr"><code>${escape(example)}</code></pre>
+        ${check ? `<p>${translate(check)}</p>` : ''}
+        ${help ? `<details class="notebook-help"><summary>${stageLabel('checkExample')}</summary><p>${translate(help)}</p></details>` : ''}
+      </dd></div>`).join('')}</dl>`;
     const {main, extra} = lesson.notebook;
     const cards = currentTask().stage?.notebook || (challenge && lesson.extra.notebook ? lesson.extra.notebook : main);
     return `<aside class="code-notebook" aria-labelledby="notebook-title">
@@ -99,6 +104,7 @@
         <div class="codebox"><pre dir="ltr"><code>${escape(stage.snippet)}</code></pre></div>
         <button class="btn" type="button" data-copy="stage">${label('copy')}</button>
         <p class="check"><strong>${stageLabel('check')}</strong>${translate(stage.check)}</p>
+        ${stage.help ? `<details class="step-help"><summary>${stageLabel('help')}</summary><p>${translate(stage.help)}</p></details>` : ''}
         <div class="stage-controls">
           ${index > 0 ? `<button class="btn" type="button" data-stage="${index - 1}">${stageLabel('previous')}</button>` : ''}
           ${index < task.stages.length - 1 ? `<button class="btn primary" type="button" data-stage="${index + 1}">${stageLabel('next')}</button>` : `<a class="btn primary" href="${location.hash === '#challenge' ? '#main-task' : '#challenge'}">${label(location.hash === '#challenge' ? 'back' : 'extraLink')}</a>`}
@@ -127,13 +133,16 @@
   }
 
   function stagedTask(task, project) {
+    const preparation = task.setup;
     return `<p>${translate(task.start)}</p>
       ${project ? `<a class="btn launch" href="${escape(project)}" target="_blank" rel="noopener">${translate(task.open)} ↗</a>` : ''}
-      <details class="paper stage-setup">
-        <summary>${stageLabel('setup')}</summary>
-        ${circuitSetup(task)}
+      <details class="paper stage-setup" ${preparation && currentTask().index === 0 ? 'open' : ''}>
+        <summary>${preparation ? translate(preparation.title) : stageLabel('setup')}</summary>
+        ${preparation ? `<ul>${preparation.needs.map(item => `<li>${translate(item)}</li>`).join('')}</ul>${steps(preparation)}` : ''}
+        ${circuitSetup(task, Boolean(preparation))}
         ${picture(task)}
         ${starter(task)}
+        ${preparation ? `<p class="check">${translate(preparation.check)}</p>` : ''}
       </details>
       ${buildStage(task, currentTask().index)}`;
   }
@@ -167,16 +176,18 @@
       <button class="btn" type="button" data-copy="starter">${label('copy')}</button></details>`;
   }
 
-  function circuitSetup(task) {
+  function circuitSetup(task, compact = false) {
     if (!task.circuit) return '';
-    return `<details class="code-help" ${task.circuit.open ? 'open' : ''}>
-      <summary>${translate(task.circuit.label)}</summary>
-      <p>${translate(task.circuit.instructions)}</p>
-      <button class="btn" type="button" data-copy="diagram">${translate(task.circuit.copy)}</button>
+    const files = `<button class="btn" type="button" data-copy="diagram">${translate(task.circuit.copy)}</button>
       <span id="circuit-feedback" role="status"></span>
       <details class="code-help"><summary>${translate(task.circuit.show)}</summary>
         <div class="codebox"><pre dir="ltr"><code>${escape(task.circuit.json)}</code></pre></div>
-      </details>
+      </details>`;
+    if (compact) return `<div class="circuit-files">${files}</div>`;
+    return `<details class="code-help" ${task.circuit.open ? 'open' : ''}>
+      <summary>${translate(task.circuit.label)}</summary>
+      <p>${translate(task.circuit.instructions)}</p>
+      ${files}
     </details>`;
   }
 
@@ -189,6 +200,13 @@
       <p><strong>${label('learn')}</strong> ${translate(task.learn)}</p>
       <p>${translate(task.start)}</p>
       ${signalSequence(task)}
+      ${task.setup ? `<section class="print-setup">
+        <h2>${translate(task.setup.title)}</h2>
+        <ul>${task.setup.needs.map(item => `<li>${translate(item)}</li>`).join('')}</ul>
+        ${steps(task.setup)}
+        ${task.starter ? `<pre dir="ltr"><code>${escape(task.starter)}</code></pre>` : ''}
+        <p>${translate(task.setup.check)}</p>
+      </section>` : ''}
       ${task.printFigure === false ? '' : picture(task)}
       ${task.stages ? task.stages.map((stage, index) => `<section class="print-stage"><h2>${index + 1}. ${translate(stage.title)}</h2><p>${translate(stage.learn)}</p>${steps(stage)}<pre dir="ltr"><code>${escape(stage.snippet)}</code></pre><p><strong>${stageLabel('check')}</strong> ${translate(stage.check)}</p></section>`).join('') : `${steps(task)}<div class="print-help"><strong>${label('help')}</strong> ${translate(task.facts)}<pre dir="ltr"><code>${escape(task.code)}</code></pre></div>`}
       <p class="check"><strong>${label('show')}</strong> ${translate(task.done)}</p>
