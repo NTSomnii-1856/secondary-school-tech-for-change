@@ -4,7 +4,7 @@
   "meta": {
     "title": "Year 8 Python and connected systems",
     "route": "Python first, then Raspberry Pi Pico MicroPython in Wokwi; full Raspberry Pi computer concepts and hardware where available.",
-    "next": "Lesson 7 finishes the traffic lights, with a pedestrian crossing for early finishers. Lesson 8 is Guess the light order. Smart Beehive continues in the separate Community Project hub.",
+    "next": "Week 8 builds the random light memory game. Week 9 replaces typed guesses with three coloured push buttons in Wokwi. Week 10 uses Tinkercad 3D Design to turn that Pico game into a case design. Smart Beehive continues separately.",
     "intro": "Students keep building confidence in Python, then use the same ideas to control a simulated device. They develop functions, data handling, 3D design and system testing before the major physical project."
   },
   "weeks": [
@@ -85,19 +85,19 @@
     },
     {
       "week": 9,
-      "title": "Turn readings into useful evidence",
-      "learn": "Coding: Lists/dictionaries, validation, CSV records, keys and a spreadsheet model. Community Project: generate several possible responses to the researched problem.",
-      "make": "Planned Period 1 (40 minutes): Record source, units and status; link a small device table to readings and check a summary chart. Recorded/simulated data is sufficient. Planned Period 2 (40 minutes): use the Brainstorm stage in the separate Smart Beehive hub to sketch two possible ideas and explain how each could meet the need.",
-      "evidence": "Validated records, one checked lookup or query, formulas and a defensible conclusion. Community Project: two labelled ideas linked to the problem and research.",
-      "codes": "ICT1 ICT2 ICT3 ICT6 DT1",
+      "title": "Memory game: press the pattern",
+      "learn": "Reuse the Week 8 LED list, random.randint(), range loops, stored order, if / else and while True. New learning: connect a push button to a Pico input and GND; use Pin.IN and Pin.PULL_UP. Read 0 for pressed and 1 for released. Teach waiting for release so one held press counts once. Introduce each new line with a short notebook example.",
+      "make": "Period 1 (40 minutes): continue the Week 8 game in a ready-wired Wokwi Pico circuit. Test one button, then use red, yellow and green buttons. After the three flashes, record exactly three separate presses in answer as text and compare answer with order: the correct order wins. Begin with a known pattern before restoring the existing random choices. Early finishers reuse their working score and faster-round challenges. Period 2 (40 minutes): brainstorm two ideas for the separate Smart Beehive project.",
+      "evidence": "Demonstrate a correct and wrong button order, including a repeated colour. Holding a button must count once; releasing and pressing it again must count twice. Explain one input line and the answer comparison. A partner can play without typing. Community Project: two labelled ideas linked to the researched need.",
+      "codes": "ICT1 ICT2 ICT3 ICT5 DT1",
       "status": "planned"
     },
     {
       "week": 10,
-      "title": "Design a housing you can repair",
-      "learn": "Dimensioned CAD, tolerances, assembly, access and alternative designs.",
-      "make": "In Tinkercad 3D Design, model a repairable Pico enclosure with a removable lid. Check supplied component sizes and compare a fit allowance.",
-      "evidence": "Two design choices, CAD views and a fit/access test.",
+      "title": "Design a case for your memory game",
+      "learn": "Tinkercad 3D Design: set dimensions in millimetres, use the ruler, align parts, and group solid and hole shapes. Learn fit allowance through a simple example. Plan a case around the Pico, buttons, LEDs and wiring, using supplied or measured component sizes.",
+      "make": "Model a tabletop or handheld case for the Week 9 game. Include three button openings, three visible LED openings, space for the Pico and wiring, USB access and a removable lid. Match the red/1, yellow/2 and green/3 controls to the game. Choose the shape and layout for a comfortable product. Early finishers improve the lid fit or control layout after a partner tries the design. This is CAD preparation; physical manufacture and fit still need checking.",
+      "evidence": "Show a dimensioned body and lid with component footprints that fit inside. Check the button openings, LED visibility, cable access and how the lid opens for repair. A partner can identify the controls and explain how to play. Explain one improvement made after that check.",
       "codes": "ICT1 ICT7 DT2",
       "status": "planned"
     },
@@ -114,7 +114,7 @@
       "week": 12,
       "title": "Make your evidence understandable",
       "learn": "Accessible HTML/CSS, graphics, presentation and responsible AI-assisted communication.",
-      "make": "Create a small device dashboard or explanation page using earlier readings; verify one AI-generated claim and improve the page after a user test.",
+      "make": "Create a small device dashboard or explanation page using a supplied game-results table; verify one AI-generated claim and improve the page after a user test.",
       "evidence": "Credited digital artefact, verified claim and a recorded accessibility improvement.",
       "codes": "ICT1 ICT6 ICT7 ICT8",
       "status": "planned"
@@ -369,14 +369,14 @@
       "ICT5",
       "Networks and interfaces",
       "GPIO, sensors, networks, clients/servers, messages/JSON and offline/failure behaviour.",
-      "W7–8, 11, 13–14",
+      "W7–9, 11, 13–14",
       "Interface/system diagram and an interpreted record with honest status."
     ],
     [
       "ICT6",
       "Data and analysis",
       "Fields, types, keys, validation/verification, linked records, simple queries/lookups, formulas and charts.",
-      "W2, 9, 12–14",
+      "W2, 12–14",
       "Checked records, query/lookup and spreadsheet conclusion."
     ],
     [
@@ -640,6 +640,7 @@
     "Use practical portfolio evidence and individual explanations. A prepared lesson is not evidence that a class has completed it. Competition placing and money raised are not assessment grades.",
     "Confirm competition rules, deadline and equipment early in the spring project. If the event is later, complete a judged school demonstration by April and retain the entry package.",
     "Year 9 direction for later agreement: applied AI and data, model evaluation/bias, automation and an independently managed impact project. AI literacy stays present in Years 7–8; specialist AI is a later progression, not a promise of a full Year 9 map here.",
-    "Each week has two 40-minute periods: coding first, then the separate shared Community Project. In the Smart Beehive hub, Week 7 introduces the engineering method and defines the problem; Week 8 is research; Week 9 is brainstorm. One new project stage opens each week. The teacher operates the project board, including Trello if used; pupils need no accounts."
+    "Each week has two 40-minute periods: coding first, then the separate shared Community Project. In the Smart Beehive hub, Week 7 introduces the engineering method and defines the problem; Week 8 is research; Week 9 is brainstorm. One new project stage opens each week. The teacher operates the project board, including Trello if used; pupils need no accounts.",
+    "Data handling previously planned for Week 9 is deferred to Weeks 12–14. Explicitly teach and check records, validation, lookups and spreadsheet analysis there using supplied game results. Do not assume the button game covers those skills."
   ]
 }
