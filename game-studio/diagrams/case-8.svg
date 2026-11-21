@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" role="img"><rect width="100%" height="100%" fill="#edf5f8"/><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#b8d5df" stroke-width=".7"/></pattern><pattern id="cut" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 8L8 0" stroke="#859399" stroke-width="2"/></pattern></defs><rect x="10" y="35" width="880" height="390" fill="url(#grid)"/><g font-family="Arial,sans-serif" fill="#23453c"><text x="25" y="27" font-size="22">Year 8: Box + Hole → Group</text>
+        <path d="M80 150L310 150L380 105L150 105Z" fill="#f6c29d" stroke="#ad643b" stroke-width="2"/>
+        <path d="M80 150V310H310V150Z" fill="#e99561" stroke="#ad643b" stroke-width="2"/>
+        <path d="M310 150L380 105V265L310 310Z" fill="#ce7c4e" stroke="#ad643b" stroke-width="2"/>
+        <path d="M100 157L305 157L357 123L153 123Z" fill="#f9f8ee" stroke="#ad643b" stroke-width="2"/>
+        <path d="M100 157V265H305V157Z" fill="#b96840"/>
+        <path d="M100 265H305L357 230V123L305 157V265Z" fill="#cf895f"/>
+        <path d="M100 265H305L357 230H152Z" fill="#f6c29d" stroke="#a56644"/>
+        <rect x="83" y="225" width="28" height="36" fill="#e3f0f4" stroke="#804a30"/>
+        <path d="M490 240H725L795 195H560Z" fill="#efb28b" stroke="#ad643b" stroke-width="2"/>
+        <path d="M490 240V254H725V240Z M725 240V254L795 209V195Z" fill="#ce7c4e" stroke="#ad643b"/>
+        <ellipse cx="565" cy="225" rx="17" ry="8" fill="#b2c7ca" stroke="#556e70"/><ellipse cx="579" cy="205" rx="7" ry="4" fill="#b2c7ca" stroke="#556e70"/><text x="560" y="278" font-size="18">1</text><ellipse cx="640" cy="225" rx="17" ry="8" fill="#b2c7ca" stroke="#556e70"/><ellipse cx="654" cy="205" rx="7" ry="4" fill="#b2c7ca" stroke="#556e70"/><text x="635" y="278" font-size="18">2</text><ellipse cx="710" cy="225" rx="17" ry="8" fill="#b2c7ca" stroke="#556e70"/><ellipse cx="724" cy="205" rx="7" ry="4" fill="#b2c7ca" stroke="#556e70"/><text x="705" y="278" font-size="18">3</text><text x="75" y="355" font-size="19">Body: 100 × 70 × 30 mm</text><text x="490" y="310" font-size="19">Lid: 100 × 70 × 3 mm</text><text x="75" y="388" font-size="17">3 mm walls + 3 mm floor</text><text x="490" y="350" font-size="17">Keep the lid separate</text><text x="490" y="380" font-size="17">Score → computer by USB</text></g></svg>

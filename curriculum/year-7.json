@@ -1,10 +1,10 @@
 {
   "year": 7,
-  "updated": "14 November 2026",
+  "updated": "22 November 2026",
   "meta": {
     "title": "Year 7 Arduino and invention",
     "route": "Arduino Uno and C++ in Tinkercad Circuits, with 3D design in Tinkercad.",
-    "next": "Lesson 7 finishes the traffic lights, with a pedestrian crossing for early finishers. Lesson 8 is Quiz-show buzzer. Smart Beehive continues in the separate Community Project hub.",
+    "next": "Week 8 is the timed Arduino clicker in Tinkercad. Week 9 turns it into a CAD game-case prototype. Each guide has short build steps, a notebook, optional problems, teacher notes and print options. Smart Beehive continues separately.",
     "intro": "Students move from their earlier Scratch work into text-based code that controls a circuit. They learn how inputs, decisions and outputs produce a useful response, then design a case and explain the evidence behind their choices."
   },
   "weeks": [
@@ -75,28 +75,29 @@
     },
     {
       "week": 8,
-      "title": "Quiz-show buzzer",
-      "learn": "Read one Arduino button with digitalRead() and use if / else for light and sound. Extra: add a second team with else if.",
-      "make": "Period 1 (40 minutes): build a one-button quiz buzzer in Tinkercad. Early finishers add a second team. Period 2 (40 minutes): research the Smart Beehive project.",
-      "evidence": "The red light and sound start on press and stop on release. Community evidence: a research question and useful cited findings.",
-      "codes": "ICT2 ICT6 DT1",
+      "title": "Ten-second clicker",
+      "learn": "Read a push button with INPUT_PULLUP, show messages in Serial Monitor and count one point per new press. Explicitly introduce a simple for countdown, remembered button state and the supplied millis timer. Keep void loop(); no while loop is needed.",
+      "make": "Period 1 (40 minutes): build a one-button clicker in Tinkercad. Show 3, 2, 1, GO, run a ten-second round and print a final score. Early finishers add an arcade qualifying target. Period 2 (40 minutes): research the separate Smart Beehive project.",
+      "evidence": "A held button earns one point, a held early press earns none, late presses do not change the final score, and a new game resets to zero. Explain one countdown or counting line. Community evidence: research findings.",
+      "codes": "ICT2 ICT5 ICT6 DT1",
       "status": "prepared lesson; classroom outcome not yet checked",
-      "link": "../week-8-quiz-buzzer/"
+      "link": "../week-8-clicker-game/"
     },
     {
       "week": 9,
-      "title": "Let a sensor make the decision",
-      "learn": "Coding: Analogue readings, Serial Monitor, thresholds and normal/boundary/fault behaviour. Community Project: generate several possible responses to the researched problem.",
-      "make": "Planned Period 1 (40 minutes): Use a simulated light or distance reading to control an indicator. Keep a manual stop and label supplied readings as simulated. Planned Period 2 (40 minutes): use the Brainstorm stage in the separate Smart Beehive hub to sketch two possible ideas and explain how each could meet the need.",
-      "evidence": "Readings, a justified threshold and three test results. Community Project: two labelled ideas linked to the problem and research.",
-      "codes": "ICT2 ICT5 ICT6 ICT7 DT1",
-      "status": "planned"
+      "title": "A case for your clicker",
+      "learn": "Tinkercad 3D Design from the beginning: millimetres, Ruler Endpoint mode, positions, Lift, Hole, Group and separate parts. Connect the case layout to the Week 8 game.",
+      "make": "Period 1 (40 minutes): model a body and removable lid with one button opening, one ready LED opening, Uno planning space and USB access. The score stays in Serial Monitor. Use supplied practice dimensions; early finishers add a locating lip or readable labels. Period 2 (40 minutes): brainstorm ideas for the separate Smart Beehive project.",
+      "evidence": "A 3 mm floor and walls, clear control and cable openings, a separate lid and a planning-space check. Explain one usability improvement. Physical fit needs measurement of the actual parts.",
+      "codes": "ICT1 ICT8 DT2",
+      "status": "prepared lesson; classroom outcome not yet checked",
+      "link": "../week-9-game-case/"
     },
     {
       "week": 10,
       "title": "Use data to choose a better setting",
       "learn": "Records, units, data quality, spreadsheet formulas, references, filtering and charts.",
-      "make": "Analyse a small sensor log using SUM, AVERAGE and IF; explain which setting the evidence supports.",
+      "make": "Analyse a supplied clicker-results table using SUM, AVERAGE and IF; compare round lengths honestly and explain which arcade target the evidence supports.",
       "evidence": "Checked formulas, a suitable chart and an evidence-based decision.",
       "codes": "ICT1 ICT7",
       "status": "planned"
@@ -112,10 +113,10 @@
     },
     {
       "week": 12,
-      "title": "Design a case that fits",
-      "learn": "3D CAD, millimetres, combining shapes, holes and access to controls.",
-      "make": "In Tinkercad 3D Design, model a simple case for the earlier circuit from supplied component dimensions. Printing is optional; a scaled fit check is required.",
-      "evidence": "Dimensioned CAD views, an access/fit check and saved model.",
+      "title": "Improve the fit and share your game",
+      "learn": "Revisit the Week 9 CAD model: fit allowances, accessible labels, assembly and user feedback.",
+      "make": "Improve the existing game case after a fit or usability check. Verify actual component dimensions before physical manufacture, and prepare a clear explanation of the game.",
+      "evidence": "An improved, dimensioned model, an explained change and a usable game explanation.",
       "codes": "ICT1 ICT8 DT2",
       "status": "planned"
     },
@@ -341,7 +342,7 @@
       "ICT1",
       "Digital workflow",
       "Files, versions, export, permissions and source credit.",
-      "W1, 3, 10–14",
+      "W1, 3, 9–14",
       "Usable working files and an organised individual portfolio."
     ],
     [
@@ -383,14 +384,14 @@
       "ICT7",
       "Data and analysis",
       "Records/fields, units, quality, formulas, references, filtering and charts.",
-      "W9–10, 13–14",
+      "W10, 13–14",
       "Checked spreadsheet and an evidence-based setting or design decision."
     ],
     [
       "ICT8",
       "Digital and 3D creation",
       "Structured documents, graphics, presentation, accessible HTML/CSS and dimensioned 3D CAD.",
-      "W3, 11–14",
+      "W3, 9, 11–14",
       "Audience-tested digital output and a fit-checked CAD model."
     ]
   ],
@@ -640,6 +641,7 @@
     "Use practical portfolio evidence and individual explanations. A prepared lesson is not evidence that a class has completed it. Competition placing and money raised are not assessment grades.",
     "Confirm competition rules, deadline and equipment early in the spring project. If the event is later, complete a judged school demonstration by April and retain the entry package.",
     "Year 9 direction for later agreement: applied AI and data, model evaluation/bias, automation and an independently managed impact project. AI literacy stays present in Years 7–8; specialist AI is a later progression, not a promise of a full Year 9 map here.",
-    "Each week has two 40-minute periods: coding first, then the separate shared Community Project. In the Smart Beehive hub, Week 7 introduces the engineering method and defines the problem; Week 8 is research; Week 9 is brainstorm. One new project stage opens each week. The teacher operates the project board, including Trello if used; pupils need no accounts."
+    "Each week has two 40-minute periods: coding first, then the separate shared Community Project. In the Smart Beehive hub, Week 7 introduces the engineering method and defines the problem; Week 8 is research; Week 9 is brainstorm. One new project stage opens each week. The teacher operates the project board, including Trello if used; pupils need no accounts.",
+    "Week 8 now builds a timed clicker, and Week 9 teaches its CAD case. Week 10 can analyse supplied clicker results. Analogue sensor readings previously planned in Week 9 still need an explicit later introduction before they are credited as covered."
   ]
 }

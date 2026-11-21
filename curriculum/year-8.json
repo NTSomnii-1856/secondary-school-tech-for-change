@@ -1,10 +1,10 @@
 {
   "year": 8,
-  "updated": "21 November 2026",
+  "updated": "22 November 2026",
   "meta": {
     "title": "Year 8 Python and connected systems",
     "route": "Python first, then Raspberry Pi Pico MicroPython in Wokwi; full Raspberry Pi computer concepts and hardware where available.",
-    "next": "Week 8 builds the random light memory game. Week 9 replaces typed guesses with three coloured push buttons in Wokwi. Week 10 uses Tinkercad 3D Design to turn that Pico game into a case design. Smart Beehive continues separately.",
+    "next": "Week 8 remains the teacher-revised random light game. Week 9 now has the ready-wired button-memory guide. Week 10 designs its Pico case in Tinkercad. Both guides include a notebook, optional problems, teacher notes and printing.",
     "intro": "Students keep building confidence in Python, then use the same ideas to control a simulated device. They develop functions, data handling, 3D design and system testing before the major physical project."
   },
   "weeks": [
@@ -86,20 +86,22 @@
     {
       "week": 9,
       "title": "Memory game: press the pattern",
-      "learn": "Reuse the Week 8 LED list, random.randint(), range loops, stored order, if / else and while True. New learning: connect a push button to a Pico input and GND; use Pin.IN and Pin.PULL_UP. Read 0 for pressed and 1 for released. Teach waiting for release so one held press counts once. Introduce each new line with a short notebook example.",
-      "make": "Period 1 (40 minutes): continue the Week 8 game in a ready-wired Wokwi Pico circuit. Test one button, then use red, yellow and green buttons. After the three flashes, record exactly three separate presses in answer as text and compare answer with order: the correct order wins. Begin with a known pattern before restoring the existing random choices. Early finishers reuse their working score and faster-round challenges. Period 2 (40 minutes): brainstorm two ideas for the separate Smart Beehive project.",
-      "evidence": "Demonstrate a correct and wrong button order, including a repeated colour. Holding a button must count once; releasing and pressing it again must count twice. Explain one input line and the answer comparison. A partner can play without typing. Community Project: two labelled ideas linked to the researched need.",
+      "learn": "Reuse Week 8 LED lists, random.randint(), range loops and text order. Introduce Pin.IN, Pin.PULL_UP, conditional while checks and waiting for release. Build one press, then three, before joining the light game. No custom helper functions or callbacks.",
+      "make": "Period 1 (40 minutes): use the ready-wired Pico. Replace the typed guess with exactly three separate coloured-button presses; the matching order wins. Core is one round; early finishers create a three-round match with a score out of 3. Period 2 (40 minutes): brainstorm two ideas for the separate Smart Beehive project.",
+      "evidence": "Correct and wrong orders, repeated colours and one count per held press. Explain the position-to-digit conversion and show where the answer is reset. Optional match: two wins give 2 out of 3, with a clean score on restart.",
       "codes": "ICT1 ICT2 ICT3 ICT5 DT1",
-      "status": "planned"
+      "status": "prepared lesson; classroom outcome not yet checked",
+      "link": "../week-9-button-memory-game/"
     },
     {
       "week": 10,
-      "title": "Design a case for your memory game",
-      "learn": "Tinkercad 3D Design: set dimensions in millimetres, use the ruler, align parts, and group solid and hole shapes. Learn fit allowance through a simple example. Plan a case around the Pico, buttons, LEDs and wiring, using supplied or measured component sizes.",
-      "make": "Model a tabletop or handheld case for the Week 9 game. Include three button openings, three visible LED openings, space for the Pico and wiring, USB access and a removable lid. Match the red/1, yellow/2 and green/3 controls to the game. Choose the shape and layout for a comfortable product. Early finishers improve the lid fit or control layout after a partner tries the design. This is CAD preparation; physical manufacture and fit still need checking.",
-      "evidence": "Show a dimensioned body and lid with component footprints that fit inside. Check the button openings, LED visibility, cable access and how the lid opens for repair. A partner can identify the controls and explain how to play. Explain one improvement made after that check.",
+      "title": "A case for your memory game",
+      "learn": "Tinkercad 3D Design: dimensions, Ruler Endpoint mode, Lift, Hole, Group, component planning spaces and fit allowances. Model a body and a separate lid for the Week 9 game.",
+      "make": "Build a CAD case for the Pico game with three button openings, three LED openings, cable access and a removable lid. Use supplied practice dimensions and planning blocks. Early finishers add a locating lip or controls readable without colour alone.",
+      "evidence": "Dimensioned body and lid, 3 mm walls and floor, through-openings, space for the Pico and wiring, and one improvement after a partner check. Measure real controls before manufacturing.",
       "codes": "ICT1 ICT7 DT2",
-      "status": "planned"
+      "status": "prepared lesson; classroom outcome not yet checked",
+      "link": "../week-10-game-case/"
     },
     {
       "week": 11,
