@@ -224,3 +224,54 @@
 .signal-light.red { background: #ff7874; }
 .signal-light.yellow { background: #ffda60; }
 .signal-light.green { background: #8be3a0; }
+
+.build-stages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-block: 18px;
+}
+.build-stages .btn {
+  font-size: 13px;
+  padding: 7px 10px;
+  min-height: 38px;
+  white-space: normal;
+  text-align: start;
+}
+.stage-progress {
+  color: #4d6259;
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+.build-stage h2 { margin: 0 0 12px; font-size: 26px; }
+.build-stage .steps { padding-inline-start: 28px; }
+.build-stage .steps li { margin-block: 12px; }
+.build-stage .codebox { margin-block: 8px 12px; }
+.build-stage pre { font-size: 14px; line-height: 1.55; }
+.build-stage .check { margin-block: 20px; }
+.build-stage .check strong { display: block; margin-bottom: 4px; }
+.snippet-label { margin: 18px 0 0; font-size: 14px; font-weight: 650; }
+.stage-controls { display: flex; flex-wrap: wrap; gap: 10px; }
+.stage-setup { margin-block: 12px; }
+.stage-setup > summary { font-size: 16px; }
+.stage-setup .launch { margin-block: 12px; }
+.teacher-guide { border-inline-start: 4px solid var(--deep); }
+.teacher-guide h2 { margin-top: 0; }
+.print-stage { break-inside: avoid; }
+.print-stage h2 { margin-top: 5mm; font-size: 13pt; }
+.led-map { width: 100%; margin-block: 16px; font-size: 14px; border-collapse: collapse; }
+.led-map th, .led-map td { padding: 7px; text-align: start; border-bottom: 1px solid var(--line); }
+.led-map th { font-weight: 650; }
+
+@media (min-width: 960px) {
+  [dir="rtl"] .lesson-layout {
+    grid-template-areas: 'notebook lesson';
+    grid-template-columns: minmax(240px, 296px) minmax(0, 800px);
+  }
+}
+
+@media (max-width: 540px) {
+  .build-stage { padding: 18px 16px; }
+  .build-stage h2 { font-size: 23px; }
+  .build-stage pre { font-size: 12px; }
+}

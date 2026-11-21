@@ -1,6 +1,6 @@
 {
   "year": 8,
-  "updated": "19 November 2026",
+  "updated": "21 November 2026",
   "meta": {
     "title": "Year 8 Python and connected systems",
     "route": "Python first, then Raspberry Pi Pico MicroPython in Wokwi; full Raspberry Pi computer concepts and hardware where available.",
@@ -76,9 +76,9 @@
     {
       "week": 8,
       "title": "Guess the light order",
-      "learn": "Sequence direct LED commands and check a typed guess with input() and if / else. Optional: explicitly teach while playing to repeat until a wrong guess, shorten waits and count correct answers. Challenge 3 introduces random.choice() and a for loop over the digits of a chosen pattern.",
-      "make": "Period 1 (40 minutes): build red, green and yellow flashes and check 132. Early finishers add faster replay until a wrong answer, then scoring and a random order each round. Period 2 (40 minutes): research the Smart Beehive project.",
-      "evidence": "Show 132 passing and 123 failing. Challenges: demonstrate shorter waits, one point per correct answer and game over on a wrong guess. The random version must flash and check the same chosen pattern. Community evidence: useful research findings.",
+      "learn": "Build a random three-light memory game using LED lists, list positions, random.randint(), text for the answer, counted range loops and while True. Introduce each new idea in a separate build step with a notebook example.",
+      "make": "Period 1 (40 minutes): continue the teacher-provided Level 1 game through short build-and-test steps. Students can return to an earlier step or move to score, pretend-point bets and faster-round challenges. Period 2 (40 minutes): research the Smart Beehive project.",
+      "evidence": "Explain how list positions 0, 1 and 2 become player digits 1, 2 and 3. Check a correct and incorrect answer and show that each round resets its order. Challenge evidence includes score updates, affordable point bets and a minimum light delay. Community evidence includes useful research findings.",
       "codes": "ICT2 ICT3 ICT8 DT1",
       "status": "prepared lesson; classroom outcome not yet checked",
       "link": "../week-8-memory-game/"

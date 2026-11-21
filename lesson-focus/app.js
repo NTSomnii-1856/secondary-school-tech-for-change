@@ -6,7 +6,27 @@
   const app = document.getElementById('app');
   let language = 'en';
   let notebookOpen = window.matchMedia('(min-width: 960px)').matches;
+  let teacherOpen = false;
+  const stageIndexes = {main: 0, extra: 0};
   try { language = localStorage.getItem('ntsomnii-language') || 'en'; } catch {}
+
+  const stageLabels = {
+    stage: ['Build step', 'Шаг сборки', '制作步骤', 'שלב בנייה'],
+    previous: ['Previous step', 'Предыдущий шаг', '上一步', 'השלב הקודם'],
+    next: ['Next step', 'Следующий шаг', '下一步', 'השלב הבא'],
+    check: ['Run and check', 'Запусти и проверь', '运行并检查', 'הריצו ובדקו'],
+    snippet: ['Code for this step', 'Код для этого шага', '本步骤代码', 'הקוד לשלב הזה'],
+    teacher: ['Teacher', 'Учитель', '教师', 'מורה'],
+    solution: ['Show worked program', 'Показать готовую программу', '显示完整示例', 'הציגו תוכנית לדוגמה'],
+    hide: ['Close teacher guide', 'Закрыть руководство', '关闭教师指南', 'סגרו את מדריך המורה'],
+    setup: ['Circuit and pin setup', 'Схема и настройка выводов', '电路和引脚设置', 'מעגל והגדרת פינים'],
+    index: ['List position', 'Позиция в списке', '列表位置', 'מיקום ברשימה'],
+    led: ['LED', 'Светодиод', 'LED', 'נורית'],
+    digit: ['Player types', 'Игрок вводит', '玩家输入', 'השחקן מקליד'],
+    red: ['Red', 'Красный', '红', 'אדום'],
+    yellow: ['Yellow', 'Жёлтый', '黄', 'צהוב'],
+    green: ['Green', 'Зелёный', '绿', 'ירוק']
+  };
 
   function text(value) {
     return value[languages.findIndex(([code]) => code === language)] ?? value[0];
@@ -20,18 +40,26 @@
 
   const translate = value => escape(text(value));
   const label = name => translate(ui[name]);
+  const stageLabel = name => translate(stageLabels[name]);
+
+  function currentTask() {
+    const key = location.hash === '#challenge' ? 'extra' : 'main';
+    const task = lesson[key];
+    const index = stageIndexes[key];
+    return {key, task, index, stage: task.stages?.[index]};
+  }
 
   function notebook(challenge) {
     const examples = cards => `<dl class="command-list">${cards.map(({command, meaning, example}) => `
       <div class="command-card"><dt><code dir="ltr">${escape(command)}</code></dt>
       <dd><p>${translate(meaning)}</p><pre dir="ltr"><code>${escape(example)}</code></pre></dd></div>`).join('')}</dl>`;
     const {main, extra} = lesson.notebook;
-    const cards = challenge && lesson.extra.notebook ? lesson.extra.notebook : main;
+    const cards = currentTask().stage?.notebook || (challenge && lesson.extra.notebook ? lesson.extra.notebook : main);
     return `<aside class="code-notebook" aria-labelledby="notebook-title">
       <details ${notebookOpen ? 'open' : ''}>
         <summary id="notebook-title">${label('notebook')}</summary>
         <div class="notebook-entries">${examples(cards)}
-          ${challenge && extra.length ? `<h2>${label('notebookExtra')}</h2>${examples(extra)}` : ''}
+          ${challenge && extra.length && !currentTask().stage ? `<h2>${label('notebookExtra')}</h2>${examples(extra)}` : ''}
         </div>
       </details>
     </aside>`;
@@ -52,7 +80,62 @@
 
   function steps(task) {
     return `<ol class="steps">${task.steps.map((step, index) =>
-      `<li>${translate(step)}<span class="step-note">${translate(task.notes[index])}</span></li>`).join('')}</ol>`;
+      `<li>${translate(step)}${task.notes?.[index] ? `<span class="step-note">${translate(task.notes[index])}</span>` : ''}</li>`).join('')}</ol>`;
+  }
+
+  function buildStage(task, index) {
+    const stage = task.stages[index];
+    return `<nav class="build-stages" aria-label="${stageLabel('stage')}">
+      ${task.stages.map((item, number) => `<button class="btn${number === index ? ' primary' : ''}" type="button" data-stage="${number}" ${number === index ? 'aria-current="step"' : ''}>${number + 1}. ${translate(item.title)}</button>`).join('')}
+      </nav>
+      <section class="paper build-stage" aria-labelledby="build-title">
+        <p class="stage-progress">${stageLabel('stage')} <bdi>${index + 1} / ${task.stages.length}</bdi></p>
+        <h2 id="build-title" tabindex="-1">${translate(stage.title)}</h2>
+        <p>${translate(stage.learn)}</p>
+        ${stage.showMap ? ledMap() : ''}
+        ${steps(stage)}
+        ${stage.hint ? `<p class="step-note">${translate(stage.hint)}</p>` : ''}
+        <p class="snippet-label">${stageLabel('snippet')}</p>
+        <div class="codebox"><pre dir="ltr"><code>${escape(stage.snippet)}</code></pre></div>
+        <button class="btn" type="button" data-copy="stage">${label('copy')}</button>
+        <p class="check"><strong>${stageLabel('check')}</strong>${translate(stage.check)}</p>
+        <div class="stage-controls">
+          ${index > 0 ? `<button class="btn" type="button" data-stage="${index - 1}">${stageLabel('previous')}</button>` : ''}
+          ${index < task.stages.length - 1 ? `<button class="btn primary" type="button" data-stage="${index + 1}">${stageLabel('next')}</button>` : `<a class="btn primary" href="${location.hash === '#challenge' ? '#main-task' : '#challenge'}">${label(location.hash === '#challenge' ? 'back' : 'extraLink')}</a>`}
+        </div>
+      </section>`;
+  }
+
+  function ledMap() {
+    return `<table class="led-map"><thead><tr><th scope="col">${stageLabel('index')}</th><th scope="col">${stageLabel('led')}</th><th scope="col">${stageLabel('digit')}</th></tr></thead><tbody>
+      ${[['red', 'GP15'], ['yellow', 'GP13'], ['green', 'GP14']].map(([colour, pin], index) => `<tr><th scope="row"><code>${index}</code></th><td>${stageLabel(colour)} <code>${pin}</code></td><td><code>${index + 1}</code></td></tr>`).join('')}
+      </tbody></table>`;
+  }
+
+  function teacherPanel(challenge) {
+    if (!teacherOpen || !lesson.teacher) return '';
+    const code = challenge ? lesson.teacher.challengeCode : lesson.teacher.code;
+    return `<section class="paper teacher-guide" aria-labelledby="teacher-title">
+      <h2 id="teacher-title" tabindex="-1">${translate(lesson.teacher.title)}</h2>
+      <p>${translate(lesson.teacher.guide)}</p>
+      <details class="code-help"><summary>${stageLabel('solution')}</summary>
+        <div class="codebox"><pre dir="ltr"><code>${escape(code)}</code></pre></div>
+        <button class="btn" type="button" data-copy="teacher">${label('copy')}</button>
+      </details>
+      <button class="btn" type="button" data-teacher>${stageLabel('hide')}</button>
+    </section>`;
+  }
+
+  function stagedTask(task, project) {
+    return `<p>${translate(task.start)}</p>
+      ${project ? `<a class="btn launch" href="${escape(project)}" target="_blank" rel="noopener">${translate(task.open)} ↗</a>` : ''}
+      <details class="paper stage-setup">
+        <summary>${stageLabel('setup')}</summary>
+        ${circuitSetup(task)}
+        ${picture(task)}
+        ${starter(task)}
+      </details>
+      ${buildStage(task, currentTask().index)}`;
   }
 
   function codeHelp(task, copyKey = 'code') {
@@ -101,14 +184,13 @@
     const link = task.project && links[task.project];
     const website = lesson.url;
     return `<section class="print-sheet">
-      <p class="sheet-meta">Year ${lesson.year} · Week ${lesson.lesson} · ${translate(lesson.platform)} · ${label(name)}</p>
+      <p class="sheet-meta">Year ${lesson.year} · Lesson ${lesson.lesson} · ${translate(lesson.platform)} · ${label(name)}</p>
       <h1>${translate(title)}</h1>
       <p><strong>${label('learn')}</strong> ${translate(task.learn)}</p>
       <p>${translate(task.start)}</p>
       ${signalSequence(task)}
       ${task.printFigure === false ? '' : picture(task)}
-      ${steps(task)}
-      <div class="print-help"><strong>${label('help')}</strong> ${translate(task.facts)}<pre dir="ltr"><code>${escape(task.code)}</code></pre></div>
+      ${task.stages ? task.stages.map((stage, index) => `<section class="print-stage"><h2>${index + 1}. ${translate(stage.title)}</h2><p>${translate(stage.learn)}</p>${steps(stage)}<pre dir="ltr"><code>${escape(stage.snippet)}</code></pre><p><strong>${stageLabel('check')}</strong> ${translate(stage.check)}</p></section>`).join('') : `${steps(task)}<div class="print-help"><strong>${label('help')}</strong> ${translate(task.facts)}<pre dir="ltr"><code>${escape(task.code)}</code></pre></div>`}
       <p class="check"><strong>${label('show')}</strong> ${translate(task.done)}</p>
       <p class="sheet-links"><a href="${escape(website)}">${label(task.starter ? 'starterOnline' : 'online')}</a>${link ? ` · <a href="${escape(link)}">${translate(task.open)}</a>` : ''}<br>${escape(website)}</p>
     </section>`;
@@ -121,11 +203,11 @@
     const project = task.project ? links[task.project] : null;
     document.documentElement.lang = language;
     document.documentElement.dir = language === 'he' ? 'rtl' : 'ltr';
-    document.title = `Year ${lesson.year} · Week ${lesson.lesson} · ${text(lesson.title)}`;
+    document.title = `Year ${lesson.year} · Lesson ${lesson.lesson} · ${text(lesson.title)}`;
     app.innerHTML = `
       <header class="top focus-header">
         <a class="brand" href="../">NTSOMNII · TECH FOR CHANGE</a>
-        <div class="tools"><button class="btn" type="button" data-print>${label('print')}</button>
+        <div class="tools">${lesson.teacher ? `<button class="btn" type="button" data-teacher aria-pressed="${teacherOpen}">${stageLabel('teacher')}</button>` : ''}<button class="btn" type="button" data-print>${label('print')}</button>
         <label class="langlabel">Language<select id="language">${languages.map(([code, name]) =>
           `<option value="${code}"${code === language ? ' selected' : ''}>${name}</option>`).join('')}</select></label>
         </div>
@@ -133,14 +215,14 @@
       <div class="lesson-layout">
       ${notebook(challenge)}
       <main class="focus-lesson" id="main" tabindex="-1">
-        <p class="lesson-number">Year ${lesson.year} · Week ${lesson.lesson} · ${translate(lesson.platform)}</p>
+        <p class="lesson-number">Year ${lesson.year} · Lesson ${lesson.lesson} · ${translate(lesson.platform)}</p>
         <nav class="task-nav" aria-label="Lesson tasks">
           <a class="btn ${challenge ? '' : 'primary'}" href="#main-task" ${challenge ? '' : 'aria-current="page"'}>${label('main')}</a>
           <a class="btn ${challenge ? 'primary' : ''}" href="#challenge" ${challenge ? 'aria-current="page"' : ''}>${label('challenge')}</a>
         </nav>
         <h1>${translate(heading)}</h1>
         <p class="lesson-learn"><strong>${label('learn')}</strong> ${translate(task.learn)}</p>
-        <article class="paper task-card">
+        ${task.stages ? stagedTask(task, project) : `<article class="paper task-card">
           <p>${translate(task.start)}</p>
           ${signalSequence(task)}
           ${project ? `<a class="btn primary launch" href="${escape(project)}" target="_blank" rel="noopener">${translate(task.open)} ↗</a>` : ''}
@@ -150,8 +232,9 @@
           ${starter(task)}
           ${codeHelp(task)}
           <p class="check"><strong>${label('show')}</strong> ${translate(task.done)}</p>
-        </article>
+        </article>`}
         ${optionalChallenge(task, 'bonus')}${optionalChallenge(task, 'shuffle')}
+        ${teacherPanel(challenge)}
         <a class="btn" href="${challenge ? '#main-task' : '#challenge'}">${label(challenge ? 'back' : 'extraLink')}</a>
         <p id="toast" role="status"></p>
       </main>
@@ -170,13 +253,35 @@
       const diagram = button.dataset.copy === 'diagram';
       const message = document.getElementById(diagram ? 'circuit-feedback' : 'toast');
       try {
-        await navigator.clipboard.writeText(diagram ? task.circuit.json : ['bonus', 'shuffle'].includes(button.dataset.copy) ? task[button.dataset.copy].code : task[button.dataset.copy]);
+        const source = button.dataset.copy;
+        const code = source === 'stage' ? currentTask().stage.snippet
+          : source === 'teacher' ? lesson.teacher[challenge ? 'challengeCode' : 'code']
+          : diagram ? task.circuit.json
+          : ['bonus', 'shuffle'].includes(source) ? task[source].code : task[source];
+        await navigator.clipboard.writeText(code);
         message.textContent = diagram ? text(task.circuit.copied) : text(ui.copied);
       } catch {
         message.textContent = diagram ? text(task.circuit.copyFail) : text(ui.copyFail);
       }
     });
   }
+
+  app.addEventListener('click', event => {
+    const stageButton = event.target.closest('[data-stage]');
+    if (stageButton) {
+      const {key, task} = currentTask();
+      const index = Number(stageButton.dataset.stage);
+      if (!Number.isInteger(index) || index < 0 || index >= task.stages.length) return;
+      stageIndexes[key] = index;
+      render();
+      document.getElementById('build-title').focus();
+    }
+    if (event.target.closest('[data-teacher]')) {
+      teacherOpen = !teacherOpen;
+      render();
+      document.getElementById(teacherOpen ? 'teacher-title' : 'main').focus();
+    }
+  });
 
   app.addEventListener('change', event => {
     if (event.target.id !== 'language') return;
