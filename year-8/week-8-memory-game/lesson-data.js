@@ -403,10 +403,10 @@
       ...common,
       title: ['Build the game', 'Собери игру', '制作游戏', 'בנו את המשחק'],
       start: [
-        'Make a game that flashes three random lights and checks the numbers you type. Start with the project setup below, then build one step at a time.',
-        'Сделай игру, которая показывает три случайные вспышки и проверяет введённые цифры. Начни с подготовки проекта ниже, затем выполняй шаги по порядку.',
-        '制作一个游戏，随机闪三次灯，再检查你输入的数字。从下方项目设置开始，然后逐步搭建。',
-        'בנו משחק שמציג שלושה הבהובים אקראיים ובודק את המספרים שהקלדתם. התחילו בהגדרת הפרויקט שלמטה, ואז בנו שלב אחד בכל פעם.'
+        'Start with the project setup below, then work through the six steps.',
+        'Начни с подготовки проекта ниже, затем выполни шесть шагов по порядку.',
+        '从下方项目设置开始，然后依次完成六个步骤。',
+        'התחילו בהגדרת הפרויקט שלמטה, ואז עברו על ששת השלבים.'
       ],
       learn: [
         'Build a game that flashes three random lights and checks the answer.',
