@@ -86,9 +86,9 @@
     {
       "week": 9,
       "title": "Memory game: press the pattern",
-      "learn": "Reuse Week 8 LED lists, random.randint(), range loops and text order. Introduce Pin.IN, Pin.PULL_UP, conditional while checks and waiting for release. Build one press, then three, before joining the light game. No custom helper functions or callbacks.",
-      "make": "Period 1 (40 minutes): use the ready-wired Pico. Replace the typed guess with exactly three separate coloured-button presses; the matching order wins. Core is one round; early finishers create a three-round match with a score out of 3. Period 2 (40 minutes): brainstorm two ideas for the separate Smart Beehive project.",
-      "evidence": "Correct and wrong orders, repeated colours and one count per held press. Explain the position-to-digit conversion and show where the answer is reset. Optional match: two wins give 2 out of 3, with a clean score on restart.",
+      "learn": "Read a button with Pin.IN and Pin.PULL_UP. Use direct red, yellow and green checks to collect an answer. Explain len(answer), wait for release and compare the answer with a three-light pattern.",
+      "make": "Period 1 (40 minutes): open this lesson’s Pico circuit and starter. Test one button, collect three separate presses, then check a three-light memory game. An optional three-round match adds a score out of 3. Period 2 (40 minutes): brainstorm two ideas for the separate Smart Beehive project.",
+      "evidence": "Show a correct and wrong order, repeated colours and one count per held press. Explain how the answer grows to three digits and where it is cleared. Optional match evidence includes a score out of 3 and a clean restart.",
       "codes": "ICT1 ICT2 ICT3 ICT5 DT1",
       "status": "prepared lesson; classroom outcome not yet checked",
       "link": "../week-9-button-memory-game/"
@@ -96,8 +96,8 @@
     {
       "week": 10,
       "title": "A case for your memory game",
-      "learn": "Tinkercad 3D Design: dimensions, Ruler Endpoint mode, Lift, Hole, Group, component planning spaces and fit allowances. Model a body and a separate lid for the Week 9 game.",
-      "make": "Build a CAD case for the Pico game with three button openings, three LED openings, cable access and a removable lid. Use supplied practice dimensions and planning blocks. Early finishers add a locating lip or controls readable without colour alone.",
+      "learn": "Use Tinkercad Ruler, Hole and Group to model a game case from supplied dimensions. Build a body, a separate lid and openings for the controls.",
+      "make": "Start a new CAD design. Follow five short steps to make a body, lid, three button openings, three LED openings and USB access. Check the supplied Pico planning block inside the body.",
       "evidence": "Dimensioned body and lid, 3 mm walls and floor, through-openings, space for the Pico and wiring, and one improvement after a partner check. Measure real controls before manufacturing.",
       "codes": "ICT1 ICT7 DT2",
       "status": "prepared lesson; classroom outcome not yet checked",

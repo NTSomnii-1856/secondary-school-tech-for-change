@@ -10,6 +10,8 @@ NTSOMNII independent ICT lessons. Each class has its own page and ordered lesson
 - Give each step an observable result and a short troubleshooting hint. Keep complete worked programs in the teacher guide.
 - Follow the curriculum map. Plan each new lesson as a separate task with its own files and examples.
 
+Year 8 Lessons 9 and 10 keep worked examples in encrypted teacher data. Editable teacher references are stored in the private website repository under `classroom-teacher-sources/year-8/`.
+
 ## Open your class
 
 - [Year 7](https://ntsomnii-1856.github.io/secondary-school-tech-for-change/year-7/)
