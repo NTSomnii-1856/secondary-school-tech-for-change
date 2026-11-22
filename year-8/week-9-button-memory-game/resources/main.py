@@ -12,6 +12,3 @@ gbutton = Pin(18, Pin.IN, Pin.PULL_UP)
 rled.value(0)
 yled.value(0)
 gled.value(0)
-
-leds = [rled, yled, gled]
-speed = 1

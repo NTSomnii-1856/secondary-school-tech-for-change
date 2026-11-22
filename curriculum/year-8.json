@@ -86,9 +86,9 @@
     {
       "week": 9,
       "title": "Memory game: press the pattern",
-      "learn": "Read a button with Pin.IN and Pin.PULL_UP. Use direct red, yellow and green checks to collect an answer. Explain len(answer), wait for release and compare the answer with a three-light pattern.",
-      "make": "Period 1 (40 minutes): open this lesson’s Pico circuit and starter. Test one button, collect three separate presses, then check a three-light memory game. An optional three-round match adds a score out of 3. Period 2 (40 minutes): brainstorm two ideas for the separate Smart Beehive project.",
-      "evidence": "Show a correct and wrong order, repeated colours and one count per held press. Explain how the answer grows to three digits and where it is cleared. Optional match evidence includes a score out of 3 and a clean restart.",
+      "learn": "Read a pull-up button, save its digit as text and print the saved answer. Use the familiar for-in-range loop for three timed choices. Compare the saved buttons with the three-light pattern.",
+      "make": "Period 1 (40 minutes): use this lesson’s wiring and starter. Read one button, save one choice, then save three choices using press-and-hold, Saved and Let go prompts. Add the light pattern and answer check. A simple optional challenge shortens the choice time. Period 2 (40 minutes): brainstorm two ideas for the separate Smart Beehive project.",
+      "evidence": "Show the answer growing from 1 to 13 to 132. Explain why it is cleared above the loop. Test a matching pattern, a wrong choice, a missed turn and a repeated colour. Explain when each held button is read.",
       "codes": "ICT1 ICT2 ICT3 ICT5 DT1",
       "status": "prepared lesson; classroom outcome not yet checked",
       "link": "../week-9-button-memory-game/"
